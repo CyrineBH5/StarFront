@@ -1,4 +1,4 @@
-import { Cours } from 'src/app/models/cours';
+import { Cours } from 'src/app/models/Cours/cours';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({

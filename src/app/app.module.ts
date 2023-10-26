@@ -8,6 +8,7 @@ import { ModifierCoursComponent } from './component/Cours/modifier-cours/modifie
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 export class YourModule { }
 
 @NgModule({
@@ -15,6 +16,7 @@ export class YourModule { }
     AppComponent,
     AjouterCoursComponent,
     ModifierCoursComponent,
+
 
   ],
   imports: [

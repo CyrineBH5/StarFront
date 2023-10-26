@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Cours } from 'src/app/models/cours';
-import { CoursService } from 'src/app/services/cours.service';
+import { Cours } from 'src/app/models/Cours/cours';
+import { CoursService } from 'src/app/services/cours/cours.service';
 import { FormsModule } from '@angular/forms';
 
 
@@ -22,8 +22,8 @@ export class AjouterCoursComponent implements OnInit {
     let Langue = formAC.value['langue'];
     //let Nb = formAC.value['nb'];
     console.log('Données du formulaire :', Titre, Description, Duree, Langue);
-  this.c.ajouterCours(new Cours(Titre, Description, Duree, Langue));
-    
+    this.c.ajouterCours(new Cours(Titre, Description, Duree, Langue));
+
   }
   ngOnInit(): void {
   }
