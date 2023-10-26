@@ -12,6 +12,7 @@ export class Cours {
     this.duree = duree;
     this.langue = langue;
   }
+
   getIdCours() {
     return this.idCours;
   }
@@ -20,7 +21,7 @@ export class Cours {
     return this.titre;
   }
 
-  getDescription() {
+  getDescription() {  
     return this.description;
   }
 

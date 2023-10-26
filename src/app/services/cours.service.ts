@@ -13,10 +13,10 @@ export class CoursService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',  // Adjust the content type as needed
-        'Authorization': 'Bearer YourAccessToken', // Add any authorization headers here
       })
     };
-    this.httpCours.post<Cours[]>('http://localhost:3003/api/Cours', c,httpOptions).subscribe(res => {
+
+    this.httpCours.post<Cours[]>('http://localhost:3003/api/Cours', c, httpOptions).subscribe(res => {
       console.log(res);
     }
       , err => { console.log(err) });

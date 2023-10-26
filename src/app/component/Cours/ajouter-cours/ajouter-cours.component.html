@@ -62,7 +62,7 @@
               <div>
                 <div>
                   <label for="langue" class="formbold-form-label"> Langue</label>
-                  <select name="langue" id="langue" class="formbold-form-input" required ngModel>
+                  <select name="langue" id="langue" class="formbold-form-input" required=ngModel>
                     <option value="">Choisir la langue</option>
                     <option *ngFor="let langue of langues" [value]="langue" class="formbold-form-input">{{ langue }}
                     </option>
