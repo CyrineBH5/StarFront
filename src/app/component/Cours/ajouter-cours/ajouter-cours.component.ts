@@ -21,8 +21,9 @@ export class AjouterCoursComponent implements OnInit {
     let Duree = formAC.value['duree']
     let Langue = formAC.value['langue'];
     //let Nb = formAC.value['nb'];
-    console.log(this.c.ajouterCours(new Cours(Titre, Description, Duree, Langue)));
-    ;
+    console.log('Données du formulaire :', Titre, Description, Duree, Langue);
+  this.c.ajouterCours(new Cours(Titre, Description, Duree, Langue));
+    
   }
   ngOnInit(): void {
   }

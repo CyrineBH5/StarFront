@@ -1,6 +1,6 @@
 import { Cours } from 'src/app/models/cours';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +9,14 @@ export class CoursService {
   constructor(private httpCours: HttpClient) {
   }
   ajouterCours(c: Cours) {
-    this.httpCours.post<Cours[]>('https://localhost:3003/api/Cours', c).subscribe(res => {
+    // Define your headers
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',  // Adjust the content type as needed
+        'Authorization': 'Bearer YourAccessToken', // Add any authorization headers here
+      })
+    };
+    this.httpCours.post<Cours[]>('http://localhost:3003/api/Cours', c,httpOptions).subscribe(res => {
       console.log(res);
     }
       , err => { console.log(err) });
