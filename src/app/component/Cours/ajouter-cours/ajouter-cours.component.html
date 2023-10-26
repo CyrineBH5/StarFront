@@ -33,7 +33,7 @@
         <form #formAC="ngForm" (ngSubmit)="ajouterCours(formAC)" method="POST">
           <div class="formbold-steps">
             <ul class="flex justify-between">
-              <li class="formbold-step-menu1 active ">
+              <li class="formbold-step-menu1 active">
                 <span>1</span>
                 Cours
               </li>
@@ -48,57 +48,108 @@
             </ul>
           </div>
           <div class="formbold-form-step-1 active">
-            <div>
-              <label for="t" class="formbold-form-label"> Titre du Cours </label>
-              <input type="text" name="titre" id="t" placeholder="Saisir votre titre du cours " required ngModel
-                class="formbold-form-input" />
+            <div class="mb-6">
+              <label for="t" class="block mb-2 text-sm font-medium">Titre du Cours</label>
+              <input
+                type="text"
+                name="titre"
+                id="t"
+                placeholder="Saisir votre titre du cours"
+                required
+                ngModel
+                class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500"
+                #titre="ngModel"
+                [ngClass]="{ 'border-red-500': titre.invalid && titre.touched }"
+              />
+              <div *ngIf="titre.invalid && titre.touched" class="text-sm text-red-600 dark:text-red-500">
+                <span class="font-medium">Titre du cours est requis.</span>
+              </div>
             </div>
-            <br>
+
             <div class="formbold-input-flex">
-              <div>
-                <label for="de" class="formbold-form-label"> Durée </label>
-                <input type="time" name="duree" id="de" class="formbold-form-input" required ngModel />
-              </div>
-              <div>
-                <div>
-                  <label for="langue" class="formbold-form-label"> Langue</label>
-                  <select name="langue" id="langue" class="formbold-form-input" required ngModel>
-                    <option value="">Choisir la langue</option>
-                    <option *ngFor="let langue of langues" [value]="langue" class="formbold-form-input">{{ langue }}
-                    </option>
-                  </select>
+              <div class="mb-6">
+                <label for="de" class="block mb-2 text-sm font-medium">Durée</label>
+                <input
+                  type="time"
+                  name="duree"
+                  id="de"
+                  class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
+                  required
+                  ngModel
+                  #duree="ngModel"
+                  [ngClass]="{ 'border-red-500': duree.invalid && duree.touched }"
+                />
+                <div *ngIf="duree.invalid && duree.touched" class="text-sm text-red-600 dark:text-red-500">
+                  <span class="font-medium">Durée est requise.</span>
                 </div>
-
+              </div>
+              <div class="mb-6">
+                <label for="langue" class="block mb-2 text-sm font-medium">Langue</label>
+                <select
+                  name="langue"
+                  id="langue"
+                  class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
+                  required
+                  ngModel
+                  #langue="ngModel"
+                  [ngClass]="{ 'border-red-500': langue.invalid && langue.touched }"
+                >
+                  <option value="">Choisir la langue</option>
+                  <option *ngFor="let langue of langues" [value]="langue" class="formbold-form-input">{{ langue }}</option>
+                </select>
+                <div *ngIf="langue.invalid && langue.touched" class="text-sm text-red-600 dark:text-red-500">
+                  <span class="font-medium">Choisissez une langue.</span>
+                </div>
               </div>
             </div>
-            <div>
-              <label for="d" class="formbold-form-label"> Description </label>
-              <textarea name="description" id="d" placeholder="Saisir votre Description du cours" required ngModel
-                class=" formbold-form-input"></textarea>
+            <div class="mb-6">
+              <label for="d" class="block mb-2 text-sm font-medium">Description</label>
+              <textarea
+                name="description"
+                id="d"
+                class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
+                placeholder="Saisir votre Description du cours"
+                required
+                ngModel
+                #description="ngModel"
+                [ngClass]="{ 'border-red-500': description.invalid && description.touched }"
+              ></textarea>
+              <div *ngIf="description.invalid && description.touched" class="text-sm text-red-600 dark:text-red-500">
+                <span class="font-medium">La description est requise.</span>
+              </div>
             </div>
-
           </div>
           <div class="formbold-form-btn-wrapper">
-            <button class="formbold-btn" type="submit">
-              Next Step
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_1675_1807)">
-                  <path
-                    d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z"
-                    fill="white" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_1675_1807">
-                    <rect width="16" height="16" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
+
+
+            <button
+            class="formbold-btn"
+            type="submit"
+            [disabled]="formAC.invalid"
+            [ngStyle]="{ 'background-color': formAC.valid ? 'goldenrod' : '#ccc', 'cursor': formAC.valid ? 'pointer' : 'not-allowed' }"
+          >
+            Next Step
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1675_1807)">
+                <path
+                  d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z"
+                  [ngStyle]="{ 'fill': formAC.valid ? 'white' : '#ccc' }"
+                />
+                <!-- Update the fill color based on formAC.valid -->
+              </g>
+              <defs>
+                <clipPath id="clip0_1675_1807">
+                  <rect width="16" height="16" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+        </div>
         </form>
       </div>
     </div>
   </div>
+
 </body>
 
 </html>
