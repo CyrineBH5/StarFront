@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AjouterLeçon</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
+</head>
+
+<body>
+
+  <!--<div class="container">
+    <form #formAC="ngForm" (ngSubmit)="ajouterCours(formAC)" class="form-example" action="">
+      <label for="t">Titre : </label><br>
+      <input type="text" id="t" required ngModel name="titre">
+      <label for="desc">Description : </label><br>
+      <input type="text" id="desc" required ngModel name="description">
+      <label for="d">Durée : </label><br>
+      <input type="text" id="d" required ngModel name="duree">
+      <label for="l">Langue : </label><br>
+      <input type="text" id="l" required ngModel name="langue">
+      <label for="n">Nombre de Vue : </label><br>
+      <input type="number" id="n" required ngModel name="nb">
+      <input type="submit" value="Ajouter" name="ajout">
+    </form>
+  </div>-->
+  <div class="flex justify-center items-center h-screen">
+    <div class="formbold-main-wrapper w-full">
+      <div class="formbold-form-wrapper">
+        <form #formL="ngForm" (ngSubmit)="ajouterLecon(formL)" method="POST">
+          <div class="formbold-steps">
+            <ul class="flex justify-between">
+              <li class="formbold-step-menu1 ">
+                <span>1</span>
+                Cours
+              </li>
+              <li class="formbold-step-menu2 active">
+                <span>2</span>
+                Leçon
+              </li>
+              <li class="formbold-step-menu3">
+                <span>3</span>
+                Termes
+              </li>
+            </ul>
+          </div>
+          <div class="formbold-form-step-1 active">
+            <div class="mb-6">
+              <label for="t" class="block mb-2 text-sm font-medium">Titre du Leçon</label>
+              <input type="text" name="titre" id="t" placeholder="Saisir votre titre du cours" required ngModel
+                class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500"
+                #titre="ngModel" [ngClass]="{ 'border-red-500': titre.invalid && titre.touched }" />
+              <div *ngIf="titre.invalid && titre.touched" class="text-sm text-red-600 dark:text-red-500">
+                <span class="font-medium">Leçon du cours est requis.</span>
+              </div>
+            </div>
+
+            <div class="formbold-input-flex">
+
+            </div>
+            <div class="mb-6">
+              <label for="d" class="block mb-2 text-sm font-medium">Description</label>
+              <textarea name="description" id="d"
+                class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
+                placeholder="Saisir votre Description du cours" required ngModel #description="ngModel"
+                [ngClass]="{ 'border-red-500': description.invalid && description.touched }"></textarea>
+              <div *ngIf="description.invalid && description.touched" class="text-sm text-red-600 dark:text-red-500">
+                <span class="font-medium">La description est requise.</span>
+              </div>
+            </div>
+          </div>
+          <div class="formbold-form-btn-wrapper">
+
+
+            <button class="formbold-btn" type="submit" [disabled]="formL.invalid"
+              [ngStyle]="{ 'background-color': formL.valid ? 'goldenrod' : '#ccc', 'cursor': formL.valid ? 'pointer' : 'not-allowed' }">
+              Next Step
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1675_1807)">
+                  <path
+                    d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z"
+                    [ngStyle]="{ 'fill': formL.valid ? 'white' : '#ccc' }" />
+                  <!-- Update the fill color based on formAC.valid -->
+                </g>
+                <defs>
+                  <clipPath id="clip0_1675_1807">
+                    <rect width="16" height="16" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

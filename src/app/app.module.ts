@@ -7,6 +7,7 @@ import { AjouterCoursComponent } from './component/Cours/ajouter-cours/ajouter-c
 import { ModifierCoursComponent } from './component/Cours/modifier-cours/modifier-cours.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AjouterLeconComponent } from './component/Lecon/ajouter-lecon/ajouter-lecon.component';
 
 
 export class YourModule { }
@@ -16,6 +17,7 @@ export class YourModule { }
     AppComponent,
     AjouterCoursComponent,
     ModifierCoursComponent,
+    AjouterLeconComponent
 
 
   ],
