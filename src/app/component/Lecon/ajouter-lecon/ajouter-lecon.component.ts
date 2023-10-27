@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LeconService } from 'src/app/services/lecon/lecon.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajouter-lecon',
@@ -10,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class AjouterLeconComponent implements OnInit {
 
-  constructor(public l: LeconService) { }
+  constructor(public l: LeconService,public router : Router) { }
   ajouterLecon(formAC: NgForm) {
     let Titre = formAC.value['titre'];
     let Description = formAC.value['description'];

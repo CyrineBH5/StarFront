@@ -1,5 +1,5 @@
 export class Cours {
-  private idCours: number = 0;
+  public idCours: number = 0;
   private titre: String;
   private description: String;
   private duree: number;
@@ -21,7 +21,7 @@ export class Cours {
     return this.titre;
   }
 
-  getDescription() {  
+  getDescription() {
     return this.description;
   }
 

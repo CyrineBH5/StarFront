@@ -6,7 +6,7 @@ import { AjouterLeconComponent } from './component/Lecon/ajouter-lecon/ajouter-l
 
 const routes: Routes = [
   {path : "addCours", component: AjouterCoursComponent},
-  {path : "addLecon", component: AjouterLeconComponent},
+  // {path : "addLecon", component: AjouterLeconComponent},
   {path : "", redirectTo : "addCours", pathMatch : "full"}
 ];
 

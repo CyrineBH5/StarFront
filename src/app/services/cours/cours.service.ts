@@ -8,7 +8,7 @@ export class CoursService {
 
   constructor(private httpCours: HttpClient) {
   }
-  ajouterCours(c: Cours) {
+  ajouterCours(c: Cours): Promise<number> {
     // Define your headers
     const httpOptions = {
       headers: new HttpHeaders({
@@ -16,10 +16,18 @@ export class CoursService {
       })
     };
 
-    this.httpCours.post<Cours[]>('http://localhost:3003/api/Cours', c, httpOptions).subscribe(res => {
-      console.log(res);
-    }
-      , err => { console.log(err) });
-
+    return new Promise<number>((resolve, reject) => {
+      this.httpCours.post<Cours>('http://localhost:3003/api/Cours', c, httpOptions).subscribe(
+        (res: any) => {
+          console.log(res.idCours);
+          resolve(res.idCours); // Resolve the promise with the idCours
+        },
+        (err: any) => {
+          console.log(err);
+          reject(err); // Reject the promise if there's an error
+        }
+      );
+    });
   }
+
 }

@@ -207,3 +207,44 @@ body {
   max-height: 200px;
 }
 
+/* Add this CSS to create a transition effect between steps */
+
+/* Hide step 2 by default */
+.formbold-form-step-2 {
+  display: none;
+}
+
+/* Add a transition effect for the form steps */
+.formbold-form-step-1,
+.formbold-form-step-2 {
+  transition: opacity 0.3s ease-in-out;
+  display: none;
+  opacity: 0;
+}
+
+
+
+.formbold-form-step-2.active ,
+.formbold-form-step-1.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Add this CSS to your stylesheet */
+.formbold-main-wrapper {
+  position: relative;
+}
+
+.formbold-steps-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; /* Adjust the background color as needed */
+  z-index: 1; /* Ensure it appears above the form content */
+}
+
+.formbold-form-wrapper {
+  padding-top: 40px; /* Ensure content starts below the fixed bar */
+}
+

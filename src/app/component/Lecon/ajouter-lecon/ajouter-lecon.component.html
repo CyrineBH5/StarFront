@@ -29,7 +29,9 @@
   </div>-->
   <div class="flex justify-center items-center h-screen">
     <div class="formbold-main-wrapper w-full">
-      <div class="formbold-form-wrapper">
+      <div class="formbold-form-wrapper"><div *ngIf="router.url === '/addLecon'">
+        <!-- Step 2 content -->
+
         <form #formL="ngForm" (ngSubmit)="ajouterLecon(formL)" method="POST">
           <div class="formbold-steps">
             <ul class="flex justify-between">
@@ -110,7 +112,7 @@
               </svg>
             </button>
           </div>
-        </form>
+        </form></div>
       </div>
     </div>
   </div>

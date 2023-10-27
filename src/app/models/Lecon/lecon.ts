@@ -3,9 +3,10 @@ export class Lecon {
   private titre: string;
   private description: string;
   private contenu: string;
+  private idCours: number;
 
-  constructor(idLecon: number, titre: string, description: string, contenu: string) {
-    this.idLecon = idLecon;
+  constructor( titre: string, description: string, contenu: string , idCours: number) {
+    this.idCours = idCours;
     this.titre = titre;
     this.description = description;
     this.contenu = contenu;
