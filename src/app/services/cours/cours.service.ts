@@ -8,16 +8,22 @@ export class CoursService {
 
   constructor(private httpCours: HttpClient) {
   }
-  ajouterCours(c: Cours): Promise<number> {
-    // Define your headers
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',  // Adjust the content type as needed
-      })
-    };
+  ajouterCours(cours: Cours , image : File) : Promise<number>{
 
+    const formData = new FormData();
+
+    // Append form data
+    formData.append('duree', cours.getDuree().toString());
+    formData.append('description', cours.getDescription().toString());
+    formData.append('titre', cours.getTitre().toString());
+    formData.append('langue', cours.getLangue().toString());
+    //formData.append('idCours', cours.getIdCours().toString());
+    console.log(formData);
+
+    // Append file
+    formData.append('file', image, image.name);
     return new Promise<number>((resolve, reject) => {
-      this.httpCours.post<Cours>('http://localhost:3003/api/Cours', c, httpOptions).subscribe(
+      this.httpCours.post<Cours>('http://localhost:3003/api/Cours', formData).subscribe(
         (res: any) => {
           console.log(res.idCours);
           resolve(res.idCours); // Resolve the promise with the idCours

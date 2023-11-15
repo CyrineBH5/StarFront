@@ -248,3 +248,68 @@ body {
   padding-top: 40px; /* Ensure content starts below the fixed bar */
 }
 
+/* Add this to your global styles or component styles */
+.file-added {
+  background-color: rgba(218, 165, 32, 0.395); /* Green color when file is added */
+  border-color: #00000046; /* Darker green border color */
+  color: #ffffff; /* White text color */
+}
+
+.file-not-added {
+  background-color: #f0f0f0; /* Default background color when no file is added */
+  border-color: #bdbdbd; /* Default border color */
+  color: #333333; /* Default text color */
+}
+
+/* Add any additional styling you may need */
+
+/* ... Previous CSS ... */
+
+.formbold-steps-header {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.formbold-steps-header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.formbold-steps-header li {
+  display: inline-block;
+  margin-right: 10px; /* Adjust as needed */
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.formbold-steps-header li.active {
+  color: #ff9900; /* Adjust color as needed */
+}
+
+/* ... Rest of the CSS ... */
+/* Add this CSS to your existing styles or in a separate stylesheet */
+
+.formbold-steps ul {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* Adjust the background color as needed */
+  padding: 10px; /* Adjust the padding as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a better look */
+  z-index: 1000; /* Set a higher z-index to ensure it's above other elements */
+}
+
+.formbold-step-menu1,
+.formbold-step-menu2,
+.formbold-step-menu3 {
+  display: inline-block;
+  margin-right: 20px; /* Adjust the spacing between items */
+  cursor: pointer;
+}
+
+.formbold-step-menu1.active,
+.formbold-step-menu2.active,
+.formbold-step-menu3.active {
+  font-weight: bold; /* Highlight the active step */
+}

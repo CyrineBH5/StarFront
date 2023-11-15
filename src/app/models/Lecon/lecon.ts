@@ -28,6 +28,10 @@ export class Lecon {
     return this.contenu;
   }
 
+  getIdCours() {
+    return this.idCours ;
+  }
+
   setIdLecon(idLecon: number) {
     this.idLecon = idLecon;
   }
@@ -43,4 +47,8 @@ export class Lecon {
   setContenu(contenu: string) {
     this.contenu = contenu;
   }
+  setidCours(idCours: number) {
+    this.idCours = idCours;
+  }
+
 }
