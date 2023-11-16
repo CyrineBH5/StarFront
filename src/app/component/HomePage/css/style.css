@@ -7,7 +7,7 @@
 }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *
 * ======================================================= */
 body {
@@ -670,6 +670,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-project {
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 .fh5co-project > a {
   display: block;
@@ -778,7 +779,8 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-heading h2 {
   font-size: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
+  margin-top: 100px !important;
   line-height: 1.5;
   color: #000;
 }

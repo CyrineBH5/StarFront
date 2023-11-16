@@ -6,7 +6,7 @@ import { HomePageComponent } from './component/HomePage/home-page/home-page.comp
 
 
 const routes: Routes = [
-  {path : "addCours", component: AjouterCoursComponent},
+  {path : "addcours", component: AjouterCoursComponent},
   {path : "home", component: HomePageComponent},
   // {path : "addLecon", component: AjouterLeconComponent},
   {path : "", redirectTo : "home", pathMatch : "full"}
