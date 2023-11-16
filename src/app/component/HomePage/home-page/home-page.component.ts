@@ -9,7 +9,15 @@ export class HomePageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  showSpinner = false;
+
+  ngOnInit() {
+    // Automatically show the spinner for 1 second
+    this.showSpinner = true;
+    setTimeout(() => {
+      this.showSpinner = false;
+    }, 500);
+
+}
 
 }
