@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AjouterLeconComponent } from './component/Lecon/ajouter-lecon/ajouter-lecon.component';
 import { HomePageComponent } from './component/HomePage/home-page/home-page.component';
+import { ContactComponent } from './component/Contact/contact/contact.component';
 
 
 export class YourModule { }
@@ -19,7 +20,8 @@ export class YourModule { }
     AjouterCoursComponent,
     ModifierCoursComponent,
     AjouterLeconComponent,
-    HomePageComponent
+    HomePageComponent,
+    ContactComponent
 
 
   ],
