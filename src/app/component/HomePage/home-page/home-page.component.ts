@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-home-page',
@@ -10,7 +10,7 @@ export class HomePageComponent implements OnInit {
   constructor() { }
 
   showSpinner = false;
-
+  isActive: boolean = false;
   ngOnInit() {
     // Automatically show the spinner for 1 second
     this.showSpinner = true;
@@ -18,6 +18,17 @@ export class HomePageComponent implements OnInit {
       this.showSpinner = false;
     }, 500);
 
-}
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.isActive = window.scrollY > 200;
+  }
+
+  goToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+
 
 }
