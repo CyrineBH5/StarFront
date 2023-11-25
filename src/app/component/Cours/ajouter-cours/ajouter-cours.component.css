@@ -12,12 +12,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 48px;
+  padding: 8px;
 }
 
 .formbold-form-wrapper {
   margin: 0 auto;
-  max-width: 550px;
+
   width: 100%;
   background: white;
 }
@@ -245,7 +245,8 @@ body {
 }
 
 .formbold-form-wrapper {
-  padding-top: 40px; /* Ensure content starts below the fixed bar */
+  padding-top: 40px;
+  width: 770px;/* Ensure content starts below the fixed bar */
 }
 
 /* Add this to your global styles or component styles */
@@ -290,14 +291,16 @@ body {
 /* Add this CSS to your existing styles or in a separate stylesheet */
 
 .formbold-steps ul {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #fff; /* Adjust the background color as needed */
   padding: 10px; /* Adjust the padding as needed */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a better look */
-  z-index: 1000; /* Set a higher z-index to ensure it's above other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+   /* Add shadow for a better look */
+  z-index: 1000;
+  border-radius: 12px;/* Set a higher z-index to ensure it's above other elements */
 }
 
 .formbold-step-menu1,
@@ -312,4 +315,31 @@ body {
 .formbold-step-menu2.active,
 .formbold-step-menu3.active {
   font-weight: bold; /* Highlight the active step */
+}
+
+.fh5co-cover{
+  height: 180px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+span
+{
+  margin-right: 20px !important;
+}
+h2{
+  margin-top: 25px !important;
+}
+.form-content
+{
+  padding-bottom: 35px;
+}
+
+.label-form
+{
+  font-weight: 500;
+  margin-top: 30px;
+}
+.input-file
+{
+  height: 52px !important;
 }

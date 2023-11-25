@@ -9,25 +9,58 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
     />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+
   </head>
 
   <body>
-    <!--<div class="container">
-    <form #formAC="ngForm" (ngSubmit)="ajouterCours(formAC)" class="form-example" action="">
-      <label for="t">Titre : </label><br>
-      <input type="text" id="t" required ngModel name="titre">
-      <label for="desc">Description : </label><br>
-      <input type="text" id="desc" required ngModel name="description">
-      <label for="d">Durée : </label><br>
-      <input type="text" id="d" required ngModel name="duree">
-      <label for="l">Langue : </label><br>
-      <input type="text" id="l" required ngModel name="langue">
-      <label for="n">Nombre de Vue : </label><br>
-      <input type="number" id="n" required ngModel name="nb">
-      <input type="submit" value="Ajouter" name="ajout">
-    </form>
-  </div>-->
-    <div class="flex justify-center items-center h-screen">
+    <nav class="fh5co-nav" role="navigation">
+      <div class="top">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 text-right">
+              <p class="num">Call: +216 55 666 777</p>
+              <ul class="fh5co-social">
+                <li><a href="#"><i class="icon-twitter"></i></a></li>
+                <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                <li><a href="#"><i class="icon-github"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="top-menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-1">
+              <div id="fh5co-logo"><a href="../index.html">STAR<span>.</span></a></div>
+            </div>
+            <div class="col-xs-11 text-right menu-1">
+              <ul>
+                <li class="active"><a href="">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact">Contact</a></li>
+
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(assets/images/img_bg_1.jpg);" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 text-center">
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="form-content">
       <div class="formbold-main-wrapper w-full">
         <div class="formbold-form-wrapper">
           <div class="formbold-form-step-1" [ngClass]="{ active: step === 1 }">
@@ -64,7 +97,7 @@
               </div>
               <div class="formbold-form-step-1 active">
                 <div class="mb-6">
-                  <label for="t" class="block mb-2 text-sm font-medium"
+                  <label class="label-form" for="t" class="label-form"
                     >Titre du Cours</label
                   >
                   <input
@@ -90,7 +123,7 @@
 
                 <div class="formbold-input-flex">
                   <div class="mb-6">
-                    <label for="de" class="block mb-2 text-sm font-medium"
+                    <label class="label-form" for="de"
                       >Durée</label
                     >
                     <input
@@ -114,13 +147,13 @@
                   </div>
                   <div>
                     <div>
-                      <label for="langue" class="formbold-form-label">
+                      <label class="label-form" for="langue" >
                         Langue</label
                       >
                       <select
                         name="langue"
                         id="langue"
-                        class="formbold-form-input"
+                        class="input-file bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
                         required
                         ngModel
                       >
@@ -137,7 +170,7 @@
                   </div>
                 </div>
                 <div class="mb-6">
-                  <label for="d" class="block mb-2 text-sm font-medium"
+                  <label class="label-form" for="d"
                     >Description</label
                   >
                   <textarea
@@ -163,13 +196,13 @@
 
                 <!-- ... Other form elements ... -->
                 <div class="mb-6">
-                  <label
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  <label class="label-form"
+
                     for="file_input"
                     >Upload Image</label
                   >
                   <input
-                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    class=" block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                     aria-describedby="file_input_help"
                     id="file_input"
                     type="file"
@@ -181,7 +214,7 @@
                     class="mt-1 text-sm text-gray-500 dark:text-gray-300"
                     id="file_input_help"
                   >
-                    SVG, PNG, JPG or GIF (MAX. 800x400px).
+                    SVG, PNG, JPG or GIF.
                   </p>
                 </div>
 
@@ -257,7 +290,7 @@
               </div>
               <div class="formbold-form-step-1 active">
                 <div class="mb-6">
-                  <label for="t" class="block mb-2 text-sm font-medium"
+                  <label class="label-form" for="t"
                     >Titre du Leçon</label
                   >
                   <input
@@ -283,7 +316,7 @@
 
                 <div class="formbold-input-flex"></div>
                 <div class="mb-6">
-                  <label for="d" class="block mb-2 text-sm font-medium"
+                  <label class="label-form" for="d"
                     >Description</label
                   >
                   <textarea
@@ -308,7 +341,7 @@
                 </div>
               </div>
               <div class="flex items-center justify-center w-full">
-                <label
+                <label class="label-form"
                   for="dropzone-file"
                   [ngClass]="{
                     'file-added': fileAdded,
@@ -446,9 +479,9 @@
               </div>
               <div class="formbold-form-step-3 active">
                 <div class="mb-6">
-                  <label
+                  <label class="label-form"
                     for="acceptTerms"
-                    class="block mb-2 text-sm font-medium"
+
                     >Accept Terms</label
                   >
                   <input
@@ -464,7 +497,7 @@
                         acceptTerms.invalid && acceptTerms.touched
                     }"
                   />
-                  <label for="acceptTerms" class="ml-2 text-sm"
+                  <label class="label-form" for="acceptTerms" class="ml-2 text-sm"
                     >I accept the terms and conditions</label
                   >
                   <div
@@ -505,8 +538,73 @@
               </div>
             </form>
           </div>
+
         </div>
       </div>
     </div>
+
+    <footer id="fh5co-footer" role="contentinfo">
+      <div class="container">
+          <div class="row row-pb-md">
+              <div class="col-md-4 fh5co-widget">
+                  <h4>About E-STAR Learning</h4>
+                  <p>Empowering education through innovative and interactive learning experiences. Join us on the journey of knowledge exploration.</p>
+              </div>
+
+
+              <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                  <!-- <h4>Learn &amp; Grow</h4>
+                  <ul class="fh5co-footer-links">
+                      <li><a href="#">Blog</a></li>
+                      <li><a href="#">Privacy</a></li>
+                      <li><a href="#">Testimonials</a></li>
+                      <li><a href="#">Handbook</a></li>
+                      <li><a href="#">Help Desk</a></li>
+                  </ul> -->
+              </div>
+
+              <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                  <!-- <h4>Engage with Us</h4>
+                  <ul class="fh5co-footer-links">
+                      <li><a href="#">Marketing</a></li>
+                      <li><a href="#">Community</a></li>
+                      <li><a href="#">Support</a></li>
+                      <li><a href="#">Advertise</a></li>
+                  </ul> -->
+              </div>
+
+
+              <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                <h4>Explore</h4>
+                <ul class="fh5co-footer-links">
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Lessons</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <!-- <li><a href="#">Terms</a></li>
+                    <li><a href="#">FAQs</a></li> -->
+                </ul>
+            </div>
+          </div>
+
+
+          <div class="row copyright">
+              <div class="col-md-12 text-center">
+                  <p>
+                      <small class="block">&copy; 2023 E-STAR Learning. All Rights Reserved.</small>
+                      <!-- <small class="block">Designed by <a href="" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
+                  </p>
+                  <p>
+                      <ul class="fh5co-social-icons">
+                          <li><a href="#"><i class="icon-twitter"></i></a></li>
+                          <li><a href="#"><i class="icon-facebook"></i></a></li>
+                          <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                          <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                      </ul>
+
+              </div>
+          </div>
+      </div>
+  </footer>
+
   </body>
 </html>
