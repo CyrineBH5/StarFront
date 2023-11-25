@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Cours } from 'src/app/models/Cours/cours';
 import { Lecon } from 'src/app/models/Lecon/lecon';
@@ -9,10 +9,16 @@ import { LeconService } from 'src/app/services/lecon/lecon.service';
 
 
 
+
+
+
 @Component({
   selector: 'app-ajouter-cours',
   templateUrl: './ajouter-cours.component.html',
-  styleUrls: ['./ajouter-cours.component.css','../css/animate.css','../css/icomoon.css','../css/bootstrap.css','../css/magnific-popup.css','../css/owl.carousel.min.css','../css/owl.theme.default.min.css','../css/style.css']
+  styleUrls: ['./ajouter-cours.component.css','../css/animate.css','../css/icomoon.css','../css/bootstrap.css','../css/magnific-popup.css','../css/owl.carousel.min.css','../css/owl.theme.default.min.css','../css/style.css'],
+
+
+
 })
 export class AjouterCoursComponent implements OnInit {
   langues: string[] = ['English', 'French', 'Spanish', 'German', 'Italian']; // Ajoutez d'autres langues
@@ -21,13 +27,15 @@ export class AjouterCoursComponent implements OnInit {
   selectedImageFile : File;
   fileAdded: boolean = false;
   acceptTerms: boolean = false;
-  step: number = 1; // Current step
+  step: number = 3; // Current step
   fileInputModel: string ; // File input label text
+  submited: boolean = false;
   nextStep() {
     if (this.step < 3) {
       this.step++;
     }
   }
+
 
   constructor(public l: LeconService,public c: CoursService,public router:Router) { }
 
@@ -42,21 +50,16 @@ export class AjouterCoursComponent implements OnInit {
 
 
 
-  acceptTermsf(form) {
-    const acceptTermsCheckbox = form.value.acceptTerms;
-
-    if (acceptTermsCheckbox) {
-      // Perform any additional processing or submit the form
-      console.log("Terms accepted. Submitting the form...");
-      // You can submit the form using form.submit() or perform any other actions.
-
-      // For example, you might want to display a success message or redirect the user.
-    } else {
-      // Display an error message or take other actions if terms are not accepted
-      console.error("Please accept the terms to proceed.");
-      // You might want to show an error message to the user or handle the case when terms are not accepted.
-    }
+  submitForm(): void {
+    // Perform your form submission logic here
+    console.log("submitted");
+    this.submited=true;
+    setTimeout(() => {
+      this.router.navigate(['/']); // Update the route as needed
+    }, 1500); // Delay should match the duration of the Snackbar
   }
+
+
 
 
 

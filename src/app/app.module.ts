@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AjouterLeconComponent } from './component/Lecon/ajouter-lecon/ajouter-lecon.component';
 import { HomePageComponent } from './component/HomePage/home-page/home-page.component';
 import { ContactComponent } from './component/Contact/contact/contact.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 export class YourModule { }
@@ -21,7 +23,8 @@ export class YourModule { }
     ModifierCoursComponent,
     AjouterLeconComponent,
     HomePageComponent,
-    ContactComponent
+    ContactComponent,
+
 
 
   ],
@@ -29,7 +32,9 @@ export class YourModule { }
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],

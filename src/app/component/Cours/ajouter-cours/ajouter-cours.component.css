@@ -203,8 +203,8 @@ body {
 }
 
 #d {
-  min-height: 100px;
-  max-height: 200px;
+  min-height: 180px;
+  max-height: 400px;
 }
 
 /* Add this CSS to create a transition effect between steps */
@@ -342,4 +342,63 @@ h2{
 .input-file
 {
   height: 52px !important;
+}
+.success-snackbar {
+  background-color: #4CAF50; /* Green background color */
+  color: white; /* White text color */
+}
+
+.success-snackbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: #4CAF50; /* Green background color */
+  color: white; /* White text color */
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0); /* Adjust the value for vertical positioning */
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: translateY(20px); /* Adjust the value for vertical positioning */
+  transition: opacity 300ms, transform 300ms;
+}
+
+.success-snackbar {
+  background-color: #4CAF50; /* Green background color */
+  color: white; /* White text color */
+}
+
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 300ms, transform 300ms;
+}
+.success-snackbar {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.validation
+{
+  position: absolute;
+  z-index: 6000;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+  text-align: center;
+
+}
+.validation img{
+  width: 185px;
+  height: 185px;
+  margin-left: 125px;
 }

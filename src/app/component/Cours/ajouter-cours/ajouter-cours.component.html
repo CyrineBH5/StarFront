@@ -14,6 +14,14 @@
   </head>
 
   <body>
+    <div *ngIf="submited" class="validation">
+      <img src="./assets/images/animation.gif" alt="">
+
+      <h2>Submission Successful</h2>
+      <p>Your course has been submitted and is pending approval.</p>
+      <p>Please wait for the staff to review and accept it.</p>
+    </div>
+    <div *ngIf="!submited">
     <nav class="fh5co-nav" role="navigation">
       <div class="top">
         <div class="container">
@@ -289,7 +297,7 @@
                 </ul>
               </div>
               <div class="formbold-form-step-1 active">
-                <div class="mb-6">
+                <div class="">
                   <label class="label-form" for="t"
                     >Titre du Leçon</label
                   >
@@ -449,7 +457,7 @@
             <!-- Step 3 content -->
             <form
               #formT="ngForm"
-              (ngSubmit)="acceptTermsf(formT)"
+              (ngSubmit)="submitForm()"
               method="POST"
             >
               <div class="formbold-steps">
@@ -479,11 +487,37 @@
               </div>
               <div class="formbold-form-step-3 active">
                 <div class="mb-6">
+                  <div class="mb-6">
+                    <h2 class="text-xl font-bold mb-2 text-center">Terms and Conditions</h2>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      By checking the "I accept the terms and conditions" box, you acknowledge and agree to the following terms:
+                    </p>
+                    <ol class="list-decimal pl-6 mt-2">
+                      <li class="mb-1">
+                        <strong>Use of Content:</strong> The content provided on this platform, including courses, lessons, and any associated materials, is for educational purposes only. Users are prohibited from copying, distributing, or using the content for commercial purposes without explicit permission.
+                      </li>
+                      <li class="mb-1">
+                        <strong>Account Responsibility:</strong> Users are responsible for maintaining the confidentiality of their account information. Any activity that occurs under their account is their sole responsibility.
+                      </li>
+                      <li class="mb-1">
+                        <strong>Code of Conduct:</strong> Users agree to engage respectfully with instructors and fellow learners. Any form of harassment, discrimination, or disruptive behavior will result in account suspension.
+                      </li>
+                      <li class="mb-1">
+                        <strong>Data Privacy:</strong> Personal information provided during registration and use of the platform will be handled in accordance with our Privacy Policy. Users can review and update their data preferences in their account settings.
+                      </li>
+                      <li class="mb-1">
+                        <strong>Course Access:</strong> Course access is granted upon successful completion of payment or registration, as specified for each course. Refund policies are outlined in the platform's refund policy.
+                      </li>
+                      <li class="mb-1">
+                        <strong>Intellectual Property:</strong> All intellectual property rights related to the platform, including trademarks, copyrights, and patents, are owned by the platform. Users are not allowed to use, reproduce, or distribute any content without proper authorization.
+                      </li>
+                    </ol>
+                  </div>
                   <label class="label-form"
                     for="acceptTerms"
 
                     >Accept Terms</label
-                  >
+                  ><br>
                   <input
                     type="checkbox"
                     name="acceptTerms"
@@ -605,6 +639,6 @@
           </div>
       </div>
   </footer>
-
+</div>
   </body>
 </html>
