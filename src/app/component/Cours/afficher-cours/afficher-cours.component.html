@@ -19,7 +19,7 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-1">
-              <div id="fh5co-logo"><a href="../index.html">STAR<span>.</span></a></div>
+              <div id="fh5co-logo"><a href="">STAR<span>.</span></a></div>
             </div>
             <div class="col-xs-11 text-right menu-1">
               <ul>
@@ -28,7 +28,6 @@
                 <li><a href="contact">Contact</a></li>
                 <li class="btn-cta"><a routerLink=""><span style="background-color:goldenrod">Logout
                   <i class="bi bi-door-closed"></i></span></a></li>&nbsp;
-
               </ul>
             </div>
           </div>
@@ -53,7 +52,8 @@
           <div *ngFor="let cours of myArray">
             <div class="col-lg-4 col-md-4">
               <div class="fh5co-blog animate-box">
-                <a href="#"><img class="img-responsive" src="http://localhost:3003/{{cours.image}}" alt="a"></a>
+                <a href="#"><img class="img-responsive" [src]="getImageUrl(cours.image)" alt=""></a>
+
                 <div class="blog-text">
                   <!-- [src]="getImageUrl(cours)"-->
                   <h3><a href="">{{cours.titre}}</a></h3>
