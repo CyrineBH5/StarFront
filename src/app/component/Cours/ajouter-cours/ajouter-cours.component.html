@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AjouterCours</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AjouterCours</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+  </head>
 
-</head>
+  <body>
+    <div *ngIf="submited" class="validation">
+      <img src="./assets/images/animation.gif" alt="">
 
-<body>
-  <div *ngIf="submited" class="validation">
-    <img src="./assets/images/animation.gif" alt="">
-
-    <h2>Submission Successful</h2>
-    <p>Your course has been submitted and is pending approval.</p>
-    <p>Please wait for the staff to review and accept it.</p>
-  </div>
-  <div *ngIf="!submited">
+      <h2>Submission Successful</h2>
+      <p>Your course has been submitted and is pending approval.</p>
+      <p>Please wait for the staff to review and accept it.</p>
+    </div>
+    <div *ngIf="!submited">
     <nav class="fh5co-nav" role="navigation">
+      <div class="top">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 text-right">
+              <p class="num">Call: +216 55 666 777</p>
+              <ul class="fh5co-social">
+                <li><a href="#"><i class="icon-twitter"></i></a></li>
+                <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                <li><a href="#"><i class="icon-github"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="top-menu">
         <div class="container">
           <div class="row">
@@ -32,24 +48,21 @@
                 <li class="active"><a href="">Home</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="contact">Contact</a></li>
-                <li class="btn-cta"><a href="#"><span style="background-color:goldenrod">Login</span></a></li>
-                <li class="btn-cta"><a routerLink="/ajoutcours"><span
-                      style="background-color:rgb(229, 173, 146)">Logout</span></a></li>
 
               </ul>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </nav>
-    <header id="fh5co-header" class="fh5co-cover" role="banner"
-      style="background-image:url(assets/images/img_bg_1.jpg);" data-stellar-background-ratio="0.5">
+
+    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(assets/images/img_bg_1.jpg);" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <h1 id="aa">Create <span style="color:rgb(216, 167, 42)">A</span>Course</h1>
+          <div class="col-md-8 col-md-offset-2 text-center">
+
           </div>
         </div>
       </div>
@@ -60,101 +73,184 @@
         <div class="formbold-form-wrapper">
           <div class="formbold-form-step-1" [ngClass]="{ active: step === 1 }">
             <!-- Step 1 content *ngIf="router.url === '/addCours'"*ngIf="router.url === '/addLecon'"-->
-            <form #formAC="ngForm" (ngSubmit)="ajouterCours(formAC)" method="POST">
+            <form
+              #formAC="ngForm"
+              (ngSubmit)="ajouterCours(formAC)"
+              method="POST"
+            >
               <div class="formbold-steps">
                 <ul class="flex justify-between">
-                  <li class="formbold-step-menu1" [ngClass]="{ active: step === 1 }">
+                  <li
+                    class="formbold-step-menu1"
+                    [ngClass]="{ active: step === 1 }"
+                  >
                     <span>1</span>
                     Cours
                   </li>
-                  <li class="formbold-step-menu2" [ngClass]="{ active: step === 2 }">
+                  <li
+                    class="formbold-step-menu2"
+                    [ngClass]="{ active: step === 2 }"
+                  >
                     <span>2</span>
                     Leçon
                   </li>
-                  <li class="formbold-step-menu3" [ngClass]="{ active: step === 3 }">
+                  <li
+                    class="formbold-step-menu3"
+                    [ngClass]="{ active: step === 3 }"
+                  >
                     <span>3</span>
-                    Terms
+                    Termes
                   </li>
                 </ul>
               </div>
               <div class="formbold-form-step-1 active">
                 <div class="mb-6">
-                  <label class="label-form" for="t" class="label-form">Titre du Cours</label>
-                  <input type="text" name="titre" id="t" placeholder="Saisir votre titre du cours" required ngModel
+                  <label class="label-form" for="t" class="label-form"
+                    >Titre du Cours</label
+                  >
+                  <input
+                    type="text"
+                    name="titre"
+                    id="t"
+                    placeholder="Saisir votre titre du cours"
+                    required
+                    ngModel
                     class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500"
-                    #titre="ngModel" [ngClass]="{
+                    #titre="ngModel"
+                    [ngClass]="{
                       'border-red-500': titre.invalid && titre.touched
-                    }" />
-                  <div *ngIf="titre.invalid && titre.touched" class="text-sm text-red-600 dark:text-red-500">
+                    }"
+                  />
+                  <div
+                    *ngIf="titre.invalid && titre.touched"
+                    class="text-sm text-red-600 dark:text-red-500"
+                  >
                     <span class="font-medium">Titre du cours est requis.</span>
                   </div>
                 </div>
-              </div>
 
-              <div class="formbold-input-flex">
-                <div class="mb-6">
-                  <label class="label-form" for="de">Durée</label>
-                  <input type="time" name="duree" id="de"
-                    class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
-                    required ngModel #duree="ngModel" [ngClass]="{
+                <div class="formbold-input-flex">
+                  <div class="mb-6">
+                    <label class="label-form" for="de"
+                      >Durée</label
+                    >
+                    <input
+                      type="time"
+                      name="duree"
+                      id="de"
+                      class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
+                      required
+                      ngModel
+                      #duree="ngModel"
+                      [ngClass]="{
                         'border-red-500': duree.invalid && duree.touched
-                      }" />
-                  <div *ngIf="duree.invalid && duree.touched" class="text-sm text-red-600 dark:text-red-500">
-                    <span class="font-medium">Durée est requise.</span>
+                      }"
+                    />
+                    <div
+                      *ngIf="duree.invalid && duree.touched"
+                      class="text-sm text-red-600 dark:text-red-500"
+                    >
+                      <span class="font-medium">Durée est requise.</span>
+                    </div>
                   </div>
-                </div>
-                <div>
                   <div>
-                    <label class="label-form" for="langue">
-                      Langue</label>
-                    <select name="langue" id="langue"
-                      class="input-file bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
-                      required ngModel>
-                      <option value="">Choisir la langue</option>
-                      <option *ngFor="let langue of langues" [value]="langue" class="formbold-form-input">
-                        {{ langue }}
-                      </option>
-                    </select>
+                    <div>
+                      <label class="label-form" for="langue" >
+                        Langue</label
+                      >
+                      <select
+                        name="langue"
+                        id="langue"
+                        class="input-file bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
+                        required
+                        ngModel
+                      >
+                        <option value="">Choisir la langue</option>
+                        <option
+                          *ngFor="let langue of langues"
+                          [value]="langue"
+                          class="formbold-form-input"
+                        >
+                          {{ langue }}
+                        </option>
+                      </select>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="mb-6">
-                <label class="label-form" for="d">Description</label>
-                <textarea name="description" id="d"
-                  class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
-                  placeholder="Saisir votre Description du cours" required ngModel #description="ngModel" [ngClass]="{
+                <div class="mb-6">
+                  <label class="label-form" for="d"
+                    >Description</label
+                  >
+                  <textarea
+                    name="description"
+                    id="d"
+                    class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
+                    placeholder="Saisir votre Description du cours"
+                    required
+                    ngModel
+                    #description="ngModel"
+                    [ngClass]="{
                       'border-red-500':
                         description.invalid && description.touched
-                    }"></textarea>
-                <div *ngIf="description.invalid && description.touched" class="text-sm text-red-600 dark:text-red-500">
-                  <span class="font-medium">La description est requise.</span>
+                    }"
+                  ></textarea>
+                  <div
+                    *ngIf="description.invalid && description.touched"
+                    class="text-sm text-red-600 dark:text-red-500"
+                  >
+                    <span class="font-medium">La description est requise.</span>
+                  </div>
                 </div>
-              </div>
 
-              <!-- ... Other form elements ... -->
-              <div class="mb-6">
-                <label class="label-form" for="file_input">Upload Image</label>
-                <input
-                  class=" block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                  aria-describedby="file_input_help" id="file_input" type="file" (change)="onImageFileChange($event)"
-                  name="fileInput" accept=".SVG, .PNG, .JPG , .GIF" />
-                <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
-                  SVG, PNG, JPG or GIF.
-                </p>
-              </div>
+                <!-- ... Other form elements ... -->
+                <div class="mb-6">
+                  <label class="label-form"
 
-              <!-- ... Other form elements ... -->
+                    for="file_input"
+                    >Upload Image</label
+                  >
+                  <input
+                    class=" block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    aria-describedby="file_input_help"
+                    id="file_input"
+                    type="file"
+                    (change)="onImageFileChange($event)"
+                    name="fileInput"
+                    accept=".SVG, .PNG, .JPG , .GIF"
+                  />
+                  <p
+                    class="mt-1 text-sm text-gray-500 dark:text-gray-300"
+                    id="file_input_help"
+                  >
+                    SVG, PNG, JPG or GIF.
+                  </p>
+                </div>
+
+                <!-- ... Other form elements ... -->
+              </div>
               <div class="formbold-form-btn-wrapper">
-                <button class="formbold-btn" type="submit" [disabled]="formAC.invalid" [ngStyle]="{
+                <button
+                  class="formbold-btn"
+                  type="submit"
+                  [disabled]="formAC.invalid"
+                  [ngStyle]="{
                     'background-color': formAC.valid ? 'goldenrod' : '#ccc',
                     cursor: formAC.valid ? 'pointer' : 'not-allowed'
-                  }">
+                  }"
+                >
                   Next Step
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <g clip-path="url(#clip0_1675_1807)">
                       <path
                         d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z"
-                        [ngStyle]="{ fill: formAC.valid ? 'white' : '#ccc' }" />
+                        [ngStyle]="{ fill: formAC.valid ? 'white' : '#ccc' }"
+                      />
                       <!-- Update the fill color based on formAC.valid -->
                     </g>
                     <defs>
@@ -170,61 +266,114 @@
           <div class="formbold-form-step-2" [ngClass]="{ active: step === 2 }">
             <!-- Step 2 content -->
 
-            <form #formL="ngForm" (ngSubmit)="ajouterLecon(formL)" method="POST">
+            <form
+              #formL="ngForm"
+              (ngSubmit)="ajouterLecon(formL)"
+              method="POST"
+            >
               <div class="formbold-steps">
                 <ul class="flex justify-between">
-                  <li class="formbold-step-menu1" [ngClass]="{ active: step === 1 }">
+                  <li
+                    class="formbold-step-menu1"
+                    [ngClass]="{ active: step === 1 }"
+                  >
                     <span>1</span>
                     Cours
                   </li>
-                  <li class="formbold-step-menu2" [ngClass]="{ active: step === 2 }">
+                  <li
+                    class="formbold-step-menu2"
+                    [ngClass]="{ active: step === 2 }"
+                  >
                     <span>2</span>
                     Leçon
                   </li>
-                  <li class="formbold-step-menu3" [ngClass]="{ active: step === 3 }">
+                  <li
+                    class="formbold-step-menu3"
+                    [ngClass]="{ active: step === 3 }"
+                  >
                     <span>3</span>
-                    Terms
+                    Termes
                   </li>
                 </ul>
               </div>
               <div class="formbold-form-step-1 active">
                 <div class="">
-                  <label class="label-form" for="t">Titre du Leçon</label>
-                  <input type="text" name="titre" id="t" placeholder="Saisir votre titre du cours" required ngModel
+                  <label class="label-form" for="t"
+                    >Titre du Leçon</label
+                  >
+                  <input
+                    type="text"
+                    name="titre"
+                    id="t"
+                    placeholder="Saisir votre titre du cours"
+                    required
+                    ngModel
                     class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500"
-                    #titre="ngModel" [ngClass]="{
+                    #titre="ngModel"
+                    [ngClass]="{
                       'border-red-500': titre.invalid && titre.touched
-                    }" />
-                  <div *ngIf="titre.invalid && titre.touched" class="text-sm text-red-600 dark:text-red-500">
+                    }"
+                  />
+                  <div
+                    *ngIf="titre.invalid && titre.touched"
+                    class="text-sm text-red-600 dark:text-red-500"
+                  >
                     <span class="font-medium">Leçon du cours est requis.</span>
                   </div>
                 </div>
-              </div>
 
-              <div class="formbold-input-flex"></div>
-              <div class="mb-6">
-                <label class="label-form" for="d">Description</label>
-                <textarea name="description" id="d"
-                  class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
-                  placeholder="Saisir votre Description du cours" required ngModel #description="ngModel" [ngClass]="{
+                <div class="formbold-input-flex"></div>
+                <div class="mb-6">
+                  <label class="label-form" for="d"
+                    >Description</label
+                  >
+                  <textarea
+                    name="description"
+                    id="d"
+                    class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
+                    placeholder="Saisir votre Description du cours"
+                    required
+                    ngModel
+                    #description="ngModel"
+                    [ngClass]="{
                       'border-red-500':
                         description.invalid && description.touched
-                    }"></textarea>
-                <div *ngIf="description.invalid && description.touched" class="text-sm text-red-600 dark:text-red-500">
-                  <span class="font-medium">La description est requise.</span>
+                    }"
+                  ></textarea>
+                  <div
+                    *ngIf="description.invalid && description.touched"
+                    class="text-sm text-red-600 dark:text-red-500"
+                  >
+                    <span class="font-medium">La description est requise.</span>
+                  </div>
                 </div>
               </div>
               <div class="flex items-center justify-center w-full">
-                <label class="label-form" for="dropzone-file" [ngClass]="{
+                <label class="label-form"
+                  for="dropzone-file"
+                  [ngClass]="{
                     'file-added': fileAdded,
                     'file-not-added': !fileAdded
                   }"
-                  class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                  <div class="flex flex-col items-center justify-center pt-2 pb-3">
-                    <svg class="w-6 h-6 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                  class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                >
+                  <div
+                    class="flex flex-col items-center justify-center pt-2 pb-3"
+                  >
+                    <svg
+                      class="w-6 h-6 mb-2 text-gray-500 dark:text-gray-400"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 20 16"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                      />
                     </svg>
                     <p class="mb-1 text-xs text-gray-500 dark:text-gray-400">
                       <span class="font-semibold">Click to upload</span> or drag
@@ -234,33 +383,63 @@
                       Supported formats: PDF, DOC
                     </p>
                     <!-- Add a section to display the selected file name -->
-                    <p *ngIf="selectedFile" class="text-xs text-green-500 dark:text-green-400">
+                    <p
+                      *ngIf="selectedFile"
+                      class="text-xs text-green-500 dark:text-green-400"
+                    >
                       Selected file: {{ selectedFile.name }}
                     </p>
                   </div>
-                  <input id="dropzone-file" type="file" class="hidden" required ngModel [(ngModel)]="fileInputModel"
-                    (change)="onFileChange($event)" name="fileInput" accept=".pdf, .doc, .docx" #fileInput />
+                  <input
+                    id="dropzone-file"
+                    type="file"
+                    class="hidden"
+                    required
+                    ngModel
+                    [(ngModel)]="fileInputModel"
+                    (change)="onFileChange($event)"
+                    name="fileInput"
+                    accept=".pdf, .doc, .docx"
+                    #fileInput
+                  />
                 </label>
               </div>
 
               <div class="formbold-form-btn-wrapper">
-                <button class="formbold-btn" (click)="ajouterOtherLecon(formL)" type="button" [disabled]="formL.invalid"
+                <button
+                  class="formbold-btn"
+                  (click)="ajouterOtherLecon(formL)"
+                  type="button"
+                  [disabled]="formL.invalid"
                   [ngStyle]="{
                     'background-color': formL.valid ? 'goldenrod' : '#ccc',
                     cursor: formL.valid ? 'pointer' : 'not-allowed'
-                  }">
+                  }"
+                >
                   Autre lecon
                 </button>
-                <button class="formbold-btn" type="submit" [disabled]="formL.invalid" [ngStyle]="{
+                <button
+                  class="formbold-btn"
+                  type="submit"
+                  [disabled]="formL.invalid"
+                  [ngStyle]="{
                     'background-color': formL.valid ? 'goldenrod' : '#ccc',
                     cursor: formL.valid ? 'pointer' : 'not-allowed'
-                  }">
+                  }"
+                >
                   Next Step
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <g clip-path="url(#clip0_1675_1807)">
                       <path
                         d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z"
-                        [ngStyle]="{ fill: formL.valid ? 'white' : '#ccc' }" />
+                        [ngStyle]="{ fill: formL.valid ? 'white' : '#ccc' }"
+                      />
                       <!-- Update the fill color based on formAC.valid -->
                     </g>
                     <defs>
@@ -269,139 +448,146 @@
                       </clipPath>
                     </defs>
                   </svg>
-                  <p class="mb-1 text-xs text-gray-500 dark:text-gray-400">
-                    <span class="font-semibold">Click to upload</span> or drag
-                    and drop
-                  </p>
-                  <p class="text-xxs text-gray-500 dark:text-gray-400">
-                    Supported formats: PDF, DOC
-                  </p>
-                  <!-- Add a section to display the selected file name -->
-                  <p *ngIf="selectedFile" class="text-xs text-green-500 dark:text-green-400">
-                    Selected file: {{ selectedFile.name }}
-                  </p>
-                  <input id="dropzone-file" type="file" class="hidden" required ngModel [(ngModel)]="fileInputModel"
-                    (change)="onFileChange($event)" name="fileInput" accept=".pdf, .doc, .docx" #fileInput />
-                  <div class="formbold-form-step-3" [ngClass]="{ active: step === 3 }">
-                    <!-- Step 3 content -->
-                    <form #formT="ngForm" (ngSubmit)="submitForm()" method="POST">
-                      <div class="formbold-steps">
-                        <ul class="flex justify-between">
-                          <li class="formbold-step-menu1" [ngClass]="{ active: step === 1 }">
-                            <span>1</span>
-                            Cours
-                          </li>
-                          <li class="formbold-step-menu2" [ngClass]="{ active: step === 2 }">
-                            <span>2</span>
-                            Leçon
-                          </li>
-                          <li class="formbold-step-menu3" [ngClass]="{ active: step === 3 }">
-                            <span>3</span>
-                            Termes
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="formbold-form-step-3 active">
-                        <div class="mb-6">
-                          <div class="mb-6">
-                            <h2 class="text-xl font-bold mb-2 text-center">Terms and Conditions</h2>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">
-                              By checking the "I accept the terms and conditions" box, you acknowledge and agree to the
-                              following terms:
-                            </p>
-                            <ol class="list-decimal pl-6 mt-2">
-                              <li class="mb-1">
-                                <strong>Use of Content:</strong> The content provided on this platform, including
-                                courses,
-                                lessons, and any associated materials, is for educational purposes only. Users are
-                                prohibited
-                                from copying, distributing, or using the content for commercial purposes without
-                                explicit
-                                permission.
-                              </li>
-                              <li class="mb-1">
-                                <strong>Account Responsibility:</strong> Users are responsible for maintaining the
-                                confidentiality of their account information. Any activity that occurs under their
-                                account is
-                                their sole responsibility.
-                              </li>
-                              <li class="mb-1">
-                                <strong>Code of Conduct:</strong> Users agree to engage respectfully with instructors
-                                and fellow
-                                learners. Any form of harassment, discrimination, or disruptive behavior will result in
-                                account
-                                suspension.
-                              </li>
-                              <li class="mb-1">
-                                <strong>Data Privacy:</strong> Personal information provided during registration and use
-                                of the
-                                platform will be handled in accordance with our Privacy Policy. Users can review and
-                                update
-                                their data preferences in their account settings.
-                              </li>
-                              <li class="mb-1">
-                                <strong>Course Access:</strong> Course access is granted upon successful completion of
-                                payment
-                                or registration, as specified for each course. Refund policies are outlined in the
-                                platform's
-                                refund policy.
-                              </li>
-                              <li class="mb-1">
-                                <strong>Intellectual Property:</strong> All intellectual property rights related to the
-                                platform, including trademarks, copyrights, and patents, are owned by the platform.
-                                Users are
-                                not allowed to use, reproduce, or distribute any content without proper authorization.
-                              </li>
-                            </ol>
-                          </div>
-                          <label class="label-form" for="acceptTerms">Accept Terms</label><br>
-                          <input type="checkbox" name="acceptTerms" id="acceptTerms" required ngModel
-                            class="formbold-checkbox" #acceptTerms="ngModel" [ngClass]="{
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="formbold-form-step-3" [ngClass]="{ active: step === 3 }">
+            <!-- Step 3 content -->
+            <form
+              #formT="ngForm"
+              (ngSubmit)="submitForm()"
+              method="POST"
+            >
+              <div class="formbold-steps">
+                <ul class="flex justify-between">
+                  <li
+                    class="formbold-step-menu1"
+                    [ngClass]="{ active: step === 1 }"
+                  >
+                    <span>1</span>
+                    Cours
+                  </li>
+                  <li
+                    class="formbold-step-menu2"
+                    [ngClass]="{ active: step === 2 }"
+                  >
+                    <span>2</span>
+                    Leçon
+                  </li>
+                  <li
+                    class="formbold-step-menu3"
+                    [ngClass]="{ active: step === 3 }"
+                  >
+                    <span>3</span>
+                    Termes
+                  </li>
+                </ul>
+              </div>
+              <div class="formbold-form-step-3 active">
+                <div class="mb-6">
+                  <div class="mb-6">
+                    <h2 class="text-xl font-bold mb-2 text-center">Terms and Conditions</h2>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      By checking the "I accept the terms and conditions" box, you acknowledge and agree to the following terms:
+                    </p>
+                    <ol class="list-decimal pl-6 mt-2">
+                      <li class="mb-1">
+                        <strong>Use of Content:</strong> The content provided on this platform, including courses, lessons, and any associated materials, is for educational purposes only. Users are prohibited from copying, distributing, or using the content for commercial purposes without explicit permission.
+                      </li>
+                      <li class="mb-1">
+                        <strong>Account Responsibility:</strong> Users are responsible for maintaining the confidentiality of their account information. Any activity that occurs under their account is their sole responsibility.
+                      </li>
+                      <li class="mb-1">
+                        <strong>Code of Conduct:</strong> Users agree to engage respectfully with instructors and fellow learners. Any form of harassment, discrimination, or disruptive behavior will result in account suspension.
+                      </li>
+                      <li class="mb-1">
+                        <strong>Data Privacy:</strong> Personal information provided during registration and use of the platform will be handled in accordance with our Privacy Policy. Users can review and update their data preferences in their account settings.
+                      </li>
+                      <li class="mb-1">
+                        <strong>Course Access:</strong> Course access is granted upon successful completion of payment or registration, as specified for each course. Refund policies are outlined in the platform's refund policy.
+                      </li>
+                      <li class="mb-1">
+                        <strong>Intellectual Property:</strong> All intellectual property rights related to the platform, including trademarks, copyrights, and patents, are owned by the platform. Users are not allowed to use, reproduce, or distribute any content without proper authorization.
+                      </li>
+                    </ol>
+                  </div>
+                  <label class="label-form"
+                    for="acceptTerms"
+
+                    >Accept Terms</label
+                  ><br>
+                  <input
+                    type="checkbox"
+                    name="acceptTerms"
+                    id="acceptTerms"
+                    required
+                    ngModel
+                    class="formbold-checkbox"
+                    #acceptTerms="ngModel"
+                    [ngClass]="{
                       'border-red-500':
                         acceptTerms.invalid && acceptTerms.touched
-                    }" />
-                          <label class="label-form" for="acceptTerms" class="ml-2 text-sm">I accept the terms and
-                            conditions</label>
-                          <div *ngIf="acceptTerms.invalid && acceptTerms.touched"
-                            class="text-sm text-red-600 dark:text-red-500">
-                            <span class="font-medium">You must accept the terms to proceed.</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="formbold-form-btn-wrapper">
-                        <button class="formbold-btn" type="submit"
-                          [disabled]="acceptTerms.invalid || !acceptTerms.value" [ngStyle]="{
+                    }"
+                  />
+                  <label class="label-form" for="acceptTerms" class="ml-2 text-sm"
+                    >I accept the terms and conditions</label
+                  >
+                  <div
+                    *ngIf="acceptTerms.invalid && acceptTerms.touched"
+                    class="text-sm text-red-600 dark:text-red-500"
+                  >
+                    <span class="font-medium"
+                      >You must accept the terms to proceed.</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Add any other form elements related to terms here -->
+              </div>
+              <div class="formbold-form-btn-wrapper">
+                <button
+                  class="formbold-btn"
+                  type="submit"
+                  [disabled]="acceptTerms.invalid || !acceptTerms.value"
+                  [ngStyle]="{
                     'background-color': acceptTerms.value
                       ? 'goldenrod'
                       : '#ccc',
                     cursor: acceptTerms.value ? 'pointer' : 'not-allowed'
-                  }">
-                          Submit
-                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <!-- Your submit button icon -->
-                          </svg>
-                        </button>
-                      </div>
-                    </form>
-                  </div>
+                  }"
+                >
+                  Submit
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <!-- Your submit button icon -->
+                  </svg>
                 </button>
               </div>
+            </form>
+          </div>
 
-              <footer id="fh5co-footer" role="contentinfo">
-                <div class="container">
-                  <div class="row row-pb-md">
-                    <div class="col-md-4 fh5co-widget">
-                      <h4>About E-STAR Learning</h4>
-                      <p>Empowering education through innovative and interactive learning experiences. Join us on the
-                        journey
-                        of
-                        knowledge exploration.</p>
-                    </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="fh5co-footer" role="contentinfo">
+      <div class="container">
+          <div class="row row-pb-md">
+              <div class="col-md-4 fh5co-widget">
+                  <h4>About E-STAR Learning</h4>
+                  <p>Empowering education through innovative and interactive learning experiences. Join us on the journey of knowledge exploration.</p>
+              </div>
 
 
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-                      <!-- <h4>Learn &amp; Grow</h4>
+              <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                  <!-- <h4>Learn &amp; Grow</h4>
                   <ul class="fh5co-footer-links">
                       <li><a href="#">Blog</a></li>
                       <li><a href="#">Privacy</a></li>
@@ -409,56 +595,50 @@
                       <li><a href="#">Handbook</a></li>
                       <li><a href="#">Help Desk</a></li>
                   </ul> -->
-                    </div>
+              </div>
 
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-                      <!-- <h4>Engage with Us</h4>
+              <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                  <!-- <h4>Engage with Us</h4>
                   <ul class="fh5co-footer-links">
                       <li><a href="#">Marketing</a></li>
                       <li><a href="#">Community</a></li>
                       <li><a href="#">Support</a></li>
                       <li><a href="#">Advertise</a></li>
                   </ul> -->
-                    </div>
+              </div>
 
 
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-                      <h4>Explore</h4>
-                      <ul class="fh5co-footer-links">
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Lessons</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <!-- <li><a href="#">Terms</a></li>
+              <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                <h4>Explore</h4>
+                <ul class="fh5co-footer-links">
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Lessons</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <!-- <li><a href="#">Terms</a></li>
                     <li><a href="#">FAQs</a></li> -->
-                      </ul>
-                    </div>
-                  </div>
-
-
-                  <div class="row copyright">
-                    <div class="col-md-12 text-center">
-                      <p>
-                        <small class="block">&copy; 2023 E-STAR Learning. All Rights Reserved.</small>
-                        <!-- <small class="block">Designed by <a href="" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
-                      </p>
-                      <p>
-                      <ul class="fh5co-social-icons">
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                      </ul>
-
-                    </div>
-                  </div>
-                </div>
-              </footer>
-            </form>
+                </ul>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
 
+
+          <div class="row copyright">
+              <div class="col-md-12 text-center">
+                  <p>
+                      <small class="block">&copy; 2023 E-STAR Learning. All Rights Reserved.</small>
+                      <!-- <small class="block">Designed by <a href="" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
+                  </p>
+                  <p>
+                      <ul class="fh5co-social-icons">
+                          <li><a href="#"><i class="icon-twitter"></i></a></li>
+                          <li><a href="#"><i class="icon-facebook"></i></a></li>
+                          <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                          <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                      </ul>
+
+              </div>
+          </div>
+      </div>
+  </footer>
+</div>
+  </body>
 </html>
