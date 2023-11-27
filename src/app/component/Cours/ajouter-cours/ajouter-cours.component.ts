@@ -47,9 +47,6 @@ export class AjouterCoursComponent implements OnInit {
     this.selectedFile = event.target.files[0];
     this.fileAdded = true;
   }
-
-
-
   submitForm(): void {
     // Perform your form submission logic here
     console.log("submitted");

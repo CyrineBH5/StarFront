@@ -5,6 +5,8 @@ export class Cours {
   private duree: number;
   private langue: String;
   private nbrDeVue: number = 0;
+  private image: String;
+
 
   constructor(titre: String, des: String, duree: number, langue: String) {
     this.titre = titre;
@@ -59,5 +61,11 @@ export class Cours {
 
   setNbrDeVue(nbrDeVue: number) {
     this.nbrDeVue = nbrDeVue;
+  }
+  getImage() {
+    return this.image;
+  }
+  setImage(img: String) {
+    this.image = img;
   }
 }

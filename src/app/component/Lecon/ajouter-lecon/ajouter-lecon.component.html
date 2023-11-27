@@ -29,90 +29,92 @@
   </div>-->
   <div class="flex justify-center items-center h-screen">
     <div class="formbold-main-wrapper w-full">
-      <div class="formbold-form-wrapper"><div *ngIf="router.url === '/addLecon'">
-        <!-- Step 2 content -->
+      <div class="formbold-form-wrapper">
+        <div *ngIf="router.url === '/addLecon'">
+          <!-- Step 2 content -->
 
-        <form #formL="ngForm" (ngSubmit)="ajouterLecon(formL)" method="POST">
-          <div class="formbold-steps">
-            <ul class="flex justify-between">
-              <li class="formbold-step-menu1 ">
-                <span>1</span>
-                Cours
-              </li>
-              <li class="formbold-step-menu2 active">
-                <span>2</span>
-                Leçon
-              </li>
-              <li class="formbold-step-menu3">
-                <span>3</span>
-                Termes
-              </li>
-            </ul>
-          </div>
-          <div class="formbold-form-step-1 active">
-            <div class="mb-6">
-              <label for="t" class="block mb-2 text-sm font-medium">Titre du Leçon</label>
-              <input type="text" name="titre" id="t" placeholder="Saisir votre titre du cours" required ngModel
-                class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500"
-                #titre="ngModel" [ngClass]="{ 'border-red-500': titre.invalid && titre.touched }" />
-              <div *ngIf="titre.invalid && titre.touched" class="text-sm text-red-600 dark:text-red-500">
-                <span class="font-medium">Leçon du cours est requis.</span>
+          <form #formL="ngForm" (ngSubmit)="ajouterLecon(formL)" method="POST">
+            <div class="formbold-steps">
+              <ul class="flex justify-between">
+                <li class="formbold-step-menu1 ">
+                  <span>1</span>
+                  Cours
+                </li>
+                <li class="formbold-step-menu2 active">
+                  <span>2</span>
+                  Leçon
+                </li>
+                <li class="formbold-step-menu3">
+                  <span>3</span>
+                  Termes
+                </li>
+              </ul>
+            </div>
+            <div class="formbold-form-step-1 active">
+              <div class="mb-6">
+                <label for="t" class="block mb-2 text-sm font-medium">Titre du Leçon</label>
+                <input type="text" name="titre" id="t" placeholder="Saisir votre titre du cours" required ngModel
+                  class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500"
+                  #titre="ngModel" [ngClass]="{ 'border-red-500': titre.invalid && titre.touched }" />
+                <div *ngIf="titre.invalid && titre.touched" class="text-sm text-red-600 dark:text-red-500">
+                  <span class="font-medium">Leçon du cours est requis.</span>
+                </div>
+              </div>
+
+              <div class="formbold-input-flex">
+
+              </div>
+              <div class="mb-6">
+                <label for="d" class="block mb-2 text-sm font-medium">Description</label>
+                <textarea name="description" id="d"
+                  class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
+                  placeholder="Saisir votre Description du cours" required ngModel #description="ngModel"
+                  [ngClass]="{ 'border-red-500': description.invalid && description.touched }"></textarea>
+                <div *ngIf="description.invalid && description.touched" class="text-sm text-red-600 dark:text-red-500">
+                  <span class="font-medium">La description est requise.</span>
+                </div>
               </div>
             </div>
-
-            <div class="formbold-input-flex">
-
+            <div class="flex items-center justify-center w-full">
+              <label for="dropzone-file"
+                class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                <div class="flex flex-col items-center justify-center pt-2 pb-3">
+                  <svg class="w-6 h-6 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                  </svg>
+                  <p class="mb-1 text-xs text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to
+                      upload</span> or drag and drop</p>
+                  <p class="text-xxs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                </div>
+                <input id="dropzone-file" type="file" class="hidden" />
+              </label>
             </div>
-            <div class="mb-6">
-              <label for="d" class="block mb-2 text-sm font-medium">Description</label>
-              <textarea name="description" id="d"
-                class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
-                placeholder="Saisir votre Description du cours" required ngModel #description="ngModel"
-                [ngClass]="{ 'border-red-500': description.invalid && description.touched }"></textarea>
-              <div *ngIf="description.invalid && description.touched" class="text-sm text-red-600 dark:text-red-500">
-                <span class="font-medium">La description est requise.</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex items-center justify-center w-full">
-            <label for="dropzone-file"
-              class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-              <div class="flex flex-col items-center justify-center pt-2 pb-3">
-                <svg class="w-6 h-6 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+
+            <div class="formbold-form-btn-wrapper">
+
+
+              <button class="formbold-btn" type="submit" [disabled]="formL.invalid"
+                [ngStyle]="{ 'background-color': formL.valid ? 'goldenrod' : '#ccc', 'cursor': formL.valid ? 'pointer' : 'not-allowed' }">
+                Next Step
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1675_1807)">
+                    <path
+                      d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z"
+                      [ngStyle]="{ 'fill': formL.valid ? 'white' : '#ccc' }" />
+                    <!-- Update the fill color based on formAC.valid -->
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1675_1807">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
                 </svg>
-                <p class="mb-1 text-xs text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to
-                    upload</span> or drag and drop</p>
-                <p class="text-xxs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-              </div>
-              <input id="dropzone-file" type="file" class="hidden" />
-            </label>
-          </div>
-
-          <div class="formbold-form-btn-wrapper">
-
-
-            <button class="formbold-btn" type="submit" [disabled]="formL.invalid"
-              [ngStyle]="{ 'background-color': formL.valid ? 'goldenrod' : '#ccc', 'cursor': formL.valid ? 'pointer' : 'not-allowed' }">
-              Next Step
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_1675_1807)">
-                  <path
-                    d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z"
-                    [ngStyle]="{ 'fill': formL.valid ? 'white' : '#ccc' }" />
-                  <!-- Update the fill color based on formAC.valid -->
-                </g>
-                <defs>
-                  <clipPath id="clip0_1675_1807">
-                    <rect width="16" height="16" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
-        </form></div>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

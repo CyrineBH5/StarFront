@@ -1,3 +1,4 @@
+import { AfficherCoursComponent } from './../../component/Cours/afficher-cours/afficher-cours.component';
 import { Cours } from 'src/app/models/Cours/cours';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -8,7 +9,7 @@ export class CoursService {
 
   constructor(private httpCours: HttpClient) {
   }
-  ajouterCours(cours: Cours , image : File) : Promise<number>{
+  ajouterCours(cours: Cours, image: File): Promise<number> {
 
     const formData = new FormData();
 
@@ -34,6 +35,9 @@ export class CoursService {
         }
       );
     });
+  }
+  getDetailCours() {
+    return this.httpCours.get<Cours[]>('http://localhost:3003/api/Cours');
   }
 
 }
