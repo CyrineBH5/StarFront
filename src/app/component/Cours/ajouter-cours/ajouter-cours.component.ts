@@ -27,7 +27,7 @@ export class AjouterCoursComponent implements OnInit {
   selectedImageFile : File;
   fileAdded: boolean = false;
   acceptTerms: boolean = false;
-  step: number = 1; // Current step
+  step: number = 3; // Current step
   fileInputModel: string ; // File input label text
   submited: boolean = false;
   nextStep() {

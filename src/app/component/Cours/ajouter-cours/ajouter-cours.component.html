@@ -23,31 +23,20 @@
     </div>
     <div *ngIf="!submited">
     <nav class="fh5co-nav" role="navigation">
-      <div class="top">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12 text-right">
-              <p class="num">Call: +216 55 666 777</p>
-              <ul class="fh5co-social">
-                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                <li><a href="#"><i class="icon-github"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div class="top-menu">
         <div class="container">
           <div class="row">
             <div class="col-xs-1">
-              <div id="fh5co-logo"><a href="../index.html">STAR<span>.</span></a></div>
+              <div id="fh5co-logo"><a href="/">STAR<span>.</span></a></div>
             </div>
             <div class="col-xs-11 text-right menu-1">
               <ul>
-                <li class="active"><a href="">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/courses">Courses</a></li>
                 <li><a href="contact">Contact</a></li>
+                <li class="btn-cta"><a routerLink=""><span style="background-color:goldenrod">Logout
+                  <i class="bi bi-door-closed"></i></span></a></li>&nbsp;
 
               </ul>
             </div>
@@ -579,66 +568,73 @@
 
     <footer id="fh5co-footer" role="contentinfo">
       <div class="container">
-          <div class="row row-pb-md">
-              <div class="col-md-4 fh5co-widget">
-                  <h4>About E-STAR Learning</h4>
-                  <p>Empowering education through innovative and interactive learning experiences. Join us on the journey of knowledge exploration.</p>
-              </div>
+        <div class="row row-pb-md">
+          <div class="col-md-3 fh5co-widget">
+            <h4 style="font-weight:bold">About Learning</h4>
+            <p>Education is the most powerful weapon which you can use to change the world.<br />
 
-
-              <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-                  <!-- <h4>Learn &amp; Grow</h4>
-                  <ul class="fh5co-footer-links">
-                      <li><a href="#">Blog</a></li>
-                      <li><a href="#">Privacy</a></li>
-                      <li><a href="#">Testimonials</a></li>
-                      <li><a href="#">Handbook</a></li>
-                      <li><a href="#">Help Desk</a></li>
-                  </ul> -->
-              </div>
-
-              <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-                  <!-- <h4>Engage with Us</h4>
-                  <ul class="fh5co-footer-links">
-                      <li><a href="#">Marketing</a></li>
-                      <li><a href="#">Community</a></li>
-                      <li><a href="#">Support</a></li>
-                      <li><a href="#">Advertise</a></li>
-                  </ul> -->
-              </div>
-
-
-              <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-                <h4>Explore</h4>
-                <ul class="fh5co-footer-links">
-                    <li><a href="#">Courses</a></li>
-                    <li><a href="#">Lessons</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <!-- <li><a href="#">Terms</a></li>
-                    <li><a href="#">FAQs</a></li> -->
-                </ul>
-            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+            <h4 style="font-weight:bold">Useful links</h4>
+            <ul class="fh5co-footer-links">
+              <li><i class="bi bi-chevron-right"></i><a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Contact</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Courses</a></li>
+            </ul>
           </div>
 
-
-          <div class="row copyright">
-              <div class="col-md-12 text-center">
-                  <p>
-                      <small class="block">&copy; 2023 E-STAR Learning. All Rights Reserved.</small>
-                      <!-- <small class="block">Designed by <a href="" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
-                  </p>
-                  <p>
-                      <ul class="fh5co-social-icons">
-                          <li><a href="#"><i class="icon-twitter"></i></a></li>
-                          <li><a href="#"><i class="icon-facebook"></i></a></li>
-                          <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                          <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                      </ul>
-
-              </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+            <h4 style="font-weight:bold">Learning</h4>
+            <ul class="fh5co-footer-links">
+              <li><i class="bi bi-chevron-right"></i><a href="#">Course</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Contact</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Terms</a></li>
+            </ul>
           </div>
+
+          <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+            <h4 style="font-weight:bold">Engage us</h4>
+            <ul class="fh5co-footer-links">
+              <li><i class="bi bi-chevron-right"></i><a href="#">Marketing</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Visual Assistant</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">System Analysis</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Advertise</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+            <h4 style="font-weight:bold">Legal</h4>
+            <ul class="fh5co-footer-links">
+              <li><i class="bi bi-chevron-right"></i><a href="#">Privacy policy</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Conditions</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Support</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Teams</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row copyright">
+          <div class="col-md-12 text-center">
+            <p>
+              <small class="block">&copy; Copyright <b>STAR</b>. All Rights Reversed</small>
+              <small class="block">Designed by <a href="#" target="_blank"> Ben Henni Oussema <span
+                    style="color:gray">&</span>Ben Hlila Cyrine
+                </a></small>
+            </p>
+            <p>
+            <ul class="fh5co-social-icons">
+              <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+              <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+              <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+              <li><a href="#"><i class="bi bi-dribbble"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
       </div>
-  </footer>
+    </footer>
+
 </div>
   </body>
 </html>

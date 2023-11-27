@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: "", component: HomePageComponent },
   { path: "contact", component: ContactComponent },
   // {path : "addLecon", component: AjouterLeconComponent},
-  { path: "afficher", component: AfficherCoursComponent },
+  { path: "courses", component: AfficherCoursComponent },
   { path: "login", component: LoginComponent },
   { path: "signUp", component: SignUpComponent },
   { path: "", redirectTo: "", pathMatch: "full" },]
