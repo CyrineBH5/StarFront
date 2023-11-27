@@ -8,6 +8,12 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+#aa {
+  color: white;
+  text-align: center;
+  margin-top: 15%;
+}
+
 .formbold-main-wrapper {
   display: flex;
   align-items: center;
@@ -224,7 +230,7 @@ body {
 
 
 
-.formbold-form-step-2.active ,
+.formbold-form-step-2.active,
 .formbold-form-step-1.active {
   display: block;
   opacity: 1;
@@ -240,26 +246,35 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white; /* Adjust the background color as needed */
-  z-index: 1; /* Ensure it appears above the form content */
+  background-color: white;
+  /* Adjust the background color as needed */
+  z-index: 1;
+  /* Ensure it appears above the form content */
 }
 
 .formbold-form-wrapper {
   padding-top: 40px;
-  width: 770px;/* Ensure content starts below the fixed bar */
+  width: 770px;
+  /* Ensure content starts below the fixed bar */
 }
 
 /* Add this to your global styles or component styles */
 .file-added {
-  background-color: rgba(218, 165, 32, 0.395); /* Green color when file is added */
-  border-color: #00000046; /* Darker green border color */
-  color: #ffffff; /* White text color */
+  background-color: rgba(218, 165, 32, 0.395);
+  /* Green color when file is added */
+  border-color: #00000046;
+  /* Darker green border color */
+  color: #ffffff;
+  /* White text color */
 }
 
 .file-not-added {
-  background-color: #f0f0f0; /* Default background color when no file is added */
-  border-color: #bdbdbd; /* Default border color */
-  color: #333333; /* Default text color */
+  background-color: #f0f0f0;
+  /* Default background color when no file is added */
+  border-color: #bdbdbd;
+  /* Default border color */
+  color: #333333;
+  /* Default text color */
 }
 
 /* Add any additional styling you may need */
@@ -267,7 +282,8 @@ body {
 /* ... Previous CSS ... */
 
 .formbold-steps-header {
-  margin-bottom: 20px; /* Adjust as needed */
+  margin-bottom: 20px;
+  /* Adjust as needed */
 }
 
 .formbold-steps-header ul {
@@ -278,13 +294,15 @@ body {
 
 .formbold-steps-header li {
   display: inline-block;
-  margin-right: 10px; /* Adjust as needed */
+  margin-right: 10px;
+  /* Adjust as needed */
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
 
 .formbold-steps-header li.active {
-  color: #ff9900; /* Adjust color as needed */
+  color: #ff9900;
+  /* Adjust color as needed */
 }
 
 /* ... Rest of the CSS ... */
@@ -295,57 +313,64 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #fff; /* Adjust the background color as needed */
-  padding: 10px; /* Adjust the padding as needed */
+  background-color: #fff;
+  /* Adjust the background color as needed */
+  padding: 10px;
+  /* Adjust the padding as needed */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
-   /* Add shadow for a better look */
+  /* Add shadow for a better look */
   z-index: 1000;
-  border-radius: 12px;/* Set a higher z-index to ensure it's above other elements */
+  border-radius: 12px;
+  /* Set a higher z-index to ensure it's above other elements */
 }
 
 .formbold-step-menu1,
 .formbold-step-menu2,
 .formbold-step-menu3 {
   display: inline-block;
-  margin-right: 20px; /* Adjust the spacing between items */
+  margin-right: 20px;
+  /* Adjust the spacing between items */
   cursor: pointer;
 }
 
 .formbold-step-menu1.active,
 .formbold-step-menu2.active,
 .formbold-step-menu3.active {
-  font-weight: bold; /* Highlight the active step */
+  font-weight: bold;
+  /* Highlight the active step */
 }
 
-.fh5co-cover{
+.fh5co-cover {
   height: 180px !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
 }
 
-span
-{
+span {
   margin-right: 20px !important;
 }
-h2{
+
+h2 {
   margin-top: 25px !important;
 }
-.form-content
-{
+
+.form-content {
   padding-bottom: 35px;
 }
 
-.label-form
-{
+.label-form {
   font-weight: 500;
   margin-top: 30px;
 }
-.input-file
-{
+
+.input-file {
   height: 52px !important;
 }
+
 .success-snackbar {
-  background-color: #4CAF50; /* Green background color */
-  color: white; /* White text color */
+  background-color: #4CAF50;
+  /* Green background color */
+  color: white;
+  /* White text color */
 }
 
 .success-snackbar-content {
@@ -353,8 +378,10 @@ h2{
   align-items: center;
   justify-content: center;
   padding: 16px;
-  background-color: #4CAF50; /* Green background color */
-  color: white; /* White text color */
+  background-color: #4CAF50;
+  /* Green background color */
+  color: white;
+  /* White text color */
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   opacity: 0;
@@ -362,19 +389,23 @@ h2{
 
 .fadeIn {
   opacity: 1;
-  transform: translateY(0); /* Adjust the value for vertical positioning */
+  transform: translateY(0);
+  /* Adjust the value for vertical positioning */
   transition: opacity 300ms, transform 300ms;
 }
 
 .fadeOut {
   opacity: 0;
-  transform: translateY(20px); /* Adjust the value for vertical positioning */
+  transform: translateY(20px);
+  /* Adjust the value for vertical positioning */
   transition: opacity 300ms, transform 300ms;
 }
 
 .success-snackbar {
-  background-color: #4CAF50; /* Green background color */
-  color: white; /* White text color */
+  background-color: #4CAF50;
+  /* Green background color */
+  color: white;
+  /* White text color */
 }
 
 .fade-in {
@@ -382,14 +413,15 @@ h2{
   transform: translateY(0) !important;
   transition: opacity 300ms, transform 300ms;
 }
+
 .success-snackbar {
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.validation
-{
+
+.validation {
   position: absolute;
   z-index: 6000;
   top: calc(50% - 200px);
@@ -397,7 +429,8 @@ h2{
   text-align: center;
 
 }
-.validation img{
+
+.validation img {
   width: 185px;
   height: 185px;
   margin-left: 125px;

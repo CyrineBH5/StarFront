@@ -8,7 +8,7 @@ export class CoursService {
 
   constructor(private httpCours: HttpClient) {
   }
-  ajouterCours(cours: Cours , image : File) : Promise<number>{
+  ajouterCours(cours: Cours, image: File): Promise<number> {
 
     const formData = new FormData();
 
@@ -34,6 +34,9 @@ export class CoursService {
         }
       );
     });
+  }
+  getDetailCours() {
+    return this.httpCours.get<Cours[]>('http://localhost:3003/api/Cours');
   }
 
 }

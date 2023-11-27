@@ -1,8 +1,12 @@
-span
-{
+span {
   margin-right: 20px !important;
 }
-h2{
+
+h2 {
   margin-top: 25px !important;
 }
-  
+
+#fh5co-footer i.bi-chevron-right {
+  color: darkgoldenrod;
+  font-weight: bold;
+}
