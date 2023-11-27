@@ -1,0 +1,437 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+#aa {
+  color: white;
+  text-align: center;
+  margin-top: 15%;
+}
+
+.formbold-main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.formbold-form-wrapper {
+  margin: 0 auto;
+
+  width: 100%;
+  background: white;
+}
+
+.formbold-steps {
+  padding-bottom: 18px;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #DDE3EC;
+}
+
+.formbold-steps ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.formbold-steps li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #536387;
+}
+
+.formbold-steps li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #DDE3EC;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #536387;
+}
+
+.formbold-steps li.active {
+  color: #07074D;
+  ;
+}
+
+.formbold-steps li.active span {
+  background: goldenrod;
+  color: #FFFFFF;
+}
+
+.formbold-input-flex {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.formbold-input-flex>div {
+  width: 50%;
+}
+
+.formbold-form-input {
+  width: 100%;
+  padding: 13px 22px;
+  border-radius: 5px;
+  border: 1px solid #DDE3EC;
+  background: #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+  color: #536387;
+  outline: none;
+  resize: none;
+}
+
+.formbold-form-input:focus {
+  border-color: #6a64f1;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.formbold-form-label {
+  color: #07074D;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.formbold-form-confirm {
+  border-bottom: 1px solid #DDE3EC;
+  padding-bottom: 35px;
+}
+
+.formbold-form-confirm p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #536387;
+  margin-bottom: 22px;
+  width: 75%;
+}
+
+.formbold-form-confirm>div {
+  display: flex;
+  gap: 15px;
+}
+
+.formbold-confirm-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFFFF;
+  border: 0.5px solid #DDE3EC;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #536387;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: all .3s ease-in-out;
+}
+
+.formbold-confirm-btn {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.formbold-confirm-btn.active {
+  background: goldenrod;
+  color: #FFFFFF;
+}
+
+.formbold-form-step-1,
+.formbold-form-step-2,
+.formbold-form-step-3 {
+  display: none;
+}
+
+.formbold-form-step-1.active,
+.formbold-form-step-2.active,
+.formbold-form-step-3.active {
+  display: block;
+}
+
+.formbold-form-btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.formbold-back-btn {
+  cursor: pointer;
+  background: #FFFFFF;
+  border: none;
+  color: #07074D;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  display: none;
+}
+
+.formbold-back-btn.active {
+  display: block;
+}
+
+.formbold-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px 25px;
+  border: none;
+  font-weight: 500;
+  background-color: goldenrod;
+  color: white;
+  cursor: pointer;
+}
+
+.formbold-btn:hover {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+#d {
+  min-height: 180px;
+  max-height: 400px;
+}
+
+/* Add this CSS to create a transition effect between steps */
+
+/* Hide step 2 by default */
+.formbold-form-step-2 {
+  display: none;
+}
+
+/* Add a transition effect for the form steps */
+.formbold-form-step-1,
+.formbold-form-step-2 {
+  transition: opacity 0.3s ease-in-out;
+  display: none;
+  opacity: 0;
+}
+
+
+
+.formbold-form-step-2.active,
+.formbold-form-step-1.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Add this CSS to your stylesheet */
+.formbold-main-wrapper {
+  position: relative;
+}
+
+.formbold-steps-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  /* Adjust the background color as needed */
+  z-index: 1;
+  /* Ensure it appears above the form content */
+}
+
+.formbold-form-wrapper {
+  padding-top: 40px;
+  width: 770px;
+  /* Ensure content starts below the fixed bar */
+}
+
+/* Add this to your global styles or component styles */
+.file-added {
+  background-color: rgba(218, 165, 32, 0.395);
+  /* Green color when file is added */
+  border-color: #00000046;
+  /* Darker green border color */
+  color: #ffffff;
+  /* White text color */
+}
+
+.file-not-added {
+  background-color: #f0f0f0;
+  /* Default background color when no file is added */
+  border-color: #bdbdbd;
+  /* Default border color */
+  color: #333333;
+  /* Default text color */
+}
+
+/* Add any additional styling you may need */
+
+/* ... Previous CSS ... */
+
+.formbold-steps-header {
+  margin-bottom: 20px;
+  /* Adjust as needed */
+}
+
+.formbold-steps-header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.formbold-steps-header li {
+  display: inline-block;
+  margin-right: 10px;
+  /* Adjust as needed */
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.formbold-steps-header li.active {
+  color: #ff9900;
+  /* Adjust color as needed */
+}
+
+/* ... Rest of the CSS ... */
+/* Add this CSS to your existing styles or in a separate stylesheet */
+
+.formbold-steps ul {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  /* Adjust the background color as needed */
+  padding: 10px;
+  /* Adjust the padding as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+  /* Add shadow for a better look */
+  z-index: 1000;
+  border-radius: 12px;
+  /* Set a higher z-index to ensure it's above other elements */
+}
+
+.formbold-step-menu1,
+.formbold-step-menu2,
+.formbold-step-menu3 {
+  display: inline-block;
+  margin-right: 20px;
+  /* Adjust the spacing between items */
+  cursor: pointer;
+}
+
+.formbold-step-menu1.active,
+.formbold-step-menu2.active,
+.formbold-step-menu3.active {
+  font-weight: bold;
+  /* Highlight the active step */
+}
+
+.fh5co-cover {
+  height: 180px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+span {
+  margin-right: 20px !important;
+}
+
+h2 {
+  margin-top: 25px !important;
+}
+
+.form-content {
+  padding-bottom: 35px;
+}
+
+.label-form {
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.input-file {
+  height: 52px !important;
+}
+
+.success-snackbar {
+  background-color: #4CAF50;
+  /* Green background color */
+  color: white;
+  /* White text color */
+}
+
+.success-snackbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: #4CAF50;
+  /* Green background color */
+  color: white;
+  /* White text color */
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+  /* Adjust the value for vertical positioning */
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: translateY(20px);
+  /* Adjust the value for vertical positioning */
+  transition: opacity 300ms, transform 300ms;
+}
+
+.success-snackbar {
+  background-color: #4CAF50;
+  /* Green background color */
+  color: white;
+  /* White text color */
+}
+
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.success-snackbar {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.validation {
+  position: absolute;
+  z-index: 6000;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+  text-align: center;
+
+}
+
+.validation img {
+  width: 185px;
+  height: 185px;
+  margin-left: 125px;
+}

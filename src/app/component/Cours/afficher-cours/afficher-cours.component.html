@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ajouter un Cours</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+<<<<<<< Updated upstream
+</head>
+
+<body>
+  <div class="fh5co-loader" *ngIf="showSpinner"></div>
+=======
+
+</head>
+
+<body>
+  <div class="fh5co-loader"></div>
+>>>>>>> Stashed changes
+
+  <div id="page">
+    <nav class="fh5co-nav" role="navigation">
+      <div class="top-menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-1">
+<<<<<<< Updated upstream
+              <div id="fh5co-logo"><a routerLink="/home">STAR<span>.</span></a></div>
+            </div>
+            <div class="col-xs-11 text-right menu-1">
+              <ul>
+                <li><a routerLink="/home">Home</a></li>
+                <li class="active"><a routerLink="/afficher">Courses</a></li>
+                <li><a href="#">About us</a></li>
+=======
+              <div id="fh5co-logo"><a href="index.html">STAR<span>.</span></a></div>
+            </div>
+            <div class="col-xs-11 text-right menu-1">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="courses.html">Courses</a></li>
+>>>>>>> Stashed changes
+                <li class="has-dropdown">
+                  <ul class="dropdown">
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">eCommerce</a></li>
+                    <li><a href="#">Branding</a></li>
+                    <li><a href="#">API</a></li>
+                  </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+<<<<<<< Updated upstream
+                <li class="btn-cta"><a routerLink="/login"><span style="background-color:goldenrod">Login</span></a></li>&nbsp;
+                <li class="btn-cta"><a routerLink="/ajoutcours"><span style="background-color:rgb(229, 173, 146)">Create
+                      A Course</span></a></li>
+=======
+                <li class="btn-cta"><a href="#"><span style="background-color:goldenrod">Login</span></a></li>&nbsp;
+                <li class="btn-cta"><a routerLink="/ajoutcours"><span style="background-color:rgb(187, 119, 88)">Create
+                      a Course</span></a></li>
+>>>>>>> Stashed changes
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner"
+      style="background-image:url(assets/images/courses1.jpg);" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 text-center">
+            <div class="display-t">
+              <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                <h1>Courses</h1>
+<<<<<<< Updated upstream
+                <h2>You learn something every day if you pay attention.<a href="http://StarApp.com" target="_blank">
+                    Star.com</a></h2>
+              </div>
+
+=======
+                <h2>You learn something every day if you pay attention.<a href="http://StarApp.co" target="_blank">
+                    Star.com</a></h2>
+              </div>
+>>>>>>> Stashed changes
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+<<<<<<< Updated upstream
+
+    <div id="fh5co-blog">
+      <div class="container">
+=======
+    <div id="fh5co-blog">
+      <div class="container">
+
+>>>>>>> Stashed changes
+        <div class="row">
+          <div *ngFor="let cours of myArray">
+            <div class="col-lg-4 col-md-4">
+              <div class="fh5co-blog animate-box">
+<<<<<<< Updated upstream
+                <a href="#"><img class="img-responsive" src="http://localhost:3003/{{cours.image}}" alt="a"></a>
+                <div class="blog-text">
+                  <!-- [src]="getImageUrl(cours)"-->
+                  <h3><a href="">{{cours.titre}}</a></h3>
+                  <span class="posted_on">{{cours.duree}} Heures</span>
+                  <span class="comment"><a href="">{{cours.nbrDeVue}}<i class="bi bi-eye"></i></a></span>
+                  <p>{{cours.description}}</p>
+                  <a href="#DetailCourse" class="btn btn-primary">Read More</a>
+=======
+                <a href="#"><img class="img-responsive" src="images/project-4.jpg" alt=""></a>
+                <div class="blog-text">
+                  <h3><a href="">{{cours.titre}}</a></h3>
+                  <span class="posted_on">Nov. 15th</span>
+                  <span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
+                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts.</p>
+                  <a href="#" class="btn btn-primary">Read More</a>
+>>>>>>> Stashed changes
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="fh5co-project">
+      <div class="container">
+        <div class="row">
+          <div class="features">
+            <div class="col-md-4 animate-box">
+              <h4>We have coolest features of this course</h4>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+                blind texts. </p>
+            </div>
+            <div class="col-md-4 animate-box">
+              <h4>Great teachers that we have</h4>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+                blind texts. </p>
+            </div>
+            <div class="col-md-4 animate-box">
+              <h4>Steps by steps </h4>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+                blind texts. </p>xmlns
+            </div>
+          </div>
+          <div class="col-md-12 text-center animate-box">
+            <p><a class="btn btn-primary btn-lg btn-learn" href="#">Create A Free Course</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer id="fh5co-footer" role="contentinfo">
+      <div class="container">
+        <div class="row row-pb-md">
+          <div class="col-md-3 fh5co-widget">
+            <h4 style="font-weight:bold">About Learning</h4>
+            <p>Education is the most powerful weapon which you can use to change the world.<br />
+
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+            <h4 style="font-weight:bold">Useful links</h4>
+            <ul class="fh5co-footer-links">
+              <li><i class="bi bi-chevron-right"></i><a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Contact</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Courses</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+            <h4 style="font-weight:bold">Learning</h4>
+            <ul class="fh5co-footer-links">
+              <li><i class="bi bi-chevron-right"></i><a href="#">Course</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Contact</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Terms</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+            <h4 style="font-weight:bold">Engage us</h4>
+            <ul class="fh5co-footer-links">
+              <li><i class="bi bi-chevron-right"></i><a href="#">Marketing</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Visual Assistant</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">System Analysis</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Advertise</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+            <h4 style="font-weight:bold">Legal</h4>
+            <ul class="fh5co-footer-links">
+              <li><i class="bi bi-chevron-right"></i><a href="#">Privacy policy</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Terms & Conditions</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Support</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Teams</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row copyright">
+          <div class="col-md-12 text-center">
+            <p>
+              <small class="block">&copy; Copyright <b>STAR</b>. All Rights Reversed</small>
+              <small class="block">Designed by <a href="#" target="_blank">Ben Henni Oussema <span
+                    style="color:rgb(145, 142, 142)">&</span> Ben Hlila Cyrine </a></small>
+            </p>
+            <p>
+            <ul class="fh5co-social-icons">
+              <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+              <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+              <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+              <li><a href="#"><i class="bi bi-dribbble"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </div>
+
+
+
+
+</body>
+
+</html>
