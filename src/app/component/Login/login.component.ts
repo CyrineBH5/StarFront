@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,22 +8,26 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
-  email: string = '';
-  password: string = '';
+  constructor(private userService: UserService,private router: Router) { }
+
   ngOnInit(): void {
   }
-  login() {
+  login(formAC) {
+    let email = formAC.value['email'];
+    let password = formAC.value['password'];
+    let box = formAC.value['box'];
 
-    /*this.userService.login(this.email, this.password).subscribe(
+    this.userService.login(email, password).subscribe(
       (res: any) => {
         console.log('Login successful', res);
-        // Do something with the response if needed
+        this.router.navigate(['/']);
+        (box.checked === true) ? localStorage.setItem('logedIN', 'true'):null;
       },
       (err: any) => {
         console.error('Login failed:', err);
+        alert('Login failed'+password+email);
         // Handle login error
       }
-    );*/
+    );
   }
 }

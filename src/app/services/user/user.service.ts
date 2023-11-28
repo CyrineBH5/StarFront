@@ -10,17 +10,14 @@ import { User } from 'src/app/models/User/user';
 export class UserService {
 
   constructor(private httpUser: HttpClient) { }
-  myArray: any = [];
- /* public login(email: string, password: string): Observable<User> {
-    const body = { email, password };
-    this.httpUser.post<User>('http://localhost:3003/api/login', body).subscribe(
-      (res: any) => {
-        console.log(":)");
-      },
-      (err: any) => {
-        console.log(":(");
-      }
-    );
-  }*/
+
+
+
+  public login(email: string, mdp: string): Observable<User>{
+    const body = { email, mdp };
+    console.log(body);
+
+    return this.httpUser.post<User>('http://localhost:3003/api/login', body);
+  }
 }
 
