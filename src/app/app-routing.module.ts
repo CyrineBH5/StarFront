@@ -6,6 +6,7 @@ import { ContactComponent } from './component/Contact/contact/contact.component'
 import { AfficherCoursComponent } from './component/Cours/afficher-cours/afficher-cours.component';
 import { LoginComponent } from './component/Login/login.component';
 import { SignUpComponent } from './component/Sign-up/sign-up.component';
+import { ForgetPasswordComponent } from './component/Forget-password/forget-password.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   // {path : "addLecon", component: AjouterLeconComponent},
   { path: "courses", component: AfficherCoursComponent },
   { path: "login", component: LoginComponent },
+  { path: "forgetPassword", component: ForgetPasswordComponent },
   { path: "signUp", component: SignUpComponent },
   { path: "", redirectTo: "", pathMatch: "full" },]
 

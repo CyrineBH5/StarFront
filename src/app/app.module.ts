@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AfficherCoursComponent } from './component/Cours/afficher-cours/afficher-cours.component';
 import { LoginComponent } from './component/Login/login.component';
 import { SignUpComponent } from './component/Sign-up/sign-up.component';
+import { ForgetPasswordComponent } from './component/Forget-password/forget-password.component';
 
 
 export class YourModule { }
@@ -29,6 +30,7 @@ export class YourModule { }
     AfficherCoursComponent,
     LoginComponent,
     SignUpComponent,
+    ForgetPasswordComponent
 
 
   ],
