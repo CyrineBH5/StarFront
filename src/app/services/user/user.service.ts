@@ -19,5 +19,18 @@ export class UserService {
 
     return this.httpUser.post<User>('http://localhost:3003/api/login', body);
   }
+
+  public forgotPassword(email: string): Observable<User>{
+    const body = { email};
+    return this.httpUser.post<User>('http://localhost:3003/api/forgot-password', body);
+  }
+
+  public isTokenValid(token: string) {
+    return this.httpUser.get<{ isValid: boolean }>('http://localhost:3003/api/check-reset-token/' + token);
+  }
+  public resetPassword(token: string,newPassword:String): Observable<User>{
+    const body = { newPassword  };
+    return this.httpUser.post<User>('http://localhost:3003/api/reset-password/'+token, body);
+  }
 }
 

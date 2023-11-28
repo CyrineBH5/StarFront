@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       },
       (err: any) => {
         console.error('Login failed:', err);
-        alert('Login failed'+password+email);
+        alert('Login failed');
         // Handle login error
       }
     );
