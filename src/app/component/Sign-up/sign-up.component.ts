@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
 import { Router } from '@angular/router'; // Import Router
+import { User } from 'src/app/models/User/user';
 
 @Component({
   selector: 'app-sign-up',
@@ -23,8 +24,13 @@ export class SignUpComponent implements OnInit {
   }
 
   public register(signumform) {
-    let response = this.userService.Register(signumform.value);
-    response.subscribe(
+    let nomprenom = signumform.value['nomprenom'];
+    let addres = signumform.value['addres'];
+    let grade = signumform.value['grade'];
+    let email = signumform.value['email'];
+    let password = signumform.value['password'];
+    console.log(nomprenom,addres,grade,email,password);
+    let response = this.userService.Register(new User(nomprenom,addres,null/*photo*/,grade,null/*role*/,email,password )).subscribe(
       (res) => {
         console.log(res);
         alert("Signup done successfully");
