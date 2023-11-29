@@ -9,8 +9,14 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
-
+  showSpinner = false;
+  isActive: boolean = false;
   ngOnInit(): void {
+    // Automatically show the spinner for 1 second
+    this.showSpinner = true;
+    setTimeout(() => {
+      this.showSpinner = false;
+    }, 500);
   }
   login(formAC) {
     let email = formAC.value['email'];

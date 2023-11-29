@@ -11,8 +11,13 @@ import { User } from 'src/app/models/User/user';
 export class SignUpComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
-
+  showSpinner = false;
+  isActive: boolean = false;
   ngOnInit(): void {
+    this.showSpinner = true;
+    setTimeout(() => {
+      this.showSpinner = false;
+    }, 500);
   }
 
   public showPassword: boolean = false;
@@ -29,8 +34,13 @@ export class SignUpComponent implements OnInit {
     let grade = signumform.value['grade'];
     let email = signumform.value['email'];
     let password = signumform.value['password'];
-    console.log(nomprenom,addres,grade,email,password);
-    let response = this.userService.Register(new User(nomprenom,addres,null/*photo*/,grade,null/*role*/,email,password )).subscribe(
+    let confirmPassword = signumform.value['confirmPassword'];
+    if (password !== confirmPassword) {
+      alert("Password and Confirm Password do not match");
+      return;
+    }
+    console.log(nomprenom, addres, grade, email, password, confirmPassword);
+    let response = this.userService.Register(new User(nomprenom, addres, null/*photo*/, grade, null/*role*/, email, password)).subscribe(
       (res) => {
         console.log(res);
         alert("Signup done successfully");
@@ -41,5 +51,6 @@ export class SignUpComponent implements OnInit {
         alert("Signup failed");
       }
     );
+
   }
 }
