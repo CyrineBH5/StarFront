@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userService: UserService,private router: Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
       (res: any) => {
         console.log('Login successful', res);
         this.router.navigate(['/']);
-        (box.checked === true) ? localStorage.setItem('logedIN', 'true'):null;
+        (box.checked === true) ? localStorage.setItem('logedIN', 'true') : null;
       },
       (err: any) => {
         console.error('Login failed:', err);
@@ -29,5 +29,11 @@ export class LoginComponent implements OnInit {
         // Handle login error
       }
     );
+  }
+  public showPassword: boolean = false;
+  public password: string = '';
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 }

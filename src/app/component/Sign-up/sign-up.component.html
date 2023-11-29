@@ -83,24 +83,54 @@ component
                 </p>
               </div>
             </div>
-            <form class="signin-form">
+            <form (ngSubmit)="register(signupForm)" class="signin-form" #signupForm="ngForm" method="post">
               <div class="form-group mb-2">
                 <label class="label" for="name">FirstName & LastName </label>
-                <input type="text" class="form-control" placeholder="Write hear" required>
+                <input type="text" class="form-control" #nomprenom="ngModel" ngModel
+                  placeholder="Please enter your First and Last name" required>
               </div>
               <div class="form-group mb-2">
                 <label class="label" for="name">Address</label>
-                <input type="adresse" class="form-control" placeholder="aaaa" required>
+                <input type="adresse" #address #addres="ngModel" ngModel class="form-control" placeholder="aaaa"
+                  required>
+              </div>
+              <div class="form-group mb-2">
+                <label for="countries" class="label">Select an option</label>
+                <select id="countries"
+                  class="bg-yellow-50 border border-yellow-300 text-yellow-900 text-sm rounded-lg focus:ring-blue-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-yellow-700 dark:border-yellow-600 dark:placeholder-yellow-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500">
+                  <option selected #grade="ngModel" ngModel>Choose your Grade</option>
+                  <option value="US">Autor</option>
+                  <option value="CA">Student</option>
+                  <option value="FR">Other</option>
+                </select>
               </div>
               <div class="form-group mb-2">
                 <label class="label" for="name">Email </label>
-                <input type="email" class="form-control" placeholder="example@gmail.com" required>
-              </div>
-              <div class="form-group mb-2">
-                <label class="label" for="password">Password</label>
-                <input type="password" class="form-control" placeholder="*************" required>
+                <input type="email" #email="ngModel" ngModel class="form-control" placeholder="example@gmail.com"
+                  required>
               </div>
               <div class="form-group mb-3">
+                <label class="label" for="password">Password</label>
+                <div class="input-group">
+                  <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" #password
+                    (ngModel)="password" placeholder="*************" required>
+                  <span class="input-group-text" (click)="togglePasswordVisibility()">
+                    <i class="{{ showPassword ?  'bi-eye': 'bi-eye-slash'}}"></i>
+                  </span>
+                </div>
+              </div>
+              <!-- <div class="form-group mb-3">
+                <label class="label" for="password">Comfirm Password</label>
+                <div class="input-group">
+                  <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" #password
+                    (ngModel)="comfirmPassword" placeholder="*************" required>
+                  <span class="input-group-text" (click)="togglePasswordVisibility()">
+                    <i class="{{ showPassword ?  'bi-eye': 'bi-eye-slash'}}"></i>
+                  </span>
+                </div>
+              </div>
+            -->
+              <div class="form-group mb-2">
                 <div id="heightupload">
                   <div class="flex items-center justify-center w-full">
                     <label for="dropzone-file"
