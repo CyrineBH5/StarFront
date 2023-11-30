@@ -49,8 +49,8 @@
           <div class="row animate-box">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <div id="a">
-                <h1 style="color:white">Contact Us</h1>
-                <p style="color:white">Get in touch with us for any inquiries or assistance.<a href="http://StarApp.com"
+                <h1 style="color:white">Courses</h1>
+                <p style="color:white">You learn something every day if you pay attention <a href="http://StarApp.com"
                     target="_blank">Star.com</a></p>
               </div>
             </div>
@@ -116,26 +116,29 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4" *ngFor="let cours of myArray">
             <div class="rounded overflow-hidden mb-2">
-              <img class="img-fluid" src="img/course-1.jpg" alt="">
+              <img class="img-fluid" [src]="getImageUrl(cours.image)" alt="">
               <div class="bg-secondary p-4">
                 <div class="d-flex justify-content-between mb-3">
                   <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>{{cours.nbrDeVue}} <i
                       class="bi bi-eye"></i></small>
                   <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>{{cours.duree}} Heures</small>
                 </div>
-                <a class="h5" href="" style="color:black; ">{{cours.titre }}</a>
-                <p>{{cours.description}}</p>
+                <a class="h5" href="" style="color:black; font-size:22px">{{cours.titre }}</a>
+                <p class="description"
+                  style="font-size:14px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
+                  {{cours.description}}
+                </p>
                 <div class="border-top mt-4 pt-4">
                   <div class="d-flex justify-content-between">
                     <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                    <h5 class="m-0"> <a href="#DetailCourse" class="btn btn-primary ">Read More</a>
-                    </h5>
+                    <h5 class="m-0"> <a href="#DetailCourse" class="btn btn-primary">Read More</a></h5>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
 
       </div>
     </div>
