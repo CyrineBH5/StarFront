@@ -36,5 +36,17 @@ export class UserService {
     return this.httpUser.post<User>('http://localhost:3003/api/register', user);
 
   }
-}
 
+  public findUserByEmail(email: any) {
+  return new Promise<number>((resolve, reject) => {
+    this.httpUser.get<User>('http://localhost:3003/api/getUser/'+email).subscribe(
+      (res: any) => {
+        resolve(res.Utilisateur.id); }
+        ,
+      (err: any) => {
+        reject(err); // Reject the promise if there's an error
+      }
+    );
+  });
+}
+}
