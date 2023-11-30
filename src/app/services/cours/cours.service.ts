@@ -18,7 +18,7 @@ export class CoursService {
     formData.append('description', cours.getDescription().toString());
     formData.append('titre', cours.getTitre().toString());
     formData.append('langue', cours.getLangue().toString());
-    //formData.append('idCours', cours.getIdCours().toString());
+    formData.append('createdBy', cours.getCreatedBy().toString());
     console.log(formData);
 
     // Append file

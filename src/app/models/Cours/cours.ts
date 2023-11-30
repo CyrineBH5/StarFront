@@ -6,13 +6,15 @@ export class Cours {
   private langue: String;
   private nbrDeVue: number = 0;
   private image: String;
+  private createdBy: String;
 
 
-  constructor(titre: String, des: String, duree: number, langue: String) {
+  constructor(titre: String, des: String, duree: number, langue: String,createdBy:String) {
     this.titre = titre;
     this.description = des;
     this.duree = duree;
     this.langue = langue;
+    this.createdBy=createdBy;
   }
 
   getIdCours() {
@@ -67,5 +69,11 @@ export class Cours {
   }
   setImage(img: String) {
     this.image = img;
+  }
+  getCreatedBy() {
+    return this.createdBy;
+  }
+  setCreatedBy(createdBy: String) {
+    this.createdBy = createdBy;
   }
 }

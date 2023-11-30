@@ -18,16 +18,30 @@ export class LoginComponent implements OnInit {
       this.showSpinner = false;
     }, 500);
   }
-  login(formAC) {
+
+
+
+
+  public showPassword: boolean = false;
+  public password: string = '';
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
+  async login(formAC) {
     let email = formAC.value['email'];
     let password = formAC.value['password'];
     let box = formAC.value['box'];
 
     this.userService.login(email, password).subscribe(
-      (res: any) => {
+      async (res: any) => {
         console.log('Login successful', res);
         this.router.navigate(['/']);
-        (box.checked === true) ? localStorage.setItem('logedIN', 'true') : null;
+        (box === true) ? localStorage.setItem('logedIN', 'true') : null;
+        console.log(String(await this.userService.findUserByEmail(email)));
+        localStorage.setItem('idUtilisateur', String(await this.userService.findUserByEmail(email)));
+        localStorage.setItem('email', email);
       },
       (err: any) => {
         console.error('Login failed:', err);
@@ -35,11 +49,5 @@ export class LoginComponent implements OnInit {
         // Handle login error
       }
     );
-  }
-  public showPassword: boolean = false;
-  public password: string = '';
-
-  togglePasswordVisibility() {
-    this.showPassword = !this.showPassword;
   }
 }
