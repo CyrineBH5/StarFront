@@ -1,6 +1,6 @@
 export class User {
   private idUtilisateur: number;
-  private nomPrenom: string;
+  private nom_prenom: string;
   private adresse: string;
   private photo: string;
   private grade: string;
@@ -9,7 +9,7 @@ export class User {
   private mdp: string;
 
   constructor(
-    nomPrenom: string,
+    nomprenom: string,
     adresse: string,
     photo: string,
     grade: string,
@@ -17,7 +17,7 @@ export class User {
     email: string,
     mdp: string
   ) {
-    this.nomPrenom = nomPrenom;
+    this.nom_prenom = nomprenom;
     this.adresse = adresse;
     this.photo = photo;
     this.grade = grade;
@@ -32,7 +32,7 @@ export class User {
   }
 
   getNomPrenom(): string {
-    return this.nomPrenom;
+    return this.nom_prenom;
   }
 
   getAdresse(): string {
@@ -65,7 +65,7 @@ export class User {
   }
 
   setNomPrenom(nomPrenom: string): void {
-    this.nomPrenom = nomPrenom;
+    this.nom_prenom = nomPrenom;
   }
 
   setAdresse(adresse: string): void {

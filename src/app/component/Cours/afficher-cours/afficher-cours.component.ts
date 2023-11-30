@@ -5,11 +5,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-afficher-cours',
   templateUrl: './afficher-cours.component.html',
-  styleUrls: ['./afficher-cours.component.css', '../css/animate.css', '../css/icomoon.css', '../css/bootstrap.css', '../css/magnific-popup.css', '../css/owl.carousel.min.css', '../css/owl.theme.default.min.css', '../css/style.css']
+  styleUrls: ['./afficher-cours.component.css', './css/style.css', './lib/owlcarousel/assets/owl.carousel.min.css',
+    './template1/css/animate.css', './template1/css/icomoon.css', './template1/css/bootstrap.css', './template1/css/magnific-popup.css', './template1/css/owl.carousel.min.css', './template1/css/owl.theme.default.min.css', './template1/css/style.css']
 })
 export class AfficherCoursComponent implements OnInit {
   myArray: any = [];
-  constructor(public rs: CoursService,private sanitizer: DomSanitizer) { }
+  constructor(public rs: CoursService, private sanitizer: DomSanitizer) { }
   showSpinner = false;
 
   ngOnInit(): void {
@@ -21,8 +22,9 @@ export class AfficherCoursComponent implements OnInit {
   }
   getDetailCours() {
     this.rs.getDetailCours().subscribe(
-      (data) => { this.myArray = data; console.log(data);
-       },
+      (data) => {
+        this.myArray = data; console.log(data);
+      },
       (error) => {
         alert("Problème d'accès à l'api");
       }
@@ -32,7 +34,7 @@ export class AfficherCoursComponent implements OnInit {
   // Inside your component cla
 
   getImageUrl(imagePath: string): string {
-  const imageName = imagePath.split('\\').pop();
+    const imageName = imagePath.split('\\').pop();
     return `http://127.0.0.1:8081/${imageName}`;
   }
 

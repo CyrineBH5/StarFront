@@ -7,6 +7,11 @@
   <title>Ajouter un Cours</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,11 +28,11 @@
             </div>
             <div class="col-xs-11 text-right menu-1">
               <ul>
-                <li ><a href="">Home</a></li>
+                <li><a href="">Home</a></li>
                 <li class="active"><a href="courses.html">Courses</a></li>
                 <li><a href="contact">Contact</a></li>
                 <li class="btn-cta"><a routerLink=""><span style="background-color:goldenrod">Logout
-                  <i class="bi bi-door-closed"></i></span></a></li>&nbsp;
+                      <i class="bi bi-door-closed"></i></span></a></li>&nbsp;
               </ul>
             </div>
           </div>
@@ -36,17 +41,24 @@
       </div>
     </nav>
 
-    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(assets/images/img_bg_1.jpg);" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 text-center">
-
+    <header id="fh5co-header" class="fh5co-cover" role="banner"
+      style="background-image:url(assets/images/img_bg_1.jpg);" data-stellar-background-ratio="0.5">
+      <div id="fh5co-started" class="fh5co-bg" style="background-image:url(assets/images/header-bg.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+              <div id="a">
+                <h1 style="color:white">Contact Us</h1>
+                <p style="color:white">Get in touch with us for any inquiries or assistance.<a href="http://StarApp.com"
+                    target="_blank">Star.com</a></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </header>
-    <div id="fh5co-blog">
+    <!--<div id="fh5co-blog">
       <div class="container">
         <div class="row">
           <div *ngFor="let cours of myArray">
@@ -55,7 +67,7 @@
                 <a href="#"><img class="img-responsive" [src]="getImageUrl(cours.image)" alt=""></a>
 
                 <div class="blog-text">
-                  <!-- [src]="getImageUrl(cours)"-->
+                  [src]="getImageUrl(cours)"
                   <h3><a href="">{{cours.titre}}</a></h3>
                   <span class="posted_on">{{cours.duree}} Heures</span>
                   <span class="comment"><a href="">{{cours.nbrDeVue}}<i class="bi bi-eye"></i></a></span>
@@ -93,8 +105,41 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
+    <!-- Courses Start -->
+    <div class="container-fluid py-5" style="margin-top:100px">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">&nbsp;</h5>
+          <h1>&nbsp;</h1>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4" *ngFor="let cours of myArray">
+            <div class="rounded overflow-hidden mb-2">
+              <img class="img-fluid" src="img/course-1.jpg" alt="">
+              <div class="bg-secondary p-4">
+                <div class="d-flex justify-content-between mb-3">
+                  <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>{{cours.nbrDeVue}} <i
+                      class="bi bi-eye"></i></small>
+                  <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>{{cours.duree}} Heures</small>
+                </div>
+                <a class="h5" href="" style="color:black; ">{{cours.titre }}</a>
+                <p>{{cours.description}}</p>
+                <div class="border-top mt-4 pt-4">
+                  <div class="d-flex justify-content-between">
+                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                    <h5 class="m-0"> <a href="#DetailCourse" class="btn btn-primary ">Read More</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+      </div>
+    </div>
+    <!-- Courses End -->
 
     <footer id="fh5co-footer" role="contentinfo">
       <div class="container">
