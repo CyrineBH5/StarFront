@@ -3,6 +3,9 @@
   font-weight: bold;
 }
 .fh5co-cover {
-  height: 95PX !important;
+  height: 40% !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+#a {
+  margin-top: 10%;
 }

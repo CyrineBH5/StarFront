@@ -29,7 +29,7 @@ export class SignUpComponent implements OnInit {
   }
 
   public register(signumform) {
-    let nomprenom = signumform.value['nomprenom'];
+    let nom_prenom = signumform.value['nomprenom'];
     let addres = signumform.value['addres'];
     let grade = signumform.value['grade'];
     let email = signumform.value['email'];
@@ -39,8 +39,8 @@ export class SignUpComponent implements OnInit {
       alert("Password and Confirm Password do not match");
       return;
     }
-    console.log(nomprenom, addres, grade, email, password, confirmPassword);
-    let response = this.userService.Register(new User(nomprenom, addres, null/*photo*/, grade, null/*role*/, email, password)).subscribe(
+    console.log(nom_prenom, addres, grade, email, password, confirmPassword);
+    this.userService.Register(new User(nom_prenom, addres, null/*photo*/, grade, null/*role*/, email, password)).subscribe(
       (res) => {
         console.log(res);
         alert("Signup done successfully");
