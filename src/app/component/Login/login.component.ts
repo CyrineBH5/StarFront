@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       async (res: any) => {
         console.log('Login successful', res);
         this.router.navigate(['/']);
-        (box === true) ? localStorage.setItem('logedIN', 'true') : null;
+        localStorage.setItem('logedIN', 'true') ;
         console.log(String(await this.userService.findUserByEmail(email)));
         localStorage.setItem('idUtilisateur', String(await this.userService.findUserByEmail(email)));
         localStorage.setItem('email', email);

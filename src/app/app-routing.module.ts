@@ -7,12 +7,13 @@ import { AfficherCoursComponent } from './component/Cours/afficher-cours/affiche
 import { LoginComponent } from './component/Login/login.component';
 import { SignUpComponent } from './component/Sign-up/sign-up.component';
 import { ForgetPasswordComponent } from './component/Forget-password/forget-password.component';
+import { AuthGuard } from './services/Auth/auth.guard';
 
 
 const routes: Routes = [
   { path: "addcours", component: AjouterCoursComponent },
   { path: "", component: HomePageComponent },
-  { path: "contact", component: ContactComponent },
+  { path: "contact", component: ContactComponent,canActivate:[AuthGuard] },
   // {path : "addLecon", component: AjouterLeconComponent},
   { path: "courses", component: AfficherCoursComponent },
   { path: "login", component: LoginComponent },
