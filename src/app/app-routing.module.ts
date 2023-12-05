@@ -14,7 +14,7 @@ import { DetailCoursComponent } from './component/Cours/detail-cours/detail-cour
 const routes: Routes = [
   { path: "", component: HomePageComponent },
   { path: "addcours", component: AjouterCoursComponent },
-  { path: "detail-cours", component: DetailCoursComponent },
+  { path: "detail-cours/:id", component: DetailCoursComponent },
   { path: "contact", component: ContactComponent, canActivate: [AuthGuard] },
   // {path : "addLecon", component: AjouterLeconComponent},
   { path: "courses", component: AfficherCoursComponent },

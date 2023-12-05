@@ -1,0 +1,13 @@
+#fh5co-footer i.bi-chevron-right {
+  color: darkgoldenrod;
+  font-weight: bold;
+}
+
+.fh5co-cover {
+  height: 40% !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+#a {
+  margin-top: 10%;
+}

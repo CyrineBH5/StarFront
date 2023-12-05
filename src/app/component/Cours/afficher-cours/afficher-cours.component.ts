@@ -29,7 +29,6 @@ export class AfficherCoursComponent implements OnInit {
       }
     )
   }
-
   // Inside your component cla
 
   getImageUrl(imagePath: string): string {

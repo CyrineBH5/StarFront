@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { AfficherCoursComponent } from './../../component/Cours/afficher-cours/afficher-cours.component';
 import { Cours } from 'src/app/models/Cours/cours';
 import { Injectable } from '@angular/core';
@@ -38,6 +39,9 @@ export class CoursService {
   }
   getDetailCours() {
     return this.httpCours.get<Cours[]>('http://localhost:3003/api/Cours');
+  }
+  getCoursById(id: number): Observable<any> {
+    return this.httpCours.get<Cours[]>('http://localhost:3003/api/Cours/' + id);
   }
 
 }
