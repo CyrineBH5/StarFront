@@ -15,6 +15,7 @@ import { AfficherCoursComponent } from './component/Cours/afficher-cours/affiche
 import { LoginComponent } from './component/Login/login.component';
 import { SignUpComponent } from './component/Sign-up/sign-up.component';
 import { ForgetPasswordComponent } from './component/Forget-password/forget-password.component';
+import { DetailCoursComponent } from './component/Cours/detail-cours/detail-cours.component';
 
 
 export class YourModule { }
@@ -30,7 +31,8 @@ export class YourModule { }
     AfficherCoursComponent,
     LoginComponent,
     SignUpComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+    DetailCoursComponent
 
 
   ],

@@ -50,62 +50,32 @@
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <div id="a">
                 <h1 style="color:white">Courses</h1>
-                <p style="color:white">You learn something every day if you pay attention <a href="http://StarApp.com"
-                    target="_blank">Star.com</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!--<div id="fh5co-blog">
-      <div class="container">
-        <div class="row">
-          <div *ngFor="let cours of myArray">
-            <div class="col-lg-4 col-md-4">
-              <div class="fh5co-blog animate-box">
-                <a href="#"><img class="img-responsive" [src]="getImageUrl(cours.image)" alt=""></a>
+                <p style="color:white">You learn something every day if you pay attention
+                  <a href="http://StarApp.com" target="_blank">Star.com</a>
+                </p>
+                <br />
+                <!-- component search  -->
+                <div class='max-w-md mx-auto'>
+                  <div
+                    class="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+                    <div class="grid place-items-center h-full w-12 text-gray-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </div>
 
-                <div class="blog-text">
-                  [src]="getImageUrl(cours)"
-                  <h3><a href="">{{cours.titre}}</a></h3>
-                  <span class="posted_on">{{cours.duree}} Heures</span>
-                  <span class="comment"><a href="">{{cours.nbrDeVue}}<i class="bi bi-eye"></i></a></span>
-                  <p>{{cours.description}}</p>
-                  <a href="#DetailCourse" class="btn btn-primary">Read More</a>
+                    <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text" id="search"
+                      placeholder="Search something.." />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="fh5co-project">
-      <div class="container">
-        <div class="row">
-          <div class="features">
-            <div class="col-md-4 animate-box">
-              <h4>We have coolest features of this course</h4>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                blind texts. </p>
-            </div>
-            <div class="col-md-4 animate-box">
-              <h4>Great teachers that we have</h4>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                blind texts. </p>
-            </div>
-            <div class="col-md-4 animate-box">
-              <h4>Steps by steps </h4>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                blind texts. </p>xmlns
-            </div>
-          </div>
-          <div class="col-md-12 text-center animate-box">
-            <p><a class="btn btn-primary btn-lg btn-learn" href="#">Create A Free Course</a></p>
-          </div>
-        </div>
-      </div>
-    </div>-->
+    </header>
     <!-- Courses Start -->
     <div class="container-fluid py-5" style="margin-top:100px">
       <div class="container py-5">
@@ -116,7 +86,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4" *ngFor="let cours of myArray">
             <div class="rounded overflow-hidden mb-2">
-              <img class="img-fluid" [src]="getImageUrl(cours.image)" alt="">
+              <img class="object-cover object-center w-full h-40" [src]="getImageUrl(cours.image)" alt="">
               <div class="bg-secondary p-4">
                 <div class="d-flex justify-content-between mb-3">
                   <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>{{cours.nbrDeVue}} <i
@@ -131,7 +101,7 @@
                 <div class="border-top mt-4 pt-4">
                   <div class="d-flex justify-content-between">
                     <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                    <h5 class="m-0"> <a href="#DetailCourse" class="btn btn-primary">Read More</a></h5>
+                    <h5 class="m-0"> <a routerLink="/detail-cours" class="btn btn-primary">Read More</a></h5>
                   </div>
                 </div>
               </div>

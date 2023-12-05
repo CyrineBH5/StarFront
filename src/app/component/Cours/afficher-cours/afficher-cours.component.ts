@@ -12,7 +12,6 @@ export class AfficherCoursComponent implements OnInit {
   myArray: any = [];
   constructor(public rs: CoursService, private sanitizer: DomSanitizer) { }
   showSpinner = false;
-
   ngOnInit(): void {
     this.getDetailCours();
     this.showSpinner = true;
@@ -37,7 +36,5 @@ export class AfficherCoursComponent implements OnInit {
     const imageName = imagePath.split('\\').pop();
     return `http://127.0.0.1:8080/${imageName}`;
   }
-
-
 
 }
