@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Varsity | Course Detail</title>
+  <title>Course Detail</title>
   <!-- Google Fonts -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -83,60 +83,30 @@
                               <h2><a href="#">{{ courseDetails.titre }}</a></h2>
                               <h4>Course Information</h4>
                               <ul>
-                                <li> <span>Place</span> <span>California,USA</span></li>
                                 <li> <span>Total Students</span> <span>{{courseDetails.nbrDeVue}}14</span></li>
                                 <li> <span>Course Duration</span> <span>{{courseDetails.duree}} </span></li>
-                                <li> <span>Course Start</span> <span>Dateeeeeeeeeeee</span></li>
+                                <li> <span>Course Start</span> <span>Date courante zidha fel classe o aaytelha </span>
+                                </li>
                               </ul>
                               <h4>Description</h4>
                               <p>{{courseDetails.description}}</p>
                               <h4>Lecon</h4>
-                              <div class="table-responsive">
+                              <div class="table-responsive" *ngFor="let lecon of lecons">
                                 <table class="table">
                                   <thead>
                                     <tr>
                                       <th> Title </th>
-                                      <th> Course Time </th>
-                                      <th> Spent Time </th>
-                                      <th> Status </th>
+                                      <th> Description </th>
+                                      <th> Contenu </th>
+                                      <th>  </th>
                                     </tr>
                                   </thead>
                                   <tbody>
                                     <tr>
-                                      <td> 1. Topic 1 </td>
-                                      <td> 15:30 </td>
-                                      <td> 13:80 </td>
-                                      <td> Successful </td>
-                                    </tr>
-                                    <tr>
-                                      <td> 2. Topic 2 </td>
-                                      <td> 15:30 </td>
-                                      <td> 13:80 </td>
-                                      <td> Successful </td>
-                                    </tr>
-                                    <tr>
-                                      <td> 3. Topic 3 </td>
-                                      <td> 15:30 </td>
-                                      <td> - </td>
-                                      <td> Successful </td>
-                                    </tr>
-                                    <tr>
-                                      <td> 4. Topic 4 </td>
-                                      <td> 15:30 </td>
-                                      <td> 13:80 </td>
-                                      <td> Successful </td>
-                                    </tr>
-                                    <tr>
-                                      <td> 5. Topic 5 </td>
-                                      <td> 15:30 </td>
-                                      <td> - </td>
-                                      <td> Waiting </td>
-                                    </tr>
-                                    <tr>
-                                      <td> 6. Topic 6 </td>
-                                      <td> 15:30 </td>
-                                      <td> 13:80 </td>
-                                      <td> - </td>
+                                      <td>1. {{ lecon.titre }}</td>
+                                      <td> {{ lecon.description }} </td>
+                                      <td> --PDF </td>
+                                      <td> bouton download </td>
                                     </tr>
                                   </tbody>
                                 </table>

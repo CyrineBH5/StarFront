@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Lecon } from 'src/app/models/Lecon/lecon';
@@ -31,6 +32,9 @@ export class LeconService {
         console.error(err);
       }
     );
+  }
+  getAllLeconsByCours(coursId: number): Observable<any[]> {
+    return this.httpLecon.get<any[]>("http://localhost:3003/api/cours/" + coursId + "/lecons");
   }
 
 }
