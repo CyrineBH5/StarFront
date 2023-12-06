@@ -15,7 +15,7 @@ import { LeconService } from 'src/app/services/lecon/lecon.service';
 @Component({
   selector: 'app-ajouter-cours',
   templateUrl: './ajouter-cours.component.html',
-  styleUrls: ['./ajouter-cours.component.css','../css/animate.css','../css/icomoon.css','../css/bootstrap.css','../css/magnific-popup.css','../css/owl.carousel.min.css','../css/owl.theme.default.min.css','../css/style.css'],
+  styleUrls: ['./ajouter-cours.component.css','../css/style.css','../css/animate.css','../css/icomoon.css','../css/bootstrap.css','../css/magnific-popup.css','../css/owl.carousel.min.css','../css/owl.theme.default.min.css','../css/style.css'],
 
 
 

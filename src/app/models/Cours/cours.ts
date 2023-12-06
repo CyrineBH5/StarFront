@@ -7,6 +7,7 @@ export class Cours {
   private nbrDeVue: number = 0;
   private image: String;
   private createdBy: String;
+  private dateCreation:Date;
 
 
   constructor(titre: String, des: String, duree: number, langue: String,createdBy:String) {
@@ -75,5 +76,12 @@ export class Cours {
   }
   setCreatedBy(createdBy: String) {
     this.createdBy = createdBy;
+  }
+
+  getDateCreation() {
+    return this.dateCreation;
+  }
+  setDateCreation(dateCreation: Date) {
+    this.dateCreation = dateCreation;
   }
 }

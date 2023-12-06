@@ -10,3 +10,6 @@ h2 {
   color: darkgoldenrod;
   font-weight: bold;
 }
+*{
+  font-family: "Work Sans", Arial, sans-serif !important;
+}
