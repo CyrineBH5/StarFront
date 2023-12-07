@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
   showSpinner = false;
   isActive: boolean = false;
+  loginError: boolean = false;
   ngOnInit(): void {
     // Automatically show the spinner for 1 second
     this.showSpinner = true;
@@ -18,16 +19,9 @@ export class LoginComponent implements OnInit {
       this.showSpinner = false;
     }, 500);
   }
-
-
-
-
   public showPassword: boolean = false;
   public password: string = '';
 
-  togglePasswordVisibility() {
-    this.showPassword = !this.showPassword;
-  }
 
   async login(formAC) {
     let email = formAC.value['email'];
@@ -38,15 +32,17 @@ export class LoginComponent implements OnInit {
       async (res: any) => {
         console.log('Login successful', res);
         this.router.navigate(['/']);
-        localStorage.setItem('logedIN', 'true') ;
+        localStorage.setItem('logedIN', 'true');
         console.log(String(await this.userService.findUserByEmail(email)));
         localStorage.setItem('idUtilisateur', String(await this.userService.findUserByEmail(email)));
         localStorage.setItem('email', email);
+        this.loginError = false;
       },
       (err: any) => {
         console.error('Login failed:', err);
-        alert('Login failed');
+        // alert('Login failed');
         // Handle login error
+        this.loginError = true;
       }
     );
   }

@@ -5,19 +5,20 @@ import { UserService } from 'src/app/services/user/user.service';
 @Component({
   selector: 'app-forget-password',
   templateUrl: './forget-password.component.html',
-  styleUrls: ['./forget-password.component.css','./css/style.css']
+  styleUrls: ['./forget-password.component.css', './css/style.css']
 })
 export class ForgetPasswordComponent implements OnInit {
 
-  constructor(private userService: UserService,private router: Router) { }
-  step: number = 2;
+  constructor(private userService: UserService, private router: Router) { }
+  step: number = 1;
   email: string = '';
   code: string = '';
   newPassword: string = '';
   confirmPassword: string = '';
+
   ngOnInit(): void {
   }
-  forgetPassword(formAC){
+  forgetPassword(formAC) {
     let email = formAC.value['email'];
     this.userService.forgotPassword(email).subscribe(
       (res: any) => {
@@ -25,9 +26,8 @@ export class ForgetPasswordComponent implements OnInit {
         this.nextStep();
       },
       (err: any) => {
-        console.error('Login failed:', err);
-        alert('Login failed');
-        // Handle login error
+        console.error('Forgot password failed:', err);
+        alert('Forgot password failed');
       }
     );
   }
@@ -42,11 +42,11 @@ export class ForgetPasswordComponent implements OnInit {
       (res: any) => {
         console.log(res);
 
-        if(res.isValid){
+        if (res.isValid) {
           console.log("nice");
           this.nextStep()
 
-        }else{
+        } else {
           console.log("8alett el code");
 
         }
@@ -67,7 +67,7 @@ export class ForgetPasswordComponent implements OnInit {
     // Simulate server communication for updating the password
     // Replace this with actual server communication
     if (this.newPassword === this.confirmPassword) {
-      this.userService.resetPassword(this.code,this.newPassword).subscribe(
+      this.userService.resetPassword(this.code, this.newPassword).subscribe(
         (res: any) => {
           console.log(res);
           this.router.navigate(['/']);
