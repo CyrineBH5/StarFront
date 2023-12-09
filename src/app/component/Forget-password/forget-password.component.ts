@@ -92,6 +92,9 @@ export class ForgetPasswordComponent implements OnInit {
     // Move to the next step
     this.step++;
   }
-
+  public showPassword: boolean = false;
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 
 }

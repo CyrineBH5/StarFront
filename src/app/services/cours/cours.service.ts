@@ -43,5 +43,8 @@ export class CoursService {
   getCoursById(id: number): Observable<any> {
     return this.httpCours.get<Cours[]>('http://localhost:3003/api/Cours/' + id);
   }
+  searchCoursByTitle(title: string): Observable<any> {
+    return this.httpCours.get<Cours[]>('http://localhost:3003/api/Cours/search/' + title);
+  }
 
 }

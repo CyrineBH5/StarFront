@@ -23,6 +23,10 @@ export class LoginComponent implements OnInit {
   public password: string = '';
 
 
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
   async login(formAC) {
     let email = formAC.value['email'];
     let password = formAC.value['password'];

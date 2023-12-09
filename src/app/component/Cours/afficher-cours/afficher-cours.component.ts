@@ -36,4 +36,18 @@ export class AfficherCoursComponent implements OnInit {
     return `http://127.0.0.1:8080/${imageName}`;
   }
 
+  searchTerm: string;
+  search() {
+    if (this.searchTerm) {
+      this.rs.searchCoursByTitle(this.searchTerm).subscribe(
+        (data) => {
+          this.myArray = data;
+        },
+        (error) => {
+          console.error('Error searching courses:', error);
+        }
+      );
+    }
+  }
+
 }
