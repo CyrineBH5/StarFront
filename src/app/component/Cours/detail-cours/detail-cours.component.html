@@ -87,7 +87,8 @@
                               <ul>
                                 <li> <span>Total Students</span> <span>{{courseDetails.nbrDeVue}}</span></li>
                                 <li> <span>Course Duration</span> <span>{{courseDetails.duree}} </span></li>
-                                <li> <span>Course Start</span> <span>{{formatCourseStartDateTime(courseDetails.dateCreation)}} </span>
+                                <li> <span>Course Start</span>
+                                  <span>{{formatCourseStartDateTime(courseDetails.dateCreation)}} </span>
                                 </li>
                               </ul>
                               <h4>Description</h4>
@@ -101,7 +102,7 @@
                                       <th> Title </th>
                                       <th> Description </th>
 
-                                      <th> Download  </th>
+                                      <th> Download </th>
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -110,7 +111,8 @@
                                       <td>{{ lecon.titre }}</td>
                                       <td> {{ lecon.description }} </td>
 
-                                      <td><a [href]="getFileUrl(lecon.contenu)" download class=""><i class="bi bi-download"></i></a></td>
+                                      <td><a [href]="getFileUrl(lecon.contenu)" download class=""><i
+                                            class="bi bi-download"></i></a></td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -119,8 +121,113 @@
                           </div>
                         </div>
                       </div>
+
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="mu-comments-area">
+                          <h3>Comments</h3>
+                          <div class="comments">
+                            <ul class="commentlist">
+                              <li>
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img alt="img" src="assets/img/testimonial-1.png" class="media-object news-img">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="author-name">David Muller </h4>
+                                    <span class="comments-date"> Posted on 12th June, 2016</span>
+                                    <div class="flex items-center mb-5">
+                                      <svg class="w-4 h-4 ms-1 text-yellow-300" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                        <path
+                                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                      </svg>
+                                      <svg class="w-4 h-4 ms-1 text-yellow-300" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                        <path
+                                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                      </svg>
+                                      <svg class="w-4 h-4 ms-1 text-yellow-300" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                        <path
+                                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                      </svg>
+                                      <svg class="w-4 h-4 ms-1 text-yellow-300" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                        <path
+                                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                      </svg>
+                                      <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                        <path
+                                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                      </svg>
+                                    </div>
+                                    <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+                                      opposed to using 'Content here, content here', making it look like readable
+                                      English</p>
+                                    <!-- Ajoutez ceci à votre structure HTML -->
+                                    <button class="reply-btn bg-yellow-500 hover:bg-yellow-600" id="postCommentBtn"
+                                      (click)="redirectToLoginForm()">
+                                      Reply <span class="fa fa-long-arrow-right"></span>
+                                    </button>
+
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+
+                            <!-- comments pagination -->
+                            <!--  <nav>
+                              <ul class="pagination comments-pagination">
+                                <li>
+                                  <a aria-label="Previous" href="#">
+                                    <span class="fa fa-long-arrow-left"></span>
+                                  </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                  <a aria-label="Next" href="#">
+                                    <span class="fa fa-long-arrow-right"></span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </nav>-->
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="row justify-content-center">
+                      <div class="bg-secondary rounded p-8">
+                        <h3 class="mb-4">Leave a comment</h3>
+                        <form>
+                          <div class="form-group mb-4">
+                            <label for="name">FirstName and LastName *</label>
+                            <input type="text" class="form-control border-0" id="name">
+                          </div>
+                          <div class="form-group">
+                            <label for="mail">Email Address *</label>
+                            <input type="email" class="form-control border-0" id="mail">
+                          </div>
+                          <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" cols="30" rows="5" class="form-control border-0"></textarea>
+                          </div>
+                          <div class="form-group mb-0">
+                            <input type="submit" value="Leave Comment"
+                              class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold">
+                          </div>
+                        </form>
+                      </div>
                     </div>
                   </div>
+
                   <div class="col-md-3">
                     <!-- start sidebar -->
                     <aside class="mu-sidebar">
@@ -191,6 +298,7 @@
                       <!-- end single sidebar -->
                     </aside>
                     <!-- / end sidebar -->
+
                   </div>
                 </div>
               </div>
@@ -198,6 +306,8 @@
           </div>
         </div>
       </section>
+
+
 
 
       <footer id="fh5co-footer" role="contentinfo">

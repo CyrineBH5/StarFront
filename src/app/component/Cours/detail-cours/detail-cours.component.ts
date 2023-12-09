@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CoursService } from 'src/app/services/cours/cours.service';
 import { LeconService } from 'src/app/services/lecon/lecon.service';
 
@@ -16,7 +16,7 @@ export class DetailCoursComponent implements OnInit {
   courseDetails: any;
   lecons: any[] = [];
 
-  constructor(public rs: CoursService, private route: ActivatedRoute, private leconService: LeconService) { }
+  constructor(public rs: CoursService, private route: ActivatedRoute, private leconService: LeconService, private router: Router) { }
   showSpinner = false;
   ngOnInit(): void {
     this.showSpinner = true;
@@ -67,5 +67,8 @@ export class DetailCoursComponent implements OnInit {
       hour: '2-digit',
       minute: '2-digit'
     });
+  }
+  redirectToLoginForm() {
+    this.router.navigate(['/login']);
   }
 }
