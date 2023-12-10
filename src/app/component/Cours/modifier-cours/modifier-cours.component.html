@@ -1,1 +1,93 @@
-<p>modifier-cours works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modify Course</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- <div id="page">
+    <nav class="fh5co-nav" role="navigation">
+
+      <div class="top-menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-1">
+              <div id="fh5co-logo"><a href="">STAR<span>.</span></a></div>
+            </div>
+            <div class="col-xs-11 text-right menu-1">
+              <ul>
+                <li><a href="">Home</a></li>
+                <li class="active"><a href="courses.html">Courses</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li class="btn-cta"><a routerLink=""><span style="background-color:goldenrod">Logout
+                      <i class="bi bi-door-closed"></i></span></a></li>&nbsp;
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </div>-->
+  <div class="container">
+    <div class="bg-white rounded p-1 shadow-md">
+
+      <!-- Step 1: Enter Email -->
+      <div class="reset-pass p-md-4">
+        <h3>Modify Course </h3>
+        <p class="text-slate-500">Fill up the form to Update form</p>
+        <form #formAC="ngForm" method="POST" class="signin-form">
+          <div class="form-group mb-3">
+            <label class="label" for="name">Title course</label>
+            <input type="text" name="titre" class="form-control" placeholder="" required>
+          </div>
+          <div class="form-group mb-3">
+            <label class="label" for="name">Duration</label>
+            <input type="time" name="titre" class="form-control" placeholder="" required>
+          </div>
+          <div class="form-group mb-3">
+            <label class="label" for="name">Langage</label>
+            <select name="langue" id="langue" class="form-control" required ngModel>
+              <option value="">Choisir la langue</option>
+              <option class="formbold-form-input">
+                <!--{{ langue }}--> langue
+              </option>
+            </select>
+          </div>
+          <div class="form-group mb-3">
+            <label class="label" for="name">Description</label>
+            <textarea name="description" id="d" placeholder="" class="form-control" required></textarea>
+          </div>
+          <div class="form-group" id="signIn">
+
+            <div class="mb-6">
+              <label class="label-form" for="file_input">Upload New Image</label>
+              <input
+                class=" block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                aria-describedby="file_input_help" id="file_input" type="file" name="fileInput"
+                accept=".SVG, .PNG, .JPG , .GIF" />
+              <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
+                SVG, PNG, JPG or GIF.
+              </p>
+            </div>
+            <div class="form-group" id="signIn">
+              <button type="submit" class="form-control btn btn-primary rounded submit px-3">
+                Modify</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
