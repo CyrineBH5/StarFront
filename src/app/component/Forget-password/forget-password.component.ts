@@ -10,11 +10,12 @@ import { UserService } from 'src/app/services/user/user.service';
 export class ForgetPasswordComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
-  step: number = 1;
+  step: number = 2;
   email: string = '';
   code: string = '';
   newPassword: string = '';
   confirmPassword: string = '';
+  tokenError: boolean = false;
 
   ngOnInit(): void {
   }
@@ -46,16 +47,11 @@ export class ForgetPasswordComponent implements OnInit {
           console.log("nice");
           this.nextStep()
 
-        } else {
-          console.log("8alett el code");
-
         }
 
       },
       (err: any) => {
-        console.error('Login failed:', err);
-
-        // Handle login error
+        this.tokenError = true;
       }
     );
   }

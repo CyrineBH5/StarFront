@@ -4,11 +4,10 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css', './css/style.css',]
+  styleUrls: ['./login.component.css', './css/style.css'],
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) {}
   showSpinner = false;
   isActive: boolean = false;
   loginError: boolean = false;
@@ -22,7 +21,6 @@ export class LoginComponent implements OnInit {
   public showPassword: boolean = false;
   public password: string = '';
 
-
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
@@ -31,15 +29,21 @@ export class LoginComponent implements OnInit {
     let email = formAC.value['email'];
     let password = formAC.value['password'];
     let box = formAC.value['box'];
-
     this.userService.login(email, password).subscribe(
       async (res: any) => {
         console.log('Login successful', res);
-        this.router.navigate(['/']);
+
         localStorage.setItem('logedIN', 'true');
         console.log(String(await this.userService.findUserByEmail(email)));
-        localStorage.setItem('idUtilisateur', String(await this.userService.findUserByEmail(email)));
+        localStorage.setItem(
+          'idUtilisateur',
+          String(await this.userService.findUserByEmail(email))
+        );
         localStorage.setItem('email', email);
+        box === true
+          ? localStorage.setItem('remeberMe', 'true')
+          : localStorage.setItem('remeberMe', 'false');
+        this.router.navigate(['/']);
         this.loginError = false;
       },
       (err: any) => {
