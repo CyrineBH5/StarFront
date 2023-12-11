@@ -81,7 +81,7 @@
                     [ngClass]="{ active: step === 2 }"
                   >
                     <span>2</span>
-                    Leçon
+                    Lecon
                   </li>
                   <li
                     class="formbold-step-menu3"
@@ -95,13 +95,13 @@
               <div class="formbold-form-step-1 active">
                 <div class="mb-6">
                   <label class="label-form" for="t" class="label-form"
-                    >Titre du Cours</label
+                    >Course Title</label
                   >
                   <input
                     type="text"
                     name="titre"
                     id="t"
-                    placeholder="Saisir votre titre du cours"
+                    placeholder="Enter your course title"
                     required
                     ngModel
                     class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500"
@@ -114,14 +114,14 @@
                     *ngIf="titre.invalid && titre.touched"
                     class="text-sm text-red-600 dark:text-red-500"
                   >
-                    <span class="font-medium">Titre du cours est requis.</span>
+                    <span class="font-medium">Course title is required.</span>
                   </div>
                 </div>
 
                 <div class="formbold-input-flex">
                   <div class="mb-6">
                     <label class="label-form" for="de"
-                      >Durée</label
+                      >Duration</label
                     >
                     <input
                       type="time"
@@ -139,13 +139,13 @@
                       *ngIf="duree.invalid && duree.touched"
                       class="text-sm text-red-600 dark:text-red-500"
                     >
-                      <span class="font-medium">Durée est requise.</span>
+                      <span class="font-medium">Duration is required.</span>
                     </div>
                   </div>
                   <div>
                     <div>
                       <label class="label-form" for="langue" >
-                        Langue</label
+                        Language</label
                       >
                       <select
                         name="langue"
@@ -154,7 +154,7 @@
                         required
                         ngModel
                       >
-                        <option value="">Choisir la langue</option>
+                        <option value="">Choose the language</option>
                         <option
                           *ngFor="let langue of langues"
                           [value]="langue"
@@ -174,7 +174,7 @@
                     name="description"
                     id="d"
                     class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
-                    placeholder="Saisir votre Description du cours"
+                    placeholder="Enter your Course Description"
                     required
                     ngModel
                     #description="ngModel"
@@ -187,7 +187,7 @@
                     *ngIf="description.invalid && description.touched"
                     class="text-sm text-red-600 dark:text-red-500"
                   >
-                    <span class="font-medium">La description est requise.</span>
+                    <span class="font-medium">Description is required.</span>
                   </div>
                 </div>
 
@@ -211,7 +211,7 @@
                     class="mt-1 text-sm text-gray-500 dark:text-gray-300"
                     id="file_input_help"
                   >
-                    SVG, PNG, JPG or GIF.
+                  Supported formats:SVG, PNG, JPG or GIF.
                   </p>
                 </div>
 
@@ -274,7 +274,7 @@
                     [ngClass]="{ active: step === 2 }"
                   >
                     <span>2</span>
-                    Leçon
+                    Lecon
                   </li>
                   <li
                     class="formbold-step-menu3"
@@ -288,13 +288,13 @@
               <div class="formbold-form-step-1 active">
                 <div class="">
                   <label class="label-form" for="t"
-                    >Titre du Leçon</label
+                    >Lesson Title</label
                   >
                   <input
                     type="text"
                     name="titre"
                     id="t"
-                    placeholder="Saisir votre titre du cours"
+                    placeholder="Enter your course title"
                     required
                     ngModel
                     class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500"
@@ -307,7 +307,7 @@
                     *ngIf="titre.invalid && titre.touched"
                     class="text-sm text-red-600 dark:text-red-500"
                   >
-                    <span class="font-medium">Leçon du cours est requis.</span>
+                    <span class="font-medium">Lesson of the course is required.</span>
                   </div>
                 </div>
 
@@ -320,7 +320,7 @@
                     name="description"
                     id="d"
                     class="bg-white border text-gray-700 placeholder-gray-500 text-sm rounded-lg focus:ring-green-500 dark:bg-gray-700 focus:border-green-500 block w-full p-2.5 dark:text-green-500 dark:placeholder-green-500 dark:border-green-500"
-                    placeholder="Saisir votre Description du cours"
+                    placeholder="Enter your Course Description"
                     required
                     ngModel
                     #description="ngModel"
@@ -333,7 +333,7 @@
                     *ngIf="description.invalid && description.touched"
                     class="text-sm text-red-600 dark:text-red-500"
                   >
-                    <span class="font-medium">La description est requise.</span>
+                    <span class="font-medium">The description is required.</span>
                   </div>
                 </div>
               </div>
@@ -441,7 +441,6 @@
               </div>
             </form>
           </div>
-
           <div class="formbold-form-step-3" [ngClass]="{ active: step === 3 }">
             <!-- Step 3 content -->
             <form
@@ -463,7 +462,7 @@
                     [ngClass]="{ active: step === 2 }"
                   >
                     <span>2</span>
-                    Leçon
+                    Lecon
                   </li>
                   <li
                     class="formbold-step-menu3"
