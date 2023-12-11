@@ -2,20 +2,20 @@ export class Cours {
   public idCours: number = 0;
   private titre: String;
   private description: String;
-  private duree: number;
+  private duree: String;
   private langue: String;
   private nbrDeVue: number = 0;
   private image: String;
   private createdBy: String;
-  private dateCreation:Date;
+  private dateCreation: Date;
 
 
-  constructor(titre: String, des: String, duree: number, langue: String,createdBy:String) {
+  constructor(titre: String, des: String, duree: String, langue: String, createdBy: String) {
     this.titre = titre;
     this.description = des;
     this.duree = duree;
     this.langue = langue;
-    this.createdBy=createdBy;
+    this.createdBy = createdBy;
   }
 
   getIdCours() {
@@ -54,7 +54,7 @@ export class Cours {
     this.description = description;
   }
 
-  setDuree(duree: number) {
+  setDuree(duree: String) {
     this.duree = duree;
   }
 
