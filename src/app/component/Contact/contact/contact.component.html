@@ -82,7 +82,8 @@
 <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
   <div class="row form-group">
     <div class="col-md-12">
-      <input type="text" name="email" ngModel class="form-control" placeholder="Your email address" required>
+      <input type="text" name="email" [(ngModel)]="email" #emailInput="ngModel" class="form-control" placeholder="Your email address" required>
+
     </div>
   </div>
 

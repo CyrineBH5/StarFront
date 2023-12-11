@@ -8,13 +8,15 @@ import { ContactService } from 'src/app/services/Contact/contact.service';
 export class ContactComponent implements OnInit {
   showSpinner= false;
   constructor(public contactService : ContactService) { }
-
+  email:String ="";
   ngOnInit(): void {
+    this.email = (localStorage.getItem('email') !== undefined )? localStorage.getItem('email') : '';
     this.showSpinner = true;
     setTimeout(() => {
       this.showSpinner = false;
     }, 500);
   }
+
 
   onSubmit(form) {
 
