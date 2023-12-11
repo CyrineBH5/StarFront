@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: "detail-cours/:id", component: DetailCoursComponent },
   { path: "contact", component: ContactComponent, canActivate: [AuthGuard] },
   // {path : "addLecon", component: AjouterLeconComponent},
-  {path : "modifyCourse", component:  ModifierCoursComponent},
+  {path : "modifyCours/:id", component:  ModifierCoursComponent},
   { path: "courses", component: AfficherCoursComponent },
   { path: "login", component: LoginComponent },
   { path: "forgetPassword", component: ForgetPasswordComponent },

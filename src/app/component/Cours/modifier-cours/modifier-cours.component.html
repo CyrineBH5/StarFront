@@ -38,6 +38,7 @@
       </div>
     </nav>
   </div>-->
+  <div class="fh5co-loader" *ngIf="showSpinner"></div>
   <div class="container">
     <div class="bg-white rounded p-1 shadow-md">
 
@@ -48,29 +49,35 @@
         <form #formAC="ngForm" method="POST" class="signin-form">
           <div class="form-group mb-3">
             <label class="label" for="name">Title course</label>
-            <input type="text" name="titre" class="form-control" placeholder="" required>
+            <input type="text" name="titre" class="form-control" [(ngModel)]="courseDetails.titre"
+              placeholder="{{ courseDetails.titre }}" required>
           </div>
           <div class="form-group mb-3">
-            <label class="label" for="name">Duration</label>
-            <input type="time" name="titre" class="form-control" placeholder="" required>
+            <label class="label" for="duree">Duration</label>
+            <input type="time" name="duree" class="form-control" [(ngModel)]="courseDetails.duree"
+              placeholder="{{ courseDetails.duree }}" required>
           </div>
           <div class="form-group mb-3">
-            <label class="label" for="name">Langage</label>
-            <select name="langue" id="langue" class="form-control" required ngModel>
-              <option value="">Choisir la langue</option>
-              <option class="formbold-form-input">
-                <!--{{ langue }}--> langue
-              </option>
-            </select>
+            <div class="form-group mb-3">
+              <label class="label" for="name">Langage</label>
+              <select name="langue" id="langue" class="form-control" [(ngModel)]="courseDetails.langue" required>
+                <option value="" disabled selected>Choisir la langue</option>
+                <option *ngFor="let langue of langues" [value]="langue" [selected]="courseDetails.langue === langue">{{
+                  langue }}</option>
+              </select>
+            </div>
+
           </div>
           <div class="form-group mb-3">
             <label class="label" for="name">Description</label>
-            <textarea name="description" id="d" placeholder="" class="form-control" required></textarea>
+            <textarea name="description" id="d" [(ngModel)]="courseDetails.description"
+              placeholder="{{ courseDetails.description }}" class="form-control" style="height: 100px;"
+              required></textarea>
           </div>
-          <div class="form-group" id="signIn">
+          <div class="form-group mb-3">
 
             <div class="mb-6">
-              <label class="label-form" for="file_input">Upload New Image</label>
+              <label class="label" for="file_input">Upload New Image</label>
               <input
                 class=" block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                 aria-describedby="file_input_help" id="file_input" type="file" name="fileInput"
@@ -79,9 +86,10 @@
                 SVG, PNG, JPG or GIF.
               </p>
             </div>
-            <div class="form-group" id="signIn">
+            ////--{{ courseDetails.image }}
+            <div class="form-group" id="update">
               <button type="submit" class="form-control btn btn-primary rounded submit px-3">
-                Modify</button>
+                Modify Course</button>
             </div>
           </div>
         </form>

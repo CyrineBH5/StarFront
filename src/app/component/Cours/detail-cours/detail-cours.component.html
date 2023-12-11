@@ -82,8 +82,20 @@
                               </figcaption>
                             </figure>
                             <div class="mu-latest-course-single-content">
-                              <h2><a href="#">{{ courseDetails.titre }}</a></h2>
+                              <div class="flex items-center">
+                                <h2 class="mr-2">
+                                  <a href="#">{{ courseDetails.titre }}</a>
+                                </h2>
+                                <button type="button"
+                                  class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900"
+                                  style="margin-left:65%" [routerLink]="'/modifyCours/' + courseDetails.idCours">
+                                  Update Course
+                                </button>
+                              </div>
+
+
                               <h4>Course Information</h4>
+
                               <ul>
                                 <li> <span>Total Students</span> <span>{{courseDetails.nbrDeVue}}</span></li>
                                 <li> <span>Course Duration</span> <span>{{courseDetails.duree}} </span></li>
