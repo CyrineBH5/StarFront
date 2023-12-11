@@ -11,13 +11,13 @@ import { User } from 'src/app/models/User/user';
 export class SignUpComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
-  showSpinner = false;
+  showSpinner = true;
   isActive: boolean = false;
   ngOnInit(): void {
     this.showSpinner = true;
     setTimeout(() => {
       this.showSpinner = false;
-    }, 500);
+    }, 1500);
   }
 
   public showPassword: boolean = false;
@@ -43,7 +43,10 @@ export class SignUpComponent implements OnInit {
     this.userService.Register(new User(nom_prenom, addres, null/*photo*/, grade, null/*role*/, email, password)).subscribe(
       (res) => {
         console.log(res);
-        alert("Signup done successfully");
+        this.showSpinner = true;
+        setTimeout(() => {
+        this.showSpinner = false;
+        }, 1500);
         this.router.navigate(['/login']);
       },
       (err) => {
