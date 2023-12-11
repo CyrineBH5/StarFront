@@ -39,14 +39,15 @@
     </nav>
   </div>-->
   <div class="fh5co-loader" *ngIf="showSpinner"></div>
-  <div class="container">
+  <div class="container" *ngIf="courseDetails">
     <div class="bg-white rounded p-1 shadow-md">
 
       <!-- Step 1: Enter Email -->
       <div class="reset-pass p-md-4">
-        <h3>Modify Course </h3>
-        <p class="text-slate-500">Fill up the form to Update form</p>
-        <form #formAC="ngForm" method="POST" class="signin-form">
+
+        <form #f="ngForm"  (ngSubmit)="updateCours(f)" method="POST" class="signin-form" >
+          <h3>Modify Course n° {{courseDetails.idCours}}</h3>
+        <p class="text-slate-500"><i>Fill up the form to Update form</i></p>
           <div class="form-group mb-3">
             <label class="label" for="name">Title course</label>
             <input type="text" name="titre" class="form-control" [(ngModel)]="courseDetails.titre"
@@ -77,16 +78,17 @@
           <div class="form-group mb-3">
 
             <div class="mb-6">
-              <label class="label" for="file_input">Upload New Image</label>
-              <input
+              <label class="label" for="uploadCheckbox" style="font-size:14px"> <input type="checkbox"
+                  id="uploadCheckbox" name="choix" class="custom-checkbox" [(ngModel)]="showFileInput"
+                  (change)="toggleFileInput()"> Upload New Image</label>
+              <input *ngIf="showFileInput"
                 class=" block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                 aria-describedby="file_input_help" id="file_input" type="file" name="fileInput"
-                accept=".SVG, .PNG, .JPG , .GIF" />
+                accept="(.SVG, .PNG, .JPG , .GIF)"(change)="onImageFileChange($event)" />
               <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
                 SVG, PNG, JPG or GIF.
               </p>
             </div>
-            ////--{{ courseDetails.image }}
             <div class="form-group" id="update">
               <button type="submit" class="form-control btn btn-primary rounded submit px-3">
                 Modify Course</button>

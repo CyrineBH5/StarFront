@@ -46,7 +46,7 @@ export class CoursService {
   searchCoursByTitle(title: string): Observable<any> {
     return this.httpCours.get<Cours[]>('http://localhost:3003/api/Cours/search/' + title);
   }
-  updateCours(cours: Cours): Observable<Cours> {
-    return this.httpCours.put<Cours>('http://localhost:3003/api/Cours/${cours.id}', cours);
+  updateCours(id: number, cours: Cours): Observable<Cours> {
+    return this.httpCours.put<Cours>('http://localhost:3003/api/Cours/' + id, cours);
   }
 }

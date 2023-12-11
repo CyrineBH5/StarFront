@@ -78,7 +78,8 @@
                             <figure class="mu-latest-course-img">
                               <a href="#"><img [src]="getImageUrl(courseDetails.image)" alt="img"></a>
                               <figcaption class="mu-latest-course-imgcaption">
-                                <span><i class="fa fa-clock-o"></i>{{courseDetails.duree}} Heures</span>
+                                <span><i class="fa fa-clock-o"></i><i
+                                    class="bi bi-stopwatch-fill"></i>{{courseDetails.duree}}</span>
                               </figcaption>
                             </figure>
                             <div class="mu-latest-course-single-content">
@@ -98,7 +99,7 @@
 
                               <ul>
                                 <li> <span>Total Students</span> <span>{{courseDetails.nbrDeVue}}</span></li>
-                                <li> <span>Course Duration</span> <span>{{courseDetails.duree}} </span></li>
+                                <li> <span>Course Language</span> <span>{{courseDetails.langue}} </span></li>
                                 <li> <span>Course Start</span>
                                   <span>{{formatCourseStartDateTime(courseDetails.dateCreation)}} </span>
                                 </li>
@@ -128,6 +129,13 @@
                                     </tr>
                                   </tbody>
                                 </table>
+
+
+
+
+
+
+
                               </div>
                             </div>
                           </div>

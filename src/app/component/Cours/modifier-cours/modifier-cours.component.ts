@@ -12,6 +12,8 @@ import { CoursService } from 'src/app/services/cours/cours.service';
 export class ModifierCoursComponent implements OnInit {
   courseId: number;
   courseDetails: any;
+  showFileInput: boolean = false;
+  selectedImageFile: File;
   constructor(public rs: CoursService, private route: ActivatedRoute, private router: Router) { }
   showSpinner = false;
   langues: string[] = ['English', 'French', 'Spanish', 'German', 'Italian']; // Ajoutez d'autres langues
@@ -25,31 +27,19 @@ export class ModifierCoursComponent implements OnInit {
       this.getDetails();
     });
   }
-  updateCours(formAC: NgForm) {
-    let Titre = formAC.value['titre'];
-    let Description = formAC.value['description'];
-    let Duree = formAC.value['duree']
-    let Langue = formAC.value['langue'];
-    /*const updatedCours: Cours = {
-      Id: this.courseDetails.id,
-      titre: Titre,
-      description: Description,
-      duree: Duree,
-      langue: Langue,
-      createdBy: this.courseDetails.createdBy, // Assurez-vous de ne pas perdre createdBy lors de la mise à jour
-    };
+  onImageFileChange(event) {
+    if (event.target.files.length > 0) {
+      this.selectedImageFile = event.target.files[0];
+    }
 
-    this.rs.updateCours(updatedCours).subscribe(
-      () => {
-        console.log('Cours updated successfully');
-        // Redirigez l'utilisateur vers une autre page après la mise à jour si nécessaire
-        this.router.navigate(['/courses']);
-      },
-      (error) => {
-        console.error('Error updating cours:', error);
-        // Gérez les erreurs ici
-      }
-    );*/
+  }
+  updateCours(f: NgForm) {
+    let Titre = f.value['titre'];
+    let Description = f.value['description'];
+    let Duree = f.value['duree']
+    let Langue = f.value['langue'];
+    console.log('Données du formulaire :', Titre, Description, Duree, this.courseId);
+    this.rs.updateCours(this.courseId, new Cours(Titre, Description, Duree, Langue, this.courseDetails.createdby));
   }
 
   getDetails() {
@@ -62,5 +52,8 @@ export class ModifierCoursComponent implements OnInit {
         console.error("Error fetching course details", error);
       }
     );
+  }
+  toggleFileInput(): void {
+    this.showFileInput = this.showFileInput;
   }
 }
