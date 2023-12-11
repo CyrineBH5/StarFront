@@ -70,7 +70,7 @@ export class ForgetPasswordComponent implements OnInit {
       this.userService.resetPassword(this.code, this.newPassword).subscribe(
         (res: any) => {
           console.log(res);
-          this.router.navigate(['/']);
+          this.router.navigate(['/login']);
         },
         (err: any) => {
           console.error('Login failed:', err);
