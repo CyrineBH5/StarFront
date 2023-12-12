@@ -26,6 +26,8 @@ export class ModifierCoursComponent implements OnInit {
       this.courseId = +params['id'];
       this.getDetails();
     });
+
+
   }
   onImageFileChange(event) {
     if (event.target.files.length > 0) {
@@ -39,7 +41,7 @@ export class ModifierCoursComponent implements OnInit {
     let Duree = f.value['duree']
     let Langue = f.value['langue'];
     console.log('Données du formulaire :', Titre, Description, Duree, this.courseId);
-    this.rs.updateCours(this.courseId, new Cours(Titre, Description, Duree, Langue, this.courseDetails.createdby)).subscribe(
+    this.rs.updateCours(this.courseId, new Cours(Titre, Description, Duree, Langue, this.courseDetails.createdBy),this.selectedImageFile).subscribe(
       (response) => {
         console.log('Update successful:', response);
         // Handle any additional logic after a successful update
@@ -54,11 +56,24 @@ export class ModifierCoursComponent implements OnInit {
 
   }
 
+
+
+
+  formatTime(timeString: string) {
+    // Assuming your time string is in the format "HH:mm:ss.SSSS"
+    const timeParts = timeString.split(':');
+    const hours = timeParts[0];
+    const minutes = timeParts[1];
+
+   // this.courseDetails.duree =`${hours}:${minutes}`;
+  }
+
   getDetails() {
     this.rs.getCoursById(this.courseId).subscribe(
       (data) => {
         this.courseDetails = data;
         console.log(data);
+
       },
       (error) => {
         console.error("Error fetching course details", error);

@@ -6,11 +6,11 @@ export class Cours {
   private langue: String;
   private nbrDeVue: number = 0;
   private image: String;
-  private createdBy: String;
+  private createdBy: number;
   private dateCreation: Date;
 
 
-  constructor(titre: String, des: String, duree: String, langue: String, createdBy: String) {
+  constructor(titre: String, des: String, duree: String, langue: String, createdBy: number) {
     this.titre = titre;
     this.description = des;
     this.duree = duree;
@@ -74,7 +74,7 @@ export class Cours {
   getCreatedBy() {
     return this.createdBy;
   }
-  setCreatedBy(createdBy: String) {
+  setCreatedBy(createdBy: number) {
     this.createdBy = createdBy;
   }
 

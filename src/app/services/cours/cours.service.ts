@@ -11,9 +11,7 @@ export class CoursService {
   constructor(private httpCours: HttpClient) {
   }
   ajouterCours(cours: Cours, image: File): Promise<number> {
-
     const formData = new FormData();
-
     // Append form data
     formData.append('duree', cours.getDuree().toString());
     formData.append('description', cours.getDescription().toString());
@@ -46,9 +44,23 @@ export class CoursService {
   searchCoursByTitle(title: string): Observable<any> {
     return this.httpCours.get<Cours[]>('http://localhost:3003/api/Cours/search/' + title);
   }
-  updateCours(id: number, cours: Cours): Observable<Cours> {
+  updateCours(id: number, cours: Cours,image: File): Observable<Cours> {
     cours.idCours=id;
-    return this.httpCours.put<Cours>('http://localhost:3003/api/Cours/' + id, cours)
+
+    const formData = new FormData();
+
+    formData.append('idCours', cours.getIdCours().toString());
+    formData.append('duree', cours.getDuree().toString());
+    formData.append('description', cours.getDescription().toString());
+    formData.append('titre', cours.getTitre().toString());
+    formData.append('langue', cours.getLangue().toString());
+    formData.append('createdBy', cours.getCreatedBy().toString());
+
+
+    // Append file
+    formData.append('image', image, image.name);
+    console.log(formData.get('image'));
+    return this.httpCours.put<Cours>('http://localhost:3003/api/Cours/' + id, formData)
       .pipe(
         catchError((error) => {
           console.error('Update failed:', error);
