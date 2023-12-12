@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 .fh5co-loader {
   position: fixed;
   left: 0px;
@@ -6,12 +5,11 @@
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: url("./images/loader2.gif") center no-repeat #fff;
-=======
+  background: url("./images/loader2.gif") center no-repeat #fff;}
+  
 .custom-checkbox {
   /* Définissez la taille souhaitée */
   width: 20px;
   height: 15px;
   /* Autres styles personnalisés si nécessaire */
->>>>>>> Stashed changes
 }

@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { AfficherCoursComponent } from './../../component/Cours/afficher-cours/afficher-cours.component';
 import { Cours } from 'src/app/models/Cours/cours';
 import { Injectable } from '@angular/core';
@@ -47,6 +47,14 @@ export class CoursService {
     return this.httpCours.get<Cours[]>('http://localhost:3003/api/Cours/search/' + title);
   }
   updateCours(id: number, cours: Cours): Observable<Cours> {
-    return this.httpCours.put<Cours>('http://localhost:3003/api/Cours/' + id, cours);
+    cours.idCours=id;
+    return this.httpCours.put<Cours>('http://localhost:3003/api/Cours/' + id, cours)
+      .pipe(
+        catchError((error) => {
+          console.error('Update failed:', error);
+          throw error; // Re-throw the error to propagate it to the subscriber
+        })
+      );
   }
+
 }
