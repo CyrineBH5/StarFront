@@ -28,13 +28,25 @@ export class UserService {
   public isTokenValid(token: string) {
     return this.httpUser.get<{ isValid: boolean }>('http://localhost:3003/api/check-reset-token/' + token);
   }
+  public isMine(idcours :number , id :number):Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      this.httpUser.get<{ message: boolean }>('http://localhost:3003/api/isMine/'+idcours+'/'+id ).subscribe(
+        (res: any) => {
+          resolve(res.message); // Resolve the promise with the idCours
+        },
+        (err: any) => {
+
+          reject(err.message); // Reject the promise if there's an error
+        }
+      );
+    });
+  }
   public resetPassword(token: string, newPassword: String): Observable<User> {
     const body = { newPassword };
     return this.httpUser.post<User>('http://localhost:3003/api/reset-password/' + token, body);
   }
   public Register(user: any) {
     return this.httpUser.post<User>('http://localhost:3003/api/register', user);
-
   }
 
   public findUserByEmail(email: any) {

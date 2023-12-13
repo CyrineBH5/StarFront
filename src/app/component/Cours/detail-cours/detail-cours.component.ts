@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { tick } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CoursService } from 'src/app/services/cours/cours.service';
 import { LeconService } from 'src/app/services/lecon/lecon.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-detail-cours',
@@ -15,8 +17,9 @@ export class DetailCoursComponent implements OnInit {
   courseId: number;
   courseDetails: any;
   lecons: any[] = [];
+  itIsMine: boolean = false;
 
-  constructor(public rs: CoursService, private route: ActivatedRoute, private leconService: LeconService, private router: Router) { }
+  constructor(public us: UserService,public rs: CoursService, private route: ActivatedRoute, private leconService: LeconService, private router: Router) { }
   showSpinner = false;
   ngOnInit(): void {
     this.showSpinner = true;
@@ -25,7 +28,7 @@ export class DetailCoursComponent implements OnInit {
     }, 500);
     this.route.params.subscribe(params => {
       this.courseId = +params['id'];
-      this.getDetails();
+
       this.leconService.getAllLeconsByCours(this.courseId).subscribe(
         (data) => {
           this.lecons = data;
@@ -35,11 +38,21 @@ export class DetailCoursComponent implements OnInit {
         }
       )
     });
+    this.getDetails();
+
+  }
+  async isMine(){
+    console.log(this.courseDetails);
+
+  this.itIsMine = await this.us.isMine(this.courseId,Number.parseInt(localStorage.getItem('idUtilisateur')));
+  console.log(this.itIsMine);
+
   }
   getDetails() {
     this.rs.getCoursById(this.courseId).subscribe(
       (data) => {
         this.courseDetails = data;
+        this.isMine()
         console.log(data);
       },
       (error) => {
