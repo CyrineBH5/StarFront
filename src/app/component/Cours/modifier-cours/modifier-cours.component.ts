@@ -51,7 +51,7 @@ export class ModifierCoursComponent implements OnInit {
         console.error('Update failed:', error);
         // Handle error scenarios
       }
-    );;
+    );
     console.log("after call");
 
   }

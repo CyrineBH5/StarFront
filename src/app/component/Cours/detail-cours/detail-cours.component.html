@@ -126,20 +126,14 @@
                                       <td> {{ lecon.description }} </td>
 
                                       <td><a [href]="getFileUrl(lecon.contenu)" download class=""><i
-                                             class="bi bi-download"></i> </a></td>
-                                      <td *ngIf="itIsMine"><a [routerLink]="'/modifyLecon/' + courseDetails.idCours +'/'+lecon.idLecon"
+                                            class="bi bi-download"></i> </a></td>
+                                      <td *ngIf="itIsMine"><a
+                                          [routerLink]="'/modifylecon/' + courseDetails.idCours +'/'+lecon.idLecon"
                                           class="">
                                           <i class="bi bi-pencil-square"></i></a></td>
                                     </tr>
                                   </tbody>
                                 </table>
-
-
-
-
-
-
-
                               </div>
                             </div>
                           </div>
