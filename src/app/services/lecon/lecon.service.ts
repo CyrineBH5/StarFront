@@ -39,13 +39,8 @@ export class LeconService {
   getLeconDetails(coursId: number, leconId: number): Observable<any> {
     return this.httpLecon.get<any>('http://localhost:3003/api/lecon/' + coursId + '/' + leconId);
   }
-<<<<<<< Updated upstream
-  updateLecon(leconId: number,updatelecon: Lecon): Observable<any> {
-    return this.httpLecon.put<Lecon>('http://localhost:3003/api/lecon/' + leconId,updatelecon);
-=======
   updateLecon(idlecon: number, updatedLecon: Lecon): Observable<Lecon> {
     return this.httpLecon.put<Lecon>('http://localhost:3003/api/lecon/' + idlecon, updatedLecon);
->>>>>>> Stashed changes
   }
 
 }

@@ -26,22 +26,13 @@
           <p class="text-slate-500"><i>Fill up the form to Update form</i></p>
           <div class="form-group mb-3">
             <label class="label" for="name">Title course</label>
-<<<<<<< Updated upstream
-            <input type="text" [(ngModel)]="leconDetails.titre" placeholder="{{ leconDetails.titre }}" name="titre"
-=======
             <input type="text" name="titre" [(ngModel)]="leconDetails.titre" placeholder="{{ leconDetails.titre }}"
->>>>>>> Stashed changes
               class="form-control" required>
           </div>
           <div class="form-group mb-3">
             <label class="label" for="name">Description</label>
-<<<<<<< Updated upstream
-            <textarea name="description" [(ngModel)]="leconDetails.description"
-              placeholder="{{ leconDetails.description }}" id="d" class="form-control" style="height: 100px;"
-=======
             <textarea name="description" id="d" [(ngModel)]="leconDetails.description"
               placeholder="{{ leconDetails.description }}" class="form-control" style="height: 100px;"
->>>>>>> Stashed changes
               required></textarea>
           </div>
           <div class="form-group mb-3">
@@ -62,16 +53,6 @@
                     Supported formats: PDF, DOC
                   </p>
                   <!-- Add a section to display the selected file name -->
-<<<<<<< Updated upstream
-                </div>
-                <input id="dropzone-file" type="file" class="hidden" required ngModel name="fileInput"
-                  accept=".pdf, .doc, .docx" #fileInput [(ngModel)]="leconDetails.contenu" />
-              </label>
-            </div>
-            <div class="form-group" id="update">
-              <button type="submit" class="form-control btn btn-primary rounded submit px-3"
-                (click)=" redirectToDetailCours()">
-=======
                   <p class="text-xs text-green-500 dark:text-green-400">
                   </p>
                 </div>
@@ -80,8 +61,7 @@
               </label>
             </div>
             <div class="form-group" id="update">
-              <button type="submit" class="form-control btn btn-primary rounded submit px-3" (click)="redirectToDetailCours()">
->>>>>>> Stashed changes
+              <button type="submit" class="form-control btn btn-primary rounded submit px-3">
                 Modify Lecon</button>
             </div>
           </div>
