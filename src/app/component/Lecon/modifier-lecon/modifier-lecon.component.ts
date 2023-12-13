@@ -46,13 +46,13 @@ export class ModifierLeconComponent implements OnInit {
   updateLecon(f: NgForm) {
     let Titre = f.value['titre'];
     let Description = f.value['description'];
-    let contenu = f.value['fileInput']
+    let contenu = f.value['fileInput'];
+    console.log(contenu);
+
     console.log('Données du formulaire :', Titre, Description, contenu, this.courseId, this.leconId);
     this.serviceLecon.updateLecon(this.leconId, new Lecon(Titre, Description, contenu, this.courseId)).subscribe(
       (response) => {
-        console.log('Update successful:', response);
-        // Handle any additional logic after a successful update
-        console.log('after call');
+        this.redirectToDetailCours()
       },
       (error) => {
         console.error('Update failed:', error);

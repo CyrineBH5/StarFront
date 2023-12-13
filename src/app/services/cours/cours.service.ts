@@ -59,17 +59,18 @@ export class CoursService {
     formData.append('langue', cours.getLangue().toString());
     formData.append('createdBy', cours.getCreatedBy().toString());
 
+    if (image != null) {
+      formData.append('image', image, image.name);
+    } else {
+      // If the image is null, keep the existing image in the FormData
+      formData.append('image', cours.getImage().toString());
+    }
 
-    // Append file
-    formData.append('image', image, image.name);
     console.log(formData.get('image'));
-    return this.httpCours.put<Cours>('http://localhost:3003/api/Cours/' + id, formData)
-      .pipe(
-        catchError((error) => {
-          console.error('Update failed:', error);
-          throw error; // Re-throw the error to propagate it to the subscriber
-        })
-      );
+
+
+    return this.httpCours.put<Cours>('http://localhost:3003/api/Cours/' + id, formData);
+
   }
   deleteCours(courseId: number) {
     return this.httpCours.delete("http://localhost:3003/api/Cours/" + courseId);

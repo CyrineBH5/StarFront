@@ -41,7 +41,7 @@ export class ModifierCoursComponent implements OnInit {
     let Duree = f.value['duree']
     let Langue = f.value['langue'];
     console.log('Données du formulaire :', Titre, Description, Duree, this.courseId);
-    this.rs.updateCours(this.courseId, new Cours(Titre, Description, Duree, Langue, this.courseDetails.createdBy), this.selectedImageFile).subscribe(
+    this.rs.updateCours(this.courseId, new Cours(Titre, Description, Duree, Langue, this.courseDetails.createdBy,this.courseDetails.image), this.selectedImageFile).subscribe(
       (response) => {
         console.log('Update successful:', response);
         // Handle any additional logic after a successful update

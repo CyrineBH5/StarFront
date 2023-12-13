@@ -10,12 +10,13 @@ export class Cours {
   private dateCreation: Date;
 
 
-  constructor(titre: String, des: String, duree: String, langue: String, createdBy: number) {
+  constructor(titre: String, des: String, duree: String, langue: String, createdBy: number,image) {
     this.titre = titre;
     this.description = des;
     this.duree = duree;
     this.langue = langue;
     this.createdBy = createdBy;
+    this.image=image;
   }
 
   getIdCours() {
