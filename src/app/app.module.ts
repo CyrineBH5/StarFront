@@ -17,6 +17,7 @@ import { SignUpComponent } from './component/Sign-up/sign-up.component';
 import { ForgetPasswordComponent } from './component/Forget-password/forget-password.component';
 import { DetailCoursComponent } from './component/Cours/detail-cours/detail-cours.component';
 import { ModifierLeconComponent } from './component/Lecon/modifier-lecon/modifier-lecon.component';
+import { MycoursAuthorComponent } from './component/Cours/mycours-author/mycours-author.component';
 
 
 export class YourModule { }
@@ -34,7 +35,8 @@ export class YourModule { }
     SignUpComponent,
     ForgetPasswordComponent,
     DetailCoursComponent,
-    ModifierLeconComponent
+    ModifierLeconComponent,
+    MycoursAuthorComponent
 
 
   ],

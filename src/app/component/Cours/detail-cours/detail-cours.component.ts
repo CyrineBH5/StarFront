@@ -18,8 +18,9 @@ export class DetailCoursComponent implements OnInit {
   courseDetails: any;
   lecons: any[] = [];
   itIsMine: boolean = false;
+  myArray: any = [];
 
-  constructor(public us: UserService,public rs: CoursService, private route: ActivatedRoute, private leconService: LeconService, private router: Router) { }
+  constructor(public us: UserService, public rs: CoursService, private route: ActivatedRoute, private leconService: LeconService, private router: Router) { }
   showSpinner = false;
   ngOnInit(): void {
     this.showSpinner = true;
@@ -41,11 +42,11 @@ export class DetailCoursComponent implements OnInit {
     this.getDetails();
 
   }
-  async isMine(){
+  async isMine() {
     console.log(this.courseDetails);
 
-  this.itIsMine = await this.us.isMine(this.courseId,Number.parseInt(localStorage.getItem('idUtilisateur')));
-  console.log(this.itIsMine);
+    this.itIsMine = await this.us.isMine(this.courseId, Number.parseInt(localStorage.getItem('idUtilisateur')));
+    console.log(this.itIsMine);
 
   }
   getDetails() {
@@ -84,4 +85,29 @@ export class DetailCoursComponent implements OnInit {
   redirectToLoginForm() {
     this.router.navigate(['/login']);
   }
+  deleteLecon(IdLecon: number) {
+    if (confirm('Are you sure to delete this Lecon ?'))
+      this.leconService.deleteLecon(IdLecon)
+        .subscribe(
+          (response: any) => {
+            console.log(response);
+            this.getDetails();
+          },
+          (error) => {
+            console.error(error);
+          });
+    location.reload();
+  }
+  getDetailCours() {
+    this.rs.getDetailCours().subscribe(
+      (data) => {
+        this.myArray = data;
+        console.log(data);
+      },
+      (error) => {
+        alert("Problème d'accès à l'api");
+      }
+    )
+  }
+
 }

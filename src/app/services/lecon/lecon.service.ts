@@ -42,5 +42,7 @@ export class LeconService {
   updateLecon(idlecon: number, updatedLecon: Lecon): Observable<Lecon> {
     return this.httpLecon.put<Lecon>('http://localhost:3003/api/lecon/' + idlecon, updatedLecon);
   }
-
+  deleteLecon(leconId: number) {
+    return this.httpLecon.delete("http://localhost:3003/api/lecon/" + leconId);
+  }
 }

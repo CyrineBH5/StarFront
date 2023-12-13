@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cours Author</title>
+</head>
+
+<body>
+  <div class="fh5co-loader" *ngIf="showSpinner"></div>
+  <!--<div id="page">
+    <nav class="fh5co-nav" role="navigation">
+
+      <div class="top-menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-1">
+              <div id="fh5co-logo"><a href="">STAR<span>.</span></a></div>
+            </div>
+            <div class="col-xs-11 text-right menu-1">
+              <ul>
+                <li><a href="">Home</a></li>
+                <li class="active"><a href="courses.html">Courses</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li class="btn-cta"><a routerLink=""><span style="background-color:goldenrod">Logout
+                      <i class="bi bi-door-closed"></i></span></a></li>&nbsp;
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <header id="fh5co-header" class="fh5co-cover" role="banner"
+      style="background-image:url(assets/images/img_bg_1.jpg);" data-stellar-background-ratio="0.5">
+      <div id="fh5co-started" class="fh5co-bg" style="background-image:url(assets/images/header-bg.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+              <div id="a">
+                <h1 style="color:white;">Course Detail</h1>
+                <p style="color:white">You learn something every day if you pay attention
+                  <a href="http://StarApp.com" target="_blank">Star.com</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+component -->
+  <!-- component -->
+
+
+  <br>
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="px-6 py-3">
+            Image
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Course name
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Duration
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Langue
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Date Creation
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Description
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let cours of myArray">
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <img class="object-cover object-center w-full h-40" [src]="getImageUrl(cours.image)" alt="">
+          </th>
+          <td class="px-6 py-4">
+            {{cours.titre }}
+          </td>
+          <td class="px-6 py-4">
+            {{cours.duree}}
+          </td>
+          <td class="px-6 py-4">
+            {{cours.langue}}
+          </td>
+          <td class="px-6 py-4">
+            {{cours.dateCreation}}
+          </td>
+          <td class="px-6 py-4">
+            {{cours.description}}
+          </td>
+          <td class="px-6 py-4">
+            <button type="button">
+              <img src="assets/images/supprimer.png" alt="" (click)="deleteCours(cours.idCours)">
+            </button>
+            <button type="button"
+              class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900"
+              style="margin-left:65%">
+              <img src="assets/images/modifier-le-fichier.png" alt=""> </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

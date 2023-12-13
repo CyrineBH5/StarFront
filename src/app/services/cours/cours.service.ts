@@ -26,11 +26,11 @@ export class CoursService {
       this.httpCours.post<Cours>('http://localhost:3003/api/Cours', formData).subscribe(
         (res: any) => {
           console.log(res.idCours);
-          resolve(res.idCours); // Resolve the promise with the idCours
+          resolve(res.idCours); 
         },
         (err: any) => {
           console.log(err);
-          reject(err); // Reject the promise if there's an error
+          reject(err);
         }
       );
     });
@@ -44,8 +44,8 @@ export class CoursService {
   searchCoursByTitle(title: string): Observable<any> {
     return this.httpCours.get<Cours[]>('http://localhost:3003/api/Cours/search/' + title);
   }
-  updateCours(id: number, cours: Cours,image: File): Observable<Cours> {
-    cours.idCours=id;
+  updateCours(id: number, cours: Cours, image: File): Observable<Cours> {
+    cours.idCours = id;
 
     const formData = new FormData();
 
@@ -68,5 +68,7 @@ export class CoursService {
         })
       );
   }
-
+  deleteCours(courseId: number) {
+    return this.httpCours.delete("http://localhost:3003/api/Cours/" + courseId);
+  }
 }

@@ -11,16 +11,18 @@ import { AuthGuard } from './services/Auth/auth.guard';
 import { DetailCoursComponent } from './component/Cours/detail-cours/detail-cours.component';
 import { ModifierCoursComponent } from './component/Cours/modifier-cours/modifier-cours.component';
 import { ModifierLeconComponent } from './component/Lecon/modifier-lecon/modifier-lecon.component';
+import { MycoursAuthorComponent } from './component/Cours/mycours-author/mycours-author.component';
 
 
 const routes: Routes = [
   { path: "", component: HomePageComponent },
-  { path: "addcours", component: AjouterCoursComponent , canActivate: [AuthGuard] },
+  { path: "addcours", component: AjouterCoursComponent, canActivate: [AuthGuard] },
   { path: "detail-cours/:id", component: DetailCoursComponent, canActivate: [AuthGuard] },
   { path: "contact", component: ContactComponent },
   { path: "modifyCours/:id", component: ModifierCoursComponent, canActivate: [AuthGuard] },
   { path: "modifylecon/:id/:idlecon", component: ModifierLeconComponent, canActivate: [AuthGuard] },
-  { path: "courses", component: AfficherCoursComponent , canActivate: [AuthGuard]},
+  { path: "mycoursAuthor", component: MycoursAuthorComponent },
+  { path: "courses", component: AfficherCoursComponent, canActivate: [AuthGuard] },
   { path: "login", component: LoginComponent },
   { path: "forgetPassword", component: ForgetPasswordComponent },
   { path: "signUp", component: SignUpComponent },

@@ -32,7 +32,7 @@
                 <li class="active"><a href="courses.html">Courses</a></li>
                 <li><a href="contact">Contact</a></li>
                 <li class="btn-cta"><a routerLink="/addcours"><span style="background-color:goldenrod">Create a
-                  Course</span></a></li>&nbsp; &nbsp;
+                      Course</span></a></li>&nbsp; &nbsp;
                 <li class="btn-cta"><a href="#" (click)="logOut()"><span style="background-color:goldenrod">Logout
                       <i class="bi bi-door-closed"></i></span></a></li>&nbsp;
               </ul>
@@ -108,6 +108,9 @@
                     <h5 class="m-0"> <a [routerLink]="['/detail-cours', cours.idCours]" class="btn btn-primary">Read
                         More</a>
                     </h5>
+                    <!-- <button  type="button">
+                   <img src="assets/images/supprimer.png" alt=""
+                      (click)="deleteCours(cours.idCours)"></button>-->
                   </div>
                 </div>
               </div>

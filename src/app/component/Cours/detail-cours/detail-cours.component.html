@@ -87,11 +87,11 @@
                                 <h2 class="mr-2">
                                   <a>{{ courseDetails.titre }}</a>
                                 </h2>
-                                <button *ngIf="itIsMine" type="button"
+                                <!-- <button *ngIf="itIsMine" type="button"
                                   class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900"
                                   style="margin-left:65%" [routerLink]="'/modifyCours/' + courseDetails.idCours">
-                                  Update Course
-                                </button>
+                                  <img src="assets/images/modifier-le-fichier.png" alt=""> </button> &nbsp;-->
+
                               </div>
 
 
@@ -115,7 +115,7 @@
                                       <th> Title </th>
                                       <th> Description </th>
                                       <th> Download </th>
-                                      <th *ngIf="itIsMine"> Edit </th>
+                                      <th *ngIf="itIsMine" colspan="2" style="text-align: center;"> Actions </th>
 
                                     </tr>
                                   </thead>
@@ -131,6 +131,8 @@
                                           [routerLink]="'/modifylecon/' + courseDetails.idCours +'/'+lecon.idLecon"
                                           class="">
                                           <i class="bi bi-pencil-square"></i></a></td>
+                                      <td *ngIf="itIsMine"><button (click)="deleteLecon(lecon.idLecon)"><i
+                                            class="bi bi-trash3-fill"></i></button></td>
                                     </tr>
                                   </tbody>
                                 </table>
