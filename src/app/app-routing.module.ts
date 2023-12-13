@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: "contact", component: ContactComponent },
   { path: "modifyCours/:id", component: ModifierCoursComponent, canActivate: [AuthGuard] },
   { path: "modifylecon/:id/:idlecon", component: ModifierLeconComponent, canActivate: [AuthGuard] },
-  { path: "mycoursAuthor", component: MycoursAuthorComponent },
+  { path: "mycoursAuthor", component: MycoursAuthorComponent, canActivate: [AuthGuard] },
   { path: "courses", component: AfficherCoursComponent, canActivate: [AuthGuard] },
   { path: "login", component: LoginComponent },
   { path: "forgetPassword", component: ForgetPasswordComponent },

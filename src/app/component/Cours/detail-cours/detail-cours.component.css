@@ -41,6 +41,16 @@ body {
   font-weight: 800 !important;
 
 }
+.icons{
+  display: flex;
+    justify-content: space-around;
+}
+.icons a{
+  font-size: x-large;
+  font-weight: 800 !important;
+
+
+}
 
 td a{
   margin-left: 24px ;

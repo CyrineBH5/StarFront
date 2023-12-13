@@ -38,7 +38,7 @@ export class AfficherCoursComponent implements OnInit {
 
   getImageUrl(imagePath: string): string {
     const imageName = imagePath.split('\\').pop();
-    return `http://127.0.0.1:8080/${imageName}`;
+    return `http://127.0.0.1:8081/${imageName}`;
   }
 
   searchTerm: string;
@@ -54,5 +54,5 @@ export class AfficherCoursComponent implements OnInit {
       );
     }
   }
- 
+
 }

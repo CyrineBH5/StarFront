@@ -26,7 +26,7 @@ export class CoursService {
       this.httpCours.post<Cours>('http://localhost:3003/api/Cours', formData).subscribe(
         (res: any) => {
           console.log(res.idCours);
-          resolve(res.idCours); 
+          resolve(res.idCours);
         },
         (err: any) => {
           console.log(err);
@@ -37,6 +37,9 @@ export class CoursService {
   }
   getDetailCours() {
     return this.httpCours.get<Cours[]>('http://localhost:3003/api/Cours');
+  }
+  getAllCoursByUserId(id:number) {
+    return this.httpCours.get<Cours[]>('http://localhost:3003/api//mycours/'+id);
   }
   getCoursById(id: number): Observable<any> {
     return this.httpCours.get<Cours[]>('http://localhost:3003/api/Cours/' + id);

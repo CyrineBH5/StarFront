@@ -1,124 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Cours Author</title>
+  </head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Cours Author</title>
-</head>
-
-<body>
-  <div class="fh5co-loader" *ngIf="showSpinner"></div>
-  <!--<div id="page">
+  <body>
+    <div class="fh5co-loader" *ngIf="showSpinner"></div>
     <nav class="fh5co-nav" role="navigation">
-
       <div class="top-menu">
         <div class="container">
           <div class="row">
             <div class="col-xs-1">
-              <div id="fh5co-logo"><a href="">STAR<span>.</span></a></div>
+              <div id="fh5co-logo">
+                <a routerLink="">STAR<span>.</span></a>
+              </div>
             </div>
             <div class="col-xs-11 text-right menu-1">
               <ul>
-                <li><a href="">Home</a></li>
-                <li class="active"><a href="courses.html">Courses</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li class="btn-cta"><a routerLink=""><span style="background-color:goldenrod">Logout
-                      <i class="bi bi-door-closed"></i></span></a></li>&nbsp;
+                <li class="active"><a routerLink="">Home</a></li>
+                <li ><a routerLink="/courses">All Courses</a></li>
+                <li><a routerLink="/contact">Contact</a></li>
+
+                &nbsp;
+                <li class="btn-cta">
+                  <a routerLink="/addcours"
+                    ><span style="background-color: goldenrod"
+                      >Create a Course</span
+                    ></a
+                  >
+                </li>
+
+                <li *ngIf="!logedIN" class="btn-cta">
+                  <a href="#" (click)="logOut()"
+                    ><span style="background-color: goldenrod"
+                      >Logout <i class="bi bi-door-closed"></i></span
+                  ></a>
+                </li>
               </ul>
             </div>
           </div>
-
         </div>
       </div>
     </nav>
 
-    <header id="fh5co-header" class="fh5co-cover" role="banner"
-      style="background-image:url(assets/images/img_bg_1.jpg);" data-stellar-background-ratio="0.5">
-      <div id="fh5co-started" class="fh5co-bg" style="background-image:url(assets/images/header-bg.jpg);">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row animate-box">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-              <div id="a">
-                <h1 style="color:white;">Course Detail</h1>
-                <p style="color:white">You learn something every day if you pay attention
-                  <a href="http://StarApp.com" target="_blank">Star.com</a>
-                </p>
-              </div>
+    <header
+      id="fh5co-header"
+      class="fh5co-cover fh5co-cover-sm"
+      role="banner"
+      style="background-image: url(assets/images/header-bg.jpg)"
+      data-stellar-background-ratio="0.5"
+    >
+      <div class="overlay"></div>
+      <div class="container">
+        <div *ngIf="myArray.length >0" class="main">
+          <table
+            class="my-cours"
+          >
+            <thead
+
+            >
+              <tr>
+                <th scope="col" class="px-6 py-3">Image</th>
+                <th scope="col" class="px-6 py-3">Course name</th>
+                <th scope="col" class="px-6 py-3">View</th>
+                <th scope="col" class="px-6 py-3">Duration</th>
+                <th scope="col" class="px-6 py-3">Langue</th>
+                <th scope="col" class="px-6 py-3">Date Creation</th>
+                <th scope="col" class="px-6 py-3">Description</th>
+                <th scope="col" class="px-6 py-3">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class=""
+                *ngFor="let cours of myArray"
+              >
+                <th
+                  scope="row"
+                  class=""
+                >
+                  <img
+                    style="width: 50px; height: 50px"
+                    [src]="getImageUrl(cours.image)"
+                    alt=""
+                  />
+                </th>
+                <td class="px-6 py-4">
+                  {{ cours.titre }}
+                </td>
+                <td class="px-6 py-4">
+                  <a [routerLink]="['/detail-cours', cours.idCours]"><i class="bi bi-eye"></i></a>
+                </td>
+                <td class="px-6 py-4">
+                  {{ cours.duree }}
+                </td>
+                <td class="px-6 py-4">
+                  {{ cours.langue }}
+                </td>
+                <td class="px-6 py-4">
+                  {{ formatCourseStartDateTime(cours.dateCreation) }}
+                </td>
+                <td class="px-6 py-4" style="font-size:14px; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                  {{ cours.description }}
+                </td>
+                <td class="icons ">
+
+                  <a href="#"><i class="bi bi-pencil-square"></i></a>
+                  <a href="#"><i
+                    (click)="deleteCours(cours.idCours)"
+                    class="bi bi-trash3"
+                  ></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div *ngIf="myArray.length === 0" class="mainempty row animate-box">
+          <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+            <div id="a">
+              <h1 style="color:white">Courses</h1>
+              <p style="color:white">
+                It seems you haven't created any courses yet, but you can create one now.
+                <a class="cre" routerLink="/addcours">
+                  <span>Create a Course</span>
+                </a>
+              </p>
+              <br />
             </div>
           </div>
         </div>
+
       </div>
-
     </header>
-component -->
-  <!-- component -->
 
+    <footer id="fh5co-footer" role="contentinfo">
+      <div class="container">
+        <div class="row row-pb-md">
+          <div class="col-md-3 fh5co-widget">
+            <h4 style="font-weight: bold">About Learning</h4>
+            <p>
+              Education is the most powerful weapon which you can use to change
+              the world.<br />
+            </p>
+          </div>
 
-  <br>
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-        <tr>
-          <th scope="col" class="px-6 py-3">
-            Image
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Course name
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Duration
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Langue
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Date Creation
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Description
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Action
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let cours of myArray">
-          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-            <img class="object-cover object-center w-full h-40" [src]="getImageUrl(cours.image)" alt="">
-          </th>
-          <td class="px-6 py-4">
-            {{cours.titre }}
-          </td>
-          <td class="px-6 py-4">
-            {{cours.duree}}
-          </td>
-          <td class="px-6 py-4">
-            {{cours.langue}}
-          </td>
-          <td class="px-6 py-4">
-            {{cours.dateCreation}}
-          </td>
-          <td class="px-6 py-4">
-            {{cours.description}}
-          </td>
-          <td class="px-6 py-4">
-            <button type="button">
-              <img src="assets/images/supprimer.png" alt="" (click)="deleteCours(cours.idCours)">
-            </button>
-            <button type="button"
-              class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900"
-              style="margin-left:65%">
-              <img src="assets/images/modifier-le-fichier.png" alt=""> </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</body>
+          <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+            <h4 style="font-weight: bold">Useful links</h4>
+            <ul class="fh5co-footer-links">
+              <li><i class="bi bi-chevron-right"></i><a href="#">Home</a></li>
+              <li>
+                <i class="bi bi-chevron-right"></i><a href="#">About us</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i><a href="#">Contact</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i><a href="#">Courses</a>
+              </li>
+            </ul>
+          </div>
 
+          <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+            <h4 style="font-weight: bold">Learning</h4>
+            <ul class="fh5co-footer-links">
+              <li><i class="bi bi-chevron-right"></i><a href="#">Course</a></li>
+              <li>
+                <i class="bi bi-chevron-right"></i><a href="#">Contact</a>
+              </li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Terms</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+            <h4 style="font-weight: bold">Engage us</h4>
+            <ul class="fh5co-footer-links">
+              <li>
+                <i class="bi bi-chevron-right"></i><a href="#">Marketing</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i
+                ><a href="#">Visual Assistant</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i
+                ><a href="#">System Analysis</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i><a href="#">Advertise</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+            <h4 style="font-weight: bold">Legal</h4>
+            <ul class="fh5co-footer-links">
+              <li>
+                <i class="bi bi-chevron-right"></i
+                ><a href="#">Privacy policy</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i><a href="#">Conditions</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i><a href="#">Support</a>
+              </li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Teams</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row copyright">
+          <div class="col-md-12 text-center">
+            <p>
+              <small class="block"
+                >&copy; Copyright <b>STAR</b>. All Rights Reversed</small
+              >
+              <small class="block"
+                >Designed by
+                <a href="#" target="_blank">
+                  Ben Henni Oussema <span style="color: gray">&</span>Ben Hlila
+                  Cyrine
+                </a></small
+              >
+            </p>
+            <p></p>
+            <ul class="fh5co-social-icons">
+              <li>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-dribbble"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

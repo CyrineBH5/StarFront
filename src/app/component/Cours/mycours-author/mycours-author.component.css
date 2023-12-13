@@ -1,0 +1,72 @@
+.my-cours
+{
+  width: 100%;
+}
+*{
+  font-family: "Work Sans", Arial, sans-serif;
+
+}
+tr{
+  height: 50px;
+  color: black;
+  padding-bottom: 20px;
+
+}
+
+thead tr{
+  background-color: goldenrod;
+  color: white;
+}
+.icons i{
+  font-size: 20px ;
+}
+
+.icons .bi-trash3{
+  margin-left: 7px;
+}
+.main{
+  background-color: white !important;
+  border-radius: 15px;
+  border: 4px solid goldenrod;
+  position: relative;
+  overflow: hidden;
+  top: 200px;
+}
+.mainempty{
+
+  position: relative;
+  overflow: hidden;
+  top: 200px;
+}
+
+span {
+  margin: 0 10px !important;
+}
+
+h2 {
+  margin-top: 25px !important;
+}
+
+#fh5co-footer i.bi-chevron-right {
+  color: darkgoldenrod;
+  font-weight: bold;
+}
+*{
+  font-family: "Work Sans", Arial, sans-serif !important;
+}
+.fh5co-loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("../images/loader2.gif") center no-repeat #fff;
+}
+html {
+  scroll-behavior: smooth !important;
+}
+
+.cre{
+  font-size: 28px;
+}

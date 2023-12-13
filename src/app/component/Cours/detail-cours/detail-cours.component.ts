@@ -63,11 +63,11 @@ export class DetailCoursComponent implements OnInit {
   }
   getImageUrl(imagePath: string): string {
     const imageName = imagePath.split('\\').pop();
-    return `http://127.0.0.1:8080/${imageName}`;
+    return `http://127.0.0.1:8081/${imageName}`;
   }
   getFileUrl(filePath: string): string {
     const fileName = filePath.split('\\').pop();
-    return `http://127.0.0.1:8080/${fileName}`;
+    return `http://127.0.0.1:8081/${fileName}`;
   }
 
 
