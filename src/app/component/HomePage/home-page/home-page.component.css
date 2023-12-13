@@ -22,3 +22,6 @@ h2 {
   z-index: 9999;
   background: url("../images/loader2.gif") center no-repeat #fff;
 }
+html {
+  scroll-behavior: smooth !important;
+}

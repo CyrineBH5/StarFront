@@ -1,4 +1,5 @@
 import { Component, OnInit ,HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -7,17 +8,23 @@ import { Component, OnInit ,HostListener } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router:Router) { }
 
   showSpinner = false;
   isActive: boolean = false;
+  logedIN: boolean = false;
   ngOnInit() {
+    this.logedIN= localStorage.getItem('loggedIn') != 'true';
     // Automatically show the spinner for 1 second
     this.showSpinner = true;
     setTimeout(() => {
       this.showSpinner = false;
     }, 500);
 
+  }
+  logOut(){
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
   @HostListener('window:scroll', ['$event'])

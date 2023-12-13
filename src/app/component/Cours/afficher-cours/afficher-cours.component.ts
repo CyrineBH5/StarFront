@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cours } from 'src/app/models/Cours/cours';
 import { CoursService } from 'src/app/services/cours/cours.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-afficher-cours',
   templateUrl: './afficher-cours.component.html',
@@ -10,7 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AfficherCoursComponent implements OnInit {
   myArray: any = [];
-  constructor(public rs: CoursService, private sanitizer: DomSanitizer) { }
+  constructor(public rs: CoursService,public router:Router) { }
   showSpinner = false;
   ngOnInit(): void {
     this.getDetailCours();
@@ -28,6 +29,10 @@ export class AfficherCoursComponent implements OnInit {
         alert("Problème d'accès à l'api");
       }
     )
+  }
+  logOut(){
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
   // Inside your component cla
 

@@ -33,16 +33,37 @@ export class LoginComponent implements OnInit {
       async (res: any) => {
         console.log('Login successful', res);
 
-        localStorage.setItem('logedIN', 'true');
-        console.log(String(await this.userService.findUserByEmail(email)));
+        localStorage.setItem('loggedIn', 'true');
+        //console.log(String(await this.userService.findUserByEmail(email)));
         localStorage.setItem(
           'idUtilisateur',
           String(await this.userService.findUserByEmail(email))
         );
         localStorage.setItem('email', email);
-        box === true
-          ? localStorage.setItem('remeberMe', 'true')
-          : localStorage.setItem('remeberMe', 'false');
+        console.log(box);
+
+        if (box == true) {
+          localStorage.setItem('remeberMe', 'true');
+        } else {
+          let isTabClosed = false;
+
+          window.addEventListener('beforeunload', (event) => {
+            if (!isTabClosed) {
+              localStorage.clear();
+            }
+          });
+
+          window.addEventListener('unload', () => {
+            isTabClosed = true;
+          });
+
+          window.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'hidden') {
+              // The tab is being closed or minimized
+              isTabClosed = true;
+            }
+          });
+        }
         this.router.navigate(['/']);
         this.loginError = false;
       },
