@@ -41,7 +41,6 @@ export class AjouterCoursComponent implements OnInit {
 
   onImageFileChange(event) {
     this.selectedImageFile = event.target.files[0];
-
   }
   onFileChange(event) {
     this.selectedFile = event.target.files[0];

@@ -14,30 +14,7 @@
 </head>
 
 <body>
-  <!-- <div id="page">
-    <nav class="fh5co-nav" role="navigation">
-
-      <div class="top-menu">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-1">
-              <div id="fh5co-logo"><a href="">STAR<span>.</span></a></div>
-            </div>
-            <div class="col-xs-11 text-right menu-1">
-              <ul>
-                <li><a href="">Home</a></li>
-                <li class="active"><a href="courses.html">Courses</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li class="btn-cta"><a routerLink=""><span style="background-color:goldenrod">Logout
-                      <i class="bi bi-door-closed"></i></span></a></li>&nbsp;
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </nav>
-  </div>-->
+  <br>
   <div class="fh5co-loader" *ngIf="showSpinner"></div>
   <div class="container" *ngIf="courseDetails">
     <div class="bg-white rounded p-1 shadow-md">
@@ -45,9 +22,9 @@
       <!-- Step 1: Enter Email -->
       <div class="reset-pass p-md-4">
 
-        <form #f="ngForm"  (ngSubmit)="updateCours(f)" method="POST" class="signin-form" >
+        <form #f="ngForm" (ngSubmit)="updateCours(f)" method="POST" class="signin-form">
           <h3>Modify Course n° {{courseDetails.idCours}}</h3>
-        <p class="text-slate-500"><i>Fill up the form to Update form</i></p>
+          <p class="text-slate-500"><i>Fill up the form to Update form</i></p>
           <div class="form-group mb-3">
             <label class="label" for="name">Title course</label>
             <input type="text" name="titre" class="form-control" [(ngModel)]="courseDetails.titre"
@@ -56,7 +33,7 @@
           <div class="form-group mb-3">
             <label class="label" for="duree">Duration</label>
             <input type="time" name="duree" class="form-control" [(ngModel)]="courseDetails.duree"
- placeholder="{{ courseDetails.duree }}" required>
+              placeholder="{{ courseDetails.duree }}" required>
           </div>
           <div class="form-group mb-3">
             <div class="form-group mb-3">
@@ -84,13 +61,14 @@
               <input *ngIf="showFileInput"
                 class=" block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                 aria-describedby="file_input_help" id="file_input" type="file" name="fileInput"
-                accept="(.SVG, .PNG, .JPG , .GIF)"(change)="onImageFileChange($event)" />
+                accept="(.SVG, .PNG, .JPG , .GIF)" (change)="onImageFileChange($event)" />
               <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
                 SVG, PNG, JPG or GIF.
               </p>
             </div>
             <div class="form-group" id="update">
-              <button type="submit" class="form-control btn btn-primary rounded submit px-3" (click)="redirectToDetailCours()">
+              <button type="submit" class="form-control btn btn-primary rounded submit px-3"
+                (click)="redirectToDetailCours()">
                 Modify Course</button>
             </div>
           </div>

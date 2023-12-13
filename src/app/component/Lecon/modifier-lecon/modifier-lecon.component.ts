@@ -1,8 +1,11 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Lecon } from 'src/app/models/Lecon/lecon';
 import { LeconService } from 'src/app/services/lecon/lecon.service';
+import { NgForm } from '@angular/forms';
+import { Lecon } from 'src/app/models/Lecon/lecon';
 
 @Component({
   selector: 'app-modifier-lecon',
@@ -13,6 +16,10 @@ export class ModifierLeconComponent implements OnInit {
   courseId: number;
   leconId: number;
   leconDetails: any;
+<<<<<<< Updated upstream
+=======
+  showFileInput: boolean = false;
+>>>>>>> Stashed changes
   constructor(private serviceLecon: LeconService, private route: ActivatedRoute, private router: Router) { }
   showSpinner = false;
 
@@ -27,6 +34,10 @@ export class ModifierLeconComponent implements OnInit {
       this.getDetailLecon();
     });
   }
+  toggleFileInput(): void {
+    this.showFileInput = this.showFileInput;
+  }
+
   getDetailLecon() {
     this.serviceLecon.getLeconDetails(this.courseId, this.leconId).subscribe(
       (data) => {
@@ -38,6 +49,7 @@ export class ModifierLeconComponent implements OnInit {
       }
     );
   }
+<<<<<<< Updated upstream
   redirectToDetailCours() {
     this.router.navigate(['/detail-cours/' + this.courseId]);
   }
@@ -47,6 +59,14 @@ export class ModifierLeconComponent implements OnInit {
     let contenu = f.value['langue'];
     console.log('Données du formulaire :', Titre, Description, this.courseId);
     this.serviceLecon.updateLecon(this.courseId, new Lecon(Titre, Description, contenu, this.courseId)).subscribe(
+=======
+  updateLecon(f: NgForm) {
+    let Titre = f.value['titre'];
+    let Description = f.value['description'];
+    let contenu = f.value['fileInput']
+    console.log('Données du formulaire :', Titre, Description, contenu, this.courseId, this.leconId);
+    this.serviceLecon.updateLecon(this.leconId, new Lecon(Titre, Description, contenu, this.courseId)).subscribe(
+>>>>>>> Stashed changes
       (response) => {
         console.log('Update successful:', response);
         // Handle any additional logic after a successful update
@@ -57,6 +77,12 @@ export class ModifierLeconComponent implements OnInit {
         // Handle error scenarios
       }
     );
+<<<<<<< Updated upstream
 
+=======
+  }
+  redirectToDetailCours() {
+    this.router.navigate(['/detail-cours/' + this.courseId]);
+>>>>>>> Stashed changes
   }
 }
