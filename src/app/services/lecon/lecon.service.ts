@@ -36,5 +36,7 @@ export class LeconService {
   getAllLeconsByCours(coursId: number): Observable<any[]> {
     return this.httpLecon.get<any[]>("http://localhost:3003/api/cours/" + coursId + "/lecons");
   }
-
+  getLeconDetails(coursId: number, leconId: number): Observable<any> {
+    return this.httpLecon.get<any>('http://localhost:3003/api/lecon/' + coursId + '/' + leconId);
+  }
 }

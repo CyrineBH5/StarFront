@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Update Lecon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+  <br>
+  <div class="fh5co-loader" *ngIf="showSpinner"></div>
+  <div class="container">
+    <div class="bg-white rounded p-1 shadow-md">
+
+      <div class="reset-pass p-md-4">
+        <form  method="POST" class="signin-form">
+          <h3>Modify Course n° </h3>
+          <p class="text-slate-500"><i>Fill up the form to Update form</i></p>
+          <div class="form-group mb-3">
+            <label class="label" for="name">Title course</label>
+            <input type="text" name="titre" class="form-control" required>
+          </div>
+          <div class="form-group mb-3">
+            <label class="label" for="name">Description</label>
+            <textarea name="description" id="d" class="form-control" style="height: 100px;" required></textarea>
+          </div>
+          <div class="form-group mb-3">
+            -- FILE --
+            <div class="form-group" id="update">
+              <button type="submit" class="form-control btn btn-primary rounded submit px-3">
+                Modify Lecon</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -10,6 +10,7 @@ import { ForgetPasswordComponent } from './component/Forget-password/forget-pass
 import { AuthGuard } from './services/Auth/auth.guard';
 import { DetailCoursComponent } from './component/Cours/detail-cours/detail-cours.component';
 import { ModifierCoursComponent } from './component/Cours/modifier-cours/modifier-cours.component';
+import { ModifierLeconComponent } from './component/Lecon/modifier-lecon/modifier-lecon.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: "detail-cours/:id", component: DetailCoursComponent },
   { path: "contact", component: ContactComponent, canActivate: [AuthGuard] },
   // {path : "addLecon", component: AjouterLeconComponent},
-  {path : "modifyCours/:id", component:  ModifierCoursComponent},
+  { path: "modifyCours/:id", component: ModifierCoursComponent },
+  { path: "modifylecon/:id/:idlecon", component: ModifierLeconComponent },
   { path: "courses", component: AfficherCoursComponent },
   { path: "login", component: LoginComponent },
   { path: "forgetPassword", component: ForgetPasswordComponent },

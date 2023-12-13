@@ -85,7 +85,7 @@
                             <div class="mu-latest-course-single-content">
                               <div class="flex items-center">
                                 <h2 class="mr-2">
-                                  <a >{{ courseDetails.titre }}</a>
+                                  <a>{{ courseDetails.titre }}</a>
                                 </h2>
                                 <button type="button"
                                   class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900"
@@ -107,25 +107,29 @@
                               <h4>Description</h4>
                               <p>{{courseDetails.description}}</p>
                               <h4>Lecon</h4>
-                              <div class="table-responsive" *ngFor="let lecon of lecons">
+                              <div class="table-responsive">
                                 <table class="table">
                                   <thead>
                                     <tr>
                                       <th></th>
                                       <th> Title </th>
                                       <th> Description </th>
-
                                       <th> Download </th>
+                                      <th> Edit </th>
+
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr>
+                                    <tr *ngFor="let lecon of lecons">
                                       <td>{{ lecon.ordre }}</td>
                                       <td>{{ lecon.titre }}</td>
                                       <td> {{ lecon.description }} </td>
 
                                       <td><a [href]="getFileUrl(lecon.contenu)" download class=""><i
-                                            class="bi bi-download"></i></a></td>
+                                             class="bi bi-download"></i> </a></td>
+                                      <td><a [routerLink]="'/modifyLecon/' + courseDetails.idCours +'/'+lecon.idLecon"
+                                          class="">
+                                          <i class="bi bi-pencil-square"></i></a></td>
                                     </tr>
                                   </tbody>
                                 </table>
