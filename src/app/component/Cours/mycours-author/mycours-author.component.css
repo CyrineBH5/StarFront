@@ -67,6 +67,7 @@ html {
   scroll-behavior: smooth !important;
 }
 
-.cre{
-  font-size: 28px;
+.cre span{
+  font-size: 28px !important;
+  margin-top: 15px !important;
 }

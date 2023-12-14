@@ -67,7 +67,7 @@ export class AjouterCoursComponent implements OnInit {
     let Langue = formAC.value['langue'];
     //let Nb = formAC.value['nb'];
     console.log('Données du formulaire :', Titre, Description, Duree, Langue,localStorage.getItem('idUtilisateur'));
-    this.idCours = await  this.c.ajouterCours(new Cours(Titre, Description, Duree, Langue,Number.parseInt(localStorage.getItem('idUtilisateur'))),this.selectedImageFile);
+    this.idCours = await  this.c.ajouterCours(new Cours(Titre, Description, Duree, Langue,Number.parseInt(localStorage.getItem('idUtilisateur')),null),this.selectedImageFile);
     console.log(this.idCours);
 
     this.nextStep();
