@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "81cd838c-5cf7-4ca3-a9ba-3557a83f191b",
+		"name": "Test1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29096556"
+	},
+	"item": [
+		{
+			"name": "getAllCours",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/cours",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"cours"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
