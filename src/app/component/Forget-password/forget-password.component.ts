@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user/user.service';
 export class ForgetPasswordComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
-  step: number = 2;
+  step: number = 1;
   email: string = '';
   code: string = '';
   newPassword: string = '';

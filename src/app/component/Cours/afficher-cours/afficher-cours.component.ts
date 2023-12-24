@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AfficherCoursComponent implements OnInit {
   myArray: any = [];
-  constructor(public rs: CoursService,public router:Router) { }
+  constructor(public rs: CoursService, public router: Router) { }
   showSpinner = false;
   ngOnInit(): void {
     this.getDetailCours();
@@ -30,7 +30,7 @@ export class AfficherCoursComponent implements OnInit {
       }
     )
   }
-  logOut(){
+  logOut() {
     localStorage.clear();
     this.router.navigate(['/login']);
   }
@@ -38,7 +38,7 @@ export class AfficherCoursComponent implements OnInit {
 
   getImageUrl(imagePath: string): string {
     const imageName = imagePath.split('\\').pop();
-    return `http://127.0.0.1:8081/${imageName}`;
+    return `http://127.0.0.1:8080/${imageName}`;
   }
 
   searchTerm: string;

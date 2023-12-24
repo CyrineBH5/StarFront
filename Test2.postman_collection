@@ -52,7 +52,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3003/api/cours/105/lecons",
+					"raw": "http://localhost:3003/api/cours/106/lecons",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -61,7 +61,7 @@
 					"path": [
 						"api",
 						"cours",
-						"105",
+						"106",
 						"lecons"
 					]
 				}
@@ -74,7 +74,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3003/api/lecon/105/90",
+					"raw": "http://localhost:3003/api/lecon/106/91",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -83,8 +83,8 @@
 					"path": [
 						"api",
 						"lecon",
-						"105",
-						"90"
+						"106",
+						"91"
 					]
 				}
 			},
@@ -118,7 +118,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3003/api/Cours/105",
+					"raw": "http://localhost:3003/api/Cours/104",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -127,7 +127,7 @@
 					"path": [
 						"api",
 						"Cours",
-						"105"
+						"104"
 					]
 				}
 			},
@@ -139,7 +139,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3003/api/lecon/101",
+					"raw": "http://localhost:3003/api/lecon/100",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -148,7 +148,7 @@
 					"path": [
 						"api",
 						"lecon",
-						"101"
+						"100"
 					]
 				}
 			},
